@@ -40,7 +40,7 @@ function Invoke-AESEncryption {
                         break
                     }
                     $plainBytes = [System.IO.File]::ReadAllBytes($File.FullName)
-                    $outPath = $File.FullName + ".intrinsec"
+                    $outPath = $File.FullName + ".mthcht"
                 }
 
                 $encryptor = $aesManaged.CreateEncryptor()
@@ -67,7 +67,7 @@ function Invoke-AESEncryption {
                         break
                     }
                     $cipherBytes = [System.IO.File]::ReadAllBytes($File.FullName)
-                    $outPath = $File.FullName -replace ".intrinsec"
+                    $outPath = $File.FullName -replace ".mthcht"
                 }
 
                 $aesManaged.IV = $cipherBytes[0..15]
