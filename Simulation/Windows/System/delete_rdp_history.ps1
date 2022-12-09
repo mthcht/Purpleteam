@@ -1,4 +1,4 @@
-#Erase RDP Connection History
+#Erase RDP Connection History (T1070.007)
 #This script will delete the registry entries and files related to recent RDP connections.
 
 #Get the current user
