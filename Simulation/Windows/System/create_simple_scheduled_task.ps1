@@ -1,7 +1,7 @@
 #First, we will define the necessary variables
 $action = 'C:\Windows\System32\cmd.exe'
 $arguments = ' /c "echo ola !"'
-$schedTaskName = 'Purpletem test'
+$schedTaskName = 'Purpleteam test'
 $triggerTime = (Get-Date).AddMinutes(1)
 
 #Now, we will create the scheduled task
