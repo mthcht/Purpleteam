@@ -1,3 +1,6 @@
+# T1098 - Account Manipulation
+# T1136.001 - Create Account: Local Account
+# T1531 - Account Access Removal
 
 [CmdletBinding()]
 param(

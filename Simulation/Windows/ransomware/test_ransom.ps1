@@ -1,4 +1,5 @@
-<#
+<# T1486 - Data Encrypted for Impact
+
 - replace path variable in the script by the path folder containing the files you want to crypt.
 $path = "C:\Users\FIXME\Documents\test_ransom"
 

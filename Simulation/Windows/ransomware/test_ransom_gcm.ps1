@@ -1,4 +1,4 @@
-<#
+<# T1486 - Data Encrypted for Impact
 If [System.Security.Cryptography.CipherMode]::Gcm is not available
 then it may be due to the version of .NET being used.
 To check which version of .NET is installed, look for the version number listed next to the Microsoft .NET Framework entry.

@@ -1,3 +1,5 @@
+# T1070.001 - Indicator Removal: Clear Windows Event Logs
+
 $evtLogs = (Get-EventLog -List).Log
 
 $j = 0

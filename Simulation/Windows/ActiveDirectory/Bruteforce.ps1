@@ -1,5 +1,6 @@
 
 <#
+T1110 - Brute Force
 .Synopsis
     This script attempts to find valid credentials for a set of users by trying different passwords
 .DESCRIPTION

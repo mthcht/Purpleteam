@@ -1,3 +1,4 @@
+# T1059 - Command and Scripting Interpreter
 # Simple reverse shell, should be flagged as malicious
 # Setup the payload
 $IP = "127.0.0.1"

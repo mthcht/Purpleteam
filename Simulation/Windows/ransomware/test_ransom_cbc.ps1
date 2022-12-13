@@ -1,3 +1,5 @@
+# T1486 - Data Encrypted for Impact
+
 [CmdletBinding()]
 [OutputType([string])]
 Param

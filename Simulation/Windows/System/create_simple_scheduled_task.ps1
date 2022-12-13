@@ -1,3 +1,6 @@
+# T1222 - File and Directory Permissions Modification
+
+
 #First, we will define the necessary variables
 $action = 'C:\Windows\System32\cmd.exe'
 $arguments = ' /c "echo ola !"'

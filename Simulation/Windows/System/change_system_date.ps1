@@ -1,3 +1,6 @@
+# T1497.003 - Virtualization/Sandbox Evasion: Time Based Evasion
+# T1124 - System Time Discovery
+
 param([switch] $help )
 if ($help)
 {

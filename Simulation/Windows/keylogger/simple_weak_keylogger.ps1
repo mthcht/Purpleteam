@@ -1,3 +1,4 @@
+#T1056.001 - Input Capture: Keylogging
 # use it to trigger AV solutions /!\
 # Assigns the path for the keylogger file
 $path = "C:\FIXME\keylogs.txt"

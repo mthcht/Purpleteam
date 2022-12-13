@@ -1,4 +1,5 @@
-#Hide actions on mailbox (T1070.008)
+# T1070.008 - Indicator Removal: Clear Mailbox Data
+# Hide actions on mailbox 
 
 #Import the Exchange PowerShell Module
 Import-Module Exchange
