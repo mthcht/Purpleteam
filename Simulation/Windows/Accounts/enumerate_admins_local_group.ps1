@@ -1,5 +1,5 @@
 # T1069.001 - Permission Groups Discovery
-# This script will detect local groups with admin privileges, enumerate them and save the result to a csv file
+# This script will detect local groups with admin privileges, enumerate them and save the result to a csv file, should trigger EventID 4799
 
 #Get the current directory
 $currentDirectory = Get-Location
