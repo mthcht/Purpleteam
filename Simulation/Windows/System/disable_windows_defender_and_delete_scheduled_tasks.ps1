@@ -36,3 +36,11 @@ Set-MpPreference -ScheduleScanTime ""
 Set-MpPreference -ScheduleScanDay ""
 # Disable action on detected threats
 Set-MpPreference -DisableRemediation $true
+
+# Get the scheduled tasks
+$tasks = Get-ScheduledTask | Where-Object {$_.TaskName -like "*Windows Defender*"}
+# Loop through each task and delete it
+foreach ($task in $tasks)
+{
+    Unregister-ScheduledTask -TaskName $task.TaskName -Confirm:$false
+}
