@@ -1,0 +1,59 @@
+<Sysmon schemaversion="4.83">
+  <HashAlgorithms>*</HashAlgorithms>
+  <CheckRevocation />
+  <DnsLookup>True</DnsLookup>
+  <ArchiveDirectory>Log everything</ArchiveDirectory>
+  <EventFiltering>
+      <ProcessCreate onmatch="exclude">
+		<Image condition="begin with">C:\Program Files\SplunkUniversalForwarder\bin\</Image>
+		<Image condition="begin with">C:\Program Files\Splunk\bin\</Image>
+		<Image condition="begin with">C:\WindowsAzure\GuestAgent</Image>
+	  </ProcessCreate>
+      <FileCreateTime onmatch="exclude"/>
+      <NetworkConnect onmatch="exclude"/>
+      <ProcessTerminate onmatch="exclude">
+		<Image condition="begin with">C:\Program Files\SplunkUniversalForwarder\bin\</Image>
+		<Image condition="begin with">C:\Program Files\Splunk\bin\</Image>
+		<Image condition="begin with">C:\WindowsAzure\GuestAgent</Image>
+	  </ProcessTerminate>
+      <DriverLoad onmatch="exclude" />
+      <ImageLoad onmatch="exclude">
+		<Image condition="is">C:\Tools\Sysinternals\Sysmon64.exe</Image>
+		<Image condition="begin with">C:\Program Files\SplunkUniversalForwarder\bin\</Image>
+		<Image condition="begin with">C:\Program Files\Splunk\bin\</Image>
+		<Image condition="begin with">C:\WindowsAzure\GuestAgent</Image>
+	  </ImageLoad>
+      <CreateRemoteThread onmatch="exclude"/>
+      <RawAccessRead onmatch="exclude" />
+      <ProcessAccess onmatch="exclude">
+		<SourceImage condition="is">C:\windows\system32\csrss.exe</SourceImage>
+		<SourceImage condition="is">C:\windows\system32\lsass.exe</SourceImage>
+		<SourceImage condition="is">C:\Program Files\Microsoft Monitoring Agent\Agent\HealthService.exe</SourceImage>
+		<SourceImage condition="begin with">C:\Program Files\SplunkUniversalForwarder\bin\</SourceImage>
+		<SourceImage condition="begin with">C:\Program Files\Splunk\bin\</SourceImage>
+  </ProcessAccess>
+      <FileCreate onmatch="exclude"/>
+      <RegistryEvent onmatch="exclude">
+		<Image condition="begin with">C:\Program Files\SplunkUniversalForwarder\bin\</Image>
+		<Image condition="begin with">C:\Program Files\Splunk\bin\</Image>
+		<Image condition="is">C:\Program Files\Microsoft Monitoring Agent\Agent\HealthService.exe</Image>
+		<Image condition="is">C:\tools\sysinternals\Sysmon64.exe</Image>
+		<Image condition="is">C:\windows\Sysmon64.exe</Image>
+		<Image condition="begin with">C:\WindowsAzure\GuestAgent</Image>
+	  </RegistryEvent>
+      <FileCreateStreamHash onmatch="exclude"/>
+      <PipeEvent onmatch="exclude">
+		<Image condition="begin with">C:\Program Files\SplunkUniversalForwarder\bin\</Image>
+		<Image condition="begin with">C:\Program Files\Microsoft Monitoring Agent\Agent\</Image>
+		<Image condition="begin with">C:\WindowsAzure\GuestAgent</Image>
+	  </PipeEvent>
+      <WmiEvent onmatch="exclude"/>
+      <DnsQuery onmatch="exclude"/>
+      <FileDelete onmatch="include"/>
+	  <ClipboardChange onmatch="exclude"/>
+	  <ProcessTampering onmatch="exclude"/>
+	  <FileDeleteDetected onmatch="exclude"/>
+	  <FileBlockExecutable onmatch="exclude"/>
+	  <FileBlockShredding onmatch="exclude"/>
+  </EventFiltering>
+</Sysmon>
