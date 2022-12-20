@@ -31,7 +31,9 @@
 		<SourceImage condition="is">C:\Program Files\Microsoft Monitoring Agent\Agent\HealthService.exe</SourceImage>
 		<SourceImage condition="begin with">C:\Program Files\SplunkUniversalForwarder\bin\</SourceImage>
 		<SourceImage condition="begin with">C:\Program Files\Splunk\bin\</SourceImage>
-  </ProcessAccess>
+	      	<TargetImage condition="begin with">C:\Program Files\SplunkUniversalForwarder\bin\</SourceImage>
+		<TargetImage condition="begin with">C:\Program Files\Splunk\bin\</SourceImage>
+      </ProcessAccess>
       <FileCreate onmatch="exclude"/>
       <RegistryEvent onmatch="exclude">
 		<Image condition="begin with">C:\Program Files\SplunkUniversalForwarder\bin\</Image>
@@ -46,6 +48,7 @@
 		<Image condition="begin with">C:\Program Files\SplunkUniversalForwarder\bin\</Image>
 		<Image condition="begin with">C:\Program Files\Microsoft Monitoring Agent\Agent\</Image>
 		<Image condition="begin with">C:\WindowsAzure\GuestAgent</Image>
+	     	<Image condition="begin with">C:\Program Files\Splunk\bin\</Image>
 	  </PipeEvent>
       <WmiEvent onmatch="exclude"/>
       <DnsQuery onmatch="exclude"/>
