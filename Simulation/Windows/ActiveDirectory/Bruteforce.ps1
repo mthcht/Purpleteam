@@ -1,6 +1,9 @@
 
 <#
-T1110 - Brute Force
+T1110.001 - Brute Force: Password Guessing
+T1110.003 - Brute Force: Password Spraying
+T1110.004 - Brute Force: Credential Stuffing
+
 .Synopsis
     This script attempts to find valid credentials for a set of users by trying different passwords
 .DESCRIPTION
