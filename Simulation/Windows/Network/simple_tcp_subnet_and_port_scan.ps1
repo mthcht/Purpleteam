@@ -1,5 +1,5 @@
 <# T1046 - Network Service Discovery
-   T1595 - Active Scanning
+   T1595.001 - Active Scanning: Scanning IP Blocks
    Simple powershell script to make a port scan or a subnet scan 
 #>
 
