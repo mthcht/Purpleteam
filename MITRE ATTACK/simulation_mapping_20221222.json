@@ -296,15 +296,19 @@
 		{
 			"techniqueID": "T1584.002",
 			"tactic": "reconnaissance",
-			"score": 1,
+			"score": 2,
 			"color": "",
-			"comment": "simple_tcp_subnet_and_port_scan.ps1\n",
+			"comment": "simple_tcp_subnet_and_port_scan.ps1\nset_custom_dns_setting.ps1",
 			"enabled": true,
 			"metadata": [],
 			"links": [
 				{
 					"label": "simple_tcp_subnet_and_port_scan.ps1",
 					"url": "https://github.com/mthcht/Purpleteam/blob/main/Simulation/Windows/Network/simple_tcp_subnet_and_port_scan.ps1"
+				},
+				{
+					"label":"set_custom_dns_setting.ps1",
+					"url":"https://github.com/mthcht/Purpleteam/blob/main/Simulation/Windows/System/set_custom_dns_setting.ps1"
 				}
 			],
 			"showSubtechniques": false
@@ -751,12 +755,16 @@
 		{
 			"techniqueID": "T1003",
 			"tactic": "credential-access",
-			"score": 0,
+			"score": 2,
 			"color": "",
-			"comment": "",
+			"comment": "change_rdp_wdigest_settings.ps1\ncheck_and_enable_wdigest_uselogoncredential_in_registry.ps1\n",
 			"enabled": true,
 			"metadata": [],
-			"links": [],
+			"links": [{"label":"change_rdp_wdigest_settings.ps1","link":"https://github.com/mthcht/Purpleteam/blob/main/Simulation/Windows/System/change_rdp_wdigest_settings.ps1"},
+			{
+				"label":"check_and_enable_wdigest_uselogoncredential_in_registry.ps1",
+				"links":"https://github.com/mthcht/Purpleteam/blob/main/Simulation/Windows/System/check_and_enable_wdigest_uselogoncredential_in_registry.ps1"
+				}],
 			"showSubtechniques": false
 		},
 		{
@@ -1015,12 +1023,12 @@
 		{
 			"techniqueID": "T1543.003",
 			"tactic": "persistence",
-			"score": 0,
+			"score": 1,
 			"color": "",
-			"comment": "",
+			"comment": "enable_rdp_and_create_firewall_rule.ps1\n",
 			"enabled": true,
 			"metadata": [],
-			"links": [],
+			"links": [{"lable":"enable_rdp_and_create_firewall_rule.ps1","link":"https://github.com/mthcht/Purpleteam/blob/main/Simulation/Windows/System/enable_rdp_and_create_firewall_rule.ps1"}],
 			"showSubtechniques": false
 		},
 		{
@@ -1664,12 +1672,12 @@
 		{
 			"techniqueID": "T1564.001",
 			"tactic": "defense-evasion",
-			"score": 0,
+			"score": 1,
 			"color": "",
-			"comment": "",
+			"comment": "hide_file_with_attrib.exe_and_Set-ItemProperty.ps1\n",
 			"enabled": true,
 			"metadata": [],
-			"links": [],
+			"links": [{"label":"hide_file_with_attrib.exe_and_Set-ItemProperty.ps1","link":"https://github.com/mthcht/Purpleteam/blob/main/Simulation/Windows/System/hide_file_with_attrib.exe_and_Set-ItemProperty.ps1"}],
 			"showSubtechniques": false
 		},
 		{
@@ -1697,12 +1705,12 @@
 		{
 			"techniqueID": "T1564.004",
 			"tactic": "defense-evasion",
-			"score": 0,
+			"score": 1,
 			"color": "",
-			"comment": "",
+			"comment": "hide_exe_file_into_txt_file.ps1\n",
 			"enabled": true,
 			"metadata": [],
-			"links": [],
+			"links": [{"label":"hide_exe_file_into_txt_file.ps1","link":"https://github.com/mthcht/Purpleteam/blob/main/Simulation/Windows/System/hide_exe_file_into_txt_file.ps1"}],
 			"showSubtechniques": false
 		},
 		{
@@ -1851,12 +1859,15 @@
 		{
 			"techniqueID": "T1115",
 			"tactic": "collection",
-			"score": 0,
+			"score": 1,
 			"color": "",
-			"comment": "",
+			"comment": "get_clipboard_content_loop.ps1\n",
 			"enabled": true,
 			"metadata": [],
-			"links": [],
+			"links": [{
+				"label":"get_clipboard_content_loop.ps1",
+				"link":"https://github.com/mthcht/Purpleteam/blob/main/Simulation/Windows/System/get_clipboard_content_loop.ps1"
+			}],
 			"showSubtechniques": false
 		},
 		{
@@ -2313,12 +2324,20 @@
 		{
 			"techniqueID": "T1562.001",
 			"tactic": "defense-evasion",
-			"score": 0,
+			"score": 2,
 			"color": "",
-			"comment": "",
+			"comment": "disable_windows_defender_and_delete_scheduled_tasks.ps1\nexecute_amsi_bypass_payloads.ps1",
 			"enabled": true,
 			"metadata": [],
-			"links": [],
+			"links": [
+				{
+					"label":"disable_windows_defender_and_delete_scheduled_tasks.ps1",
+					"link":"https://github.com/mthcht/Purpleteam/blob/main/Simulation/Windows/System/disable_windows_defender_and_delete_scheduled_tasks.ps1"
+				},
+				{
+					"label":"execute_amsi_bypass_payloads.ps1",
+					"link":"https://github.com/mthcht/Purpleteam/blob/main/Simulation/Windows/System/execute_amsi_bypass_payloads.ps1"
+				}],
 			"showSubtechniques": false
 		},
 		{
@@ -2731,12 +2750,12 @@
 		{
 			"techniqueID": "T1552.002",
 			"tactic": "credential-access",
-			"score": 0,
+			"score": 1,
 			"color": "",
-			"comment": "",
+			"comment": "search_for_credentials_in_registry.ps1",
 			"enabled": true,
 			"metadata": [],
-			"links": [],
+			"links": [{"label":"search_for_credentials_in_registry.ps1","link":"https://github.com/mthcht/Purpleteam/blob/main/Simulation/Windows/System/search_for_credentials_in_registry.ps1"}],
 			"showSubtechniques": false
 		},
 		{
@@ -3600,12 +3619,12 @@
 		{
 			"techniqueID": "T1021",
 			"tactic": "lateral-movement",
-			"score": 0,
+			"score": 1,
 			"color": "",
-			"comment": "",
+			"comment": "change_rdp_wdigest_settings.ps1",
 			"enabled": true,
 			"metadata": [],
-			"links": [],
+			"links": [{"label":"change_rdp_wdigest_settings.ps1","link":"https://github.com/mthcht/Purpleteam/blob/main/Simulation/Windows/System/change_rdp_wdigest_settings.ps1"}],
 			"showSubtechniques": false
 		},
 		{
@@ -3622,12 +3641,12 @@
 		{
 			"techniqueID": "T1021.001",
 			"tactic": "lateral-movement",
-			"score": 0,
+			"score": 1,
 			"color": "",
-			"comment": "",
+			"comment": "enable_rdp_and_create_firewall_rule.ps1\n",
 			"enabled": true,
 			"metadata": [],
-			"links": [],
+			"links": [{"label":"enable_rdp_and_create_firewall_rule.ps1","link":"https://github.com/mthcht/Purpleteam/blob/main/Simulation/Windows/System/enable_rdp_and_create_firewall_rule.ps1"}],
 			"showSubtechniques": false
 		},
 		{
@@ -3666,12 +3685,12 @@
 		{
 			"techniqueID": "T1021.006",
 			"tactic": "lateral-movement",
-			"score": 0,
+			"score": 1,
 			"color": "",
-			"comment": "",
+			"comment": "enable_winrm_local.ps1\n",
 			"enabled": true,
 			"metadata": [],
-			"links": [],
+			"links": [{"label":"enable_winrm_local.ps1","link":"https://github.com/mthcht/Purpleteam/blob/main/Simulation/Windows/System/enable_winrm_local.ps1"}],
 			"showSubtechniques": false
 		},
 		{
@@ -3776,12 +3795,26 @@
 		{
 			"techniqueID": "T1112",
 			"tactic": "defense-evasion",
-			"score": 0,
+			"score": 3,
 			"color": "",
-			"comment": "",
+			"comment": "change_rdp_wdigest_settings.ps1\ncheck_and_enable_wdigest_uselogoncredential_in_registry.ps1\nenable_rdp_and_create_firewall_rule.ps1",
 			"enabled": true,
 			"metadata": [],
-			"links": [],
+			"links": [
+			{
+			"label":"change_rdp_wdigest_settings.ps1",
+			"links":"https://github.com/mthcht/Purpleteam/blob/main/Simulation/Windows/System/change_rdp_wdigest_settings.ps1"
+			},
+			{
+			"label":"check_and_enable_wdigest_uselogoncredential_in_registry.ps1",
+			"links":"https://github.com/mthcht/Purpleteam/blob/main/Simulation/Windows/System/check_and_enable_wdigest_uselogoncredential_in_registry.ps1"
+			},
+			{
+			"label":"enable_rdp_and_create_firewall_rule.ps1",
+			"links":"https://github.com/mthcht/Purpleteam/blob/main/Simulation/Windows/System/enable_rdp_and_create_firewall_rule.ps1"
+			}
+		
+		],
 			"showSubtechniques": false
 		},
 		{
@@ -3897,12 +3930,12 @@
 		{
 			"techniqueID": "T1222",
 			"tactic": "defense-evasion",
-			"score": 0,
+			"score": 2,
 			"color": "",
-			"comment": "",
+			"comment": "create_shortcut.ps1\ncreate_simple_scheduled_task.ps1",
 			"enabled": true,
 			"metadata": [],
-			"links": [],
+			"links": [{"label":"create_shortcut.ps1","link":"https://github.com/mthcht/Purpleteam/blob/main/Simulation/Windows/System/create_shortcut.ps1"},{"label":"create_simple_scheduled_task.ps1","link":"https://github.com/mthcht/Purpleteam/blob/main/Simulation/Windows/System/create_simple_scheduled_task.ps1"}],
 			"showSubtechniques": false
 		},
 		{
@@ -4205,12 +4238,12 @@
 		{
 			"techniqueID": "T1059",
 			"tactic": "execution",
-			"score": 0,
+			"score": 2,
 			"color": "",
-			"comment": "",
+			"comment": "simple_weak_reverse_shell.ps1\nreverse_shell_obfuscated.ps1\n",
 			"enabled": true,
 			"metadata": [],
-			"links": [],
+			"links": [{"label":"simple_weak_reverse_shell.ps1","link":"https://github.com/mthcht/Purpleteam/blob/main/Simulation/Windows/shell/simple_weak_reverse_shell.ps1"},{"label":"reverse_shell_obfuscated.ps1","link":"https://github.com/mthcht/Purpleteam/blob/main/Simulation/Windows/shell/reverse_shell_obfuscated.ps1"}],
 			"showSubtechniques": false
 		},
 		{
@@ -4348,12 +4381,12 @@
 		{
 			"techniqueID": "T1070.003",
 			"tactic": "defense-evasion",
-			"score": 0,
+			"score": 1,
 			"color": "",
-			"comment": "",
+			"comment": "get_powershell_history_and_delete_it.ps1\n",
 			"enabled": true,
 			"metadata": [],
-			"links": [],
+			"links": [{"label":"get_powershell_history_and_delete_it.ps1","link":"https://github.com/mthcht/Purpleteam/blob/main/Simulation/Windows/System/get_powershell_history_and_delete_it.ps1"}],
 			"showSubtechniques": false
 		},
 		{
@@ -4370,23 +4403,23 @@
 		{
 			"techniqueID": "T1070.007",
 			"tactic": "defense-evasion",
-			"score": 0,
+			"score": 1,
 			"color": "",
-			"comment": "",
+			"comment": "delete_rdp_history.ps1\n",
 			"enabled": true,
 			"metadata": [],
-			"links": [],
+			"links": [{"label":"delete_rdp_history.ps1","link":"https://github.com/mthcht/Purpleteam/blob/main/Simulation/Windows/System/delete_rdp_history.ps1"}],
 			"showSubtechniques": false
 		},
 		{
 			"techniqueID": "T1070.001",
 			"tactic": "defense-evasion",
-			"score": 0,
+			"score": 1,
 			"color": "",
-			"comment": "",
+			"comment": "clear_event_logs.ps1",
 			"enabled": true,
 			"metadata": [],
-			"links": [],
+			"links": [{"label":"clear_event_logs.ps1","link":"https://github.com/mthcht/Purpleteam/blob/main/Simulation/Windows/System/clear_event_logs.ps1"}],
 			"showSubtechniques": false
 		},
 		{
@@ -4436,12 +4469,12 @@
 		{
 			"techniqueID": "T1083",
 			"tactic": "discovery",
-			"score": 0,
+			"score": 1,
 			"color": "",
-			"comment": "",
+			"comment": "enumerate_files.ps1\n",
 			"enabled": true,
 			"metadata": [],
-			"links": [],
+			"links": [{"label":"enumerate_files.ps1","link":"https://github.com/mthcht/Purpleteam/blob/main/Simulation/Windows/System/enumerate_files.ps1"}],
 			"showSubtechniques": false
 		},
 		{
@@ -4865,12 +4898,12 @@
 		{
 			"techniqueID": "T1497.003",
 			"tactic": "defense-evasion",
-			"score": 0,
+			"score": 1,
 			"color": "",
-			"comment": "",
+			"comment": "change_system_date.ps1",
 			"enabled": true,
 			"metadata": [],
-			"links": [],
+			"links": [{"label":"change_system_date.ps1","link":"https://github.com/mthcht/Purpleteam/blob/main/Simulation/Windows/System/change_system_date.ps1"}],
 			"showSubtechniques": false
 		},
 		{
@@ -6515,12 +6548,12 @@
 		{
 			"techniqueID": "T1027.009",
 			"tactic": "defense-evasion",
-			"score": 0,
+			"score": 1,
 			"color": "",
-			"comment": "",
+			"comment": "create_embedded_payloads.ps1",
 			"enabled": true,
 			"metadata": [],
-			"links": [],
+			"links": [{"label":"create_embedded_payloads.ps1","link":"https://github.com/mthcht/Purpleteam/blob/main/Simulation/Windows/System/create_embedded_payloads.ps1"}],
 			"showSubtechniques": false
 		},
 		{
@@ -6570,12 +6603,12 @@
 		{
 			"techniqueID": "T1027.008",
 			"tactic": "defense-evasion",
-			"score": 0,
+			"score": 1,
 			"color": "",
-			"comment": "",
+			"comment": "create_stripped_payload.ps1\n",
 			"enabled": true,
 			"metadata": [],
-			"links": [],
+			"links": [{"label":"create_stripped_payload.ps1","link":"https://github.com/mthcht/Purpleteam/blob/main/Simulation/Windows/System/create_stripped_payload.ps1"}],
 			"showSubtechniques": false
 		},
 		{
@@ -6988,12 +7021,12 @@
 		{
 			"techniqueID": "T1486",
 			"tactic": "impact",
-			"score": 0,
+			"score": 1,
 			"color": "",
-			"comment": "",
+			"comment": "test_ransom_cbc.ps1\n",
 			"enabled": true,
 			"metadata": [],
-			"links": [],
+			"links": [{"label":"test_ransom_cbc.ps1","link":"https://github.com/mthcht/Purpleteam/blob/main/Simulation/Windows/ransomware/test_ransom_cbc.ps1"}],
 			"showSubtechniques": false
 		},
 		{
@@ -7175,12 +7208,12 @@
 		{
 			"techniqueID": "T1056.001",
 			"tactic": "collection",
-			"score": 0,
+			"score": 1,
 			"color": "",
-			"comment": "",
+			"comment": "simple_weak_keylogger.ps1\n",
 			"enabled": true,
 			"metadata": [],
-			"links": [],
+			"links": [{"label":"simple_weak_keylogger.ps1","link":"https://github.com/mthcht/Purpleteam/blob/main/Simulation/Windows/keylogger/simple_weak_keylogger.ps1"}],
 			"showSubtechniques": false
 		},
 		{
@@ -8253,12 +8286,12 @@
 		{
 			"techniqueID": "T1124",
 			"tactic": "discovery",
-			"score": 0,
+			"score": 1,
 			"color": "",
-			"comment": "",
+			"comment": "change_system_date.ps1",
 			"enabled": true,
 			"metadata": [],
-			"links": [],
+			"links": [{"label":"change_system_date.ps1","link":"https://github.com/mthcht/Purpleteam/blob/main/Simulation/Windows/System/change_system_date.ps1"}],
 			"showSubtechniques": false
 		},
 		{
