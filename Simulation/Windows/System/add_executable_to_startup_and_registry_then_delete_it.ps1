@@ -1,4 +1,6 @@
-# T1070.009 - Indicator Removal: Clear Persistence
+<# T1070.009 - Indicator Removal: Clear Persistence
+   T1547.001 - Boot or Logon Autostart Execution: Registry Run Keys / Startup Folder
+#>
 
 $currentUser = [Environment]::UserName
 
