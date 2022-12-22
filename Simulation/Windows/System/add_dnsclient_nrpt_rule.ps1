@@ -1,10 +1,10 @@
-<#
+<# T1584.002 - Compromise Infrastructure: DNS Server
+
 .SYNOPSIS
 Creates a DNS Client NRPT rule.
 
 .DESCRIPTION
 This script creates a DNS Client NRPT rule using the provided parameters. If no parameters are provided, the script will set default parameters for the namespace and nameservers.
-This should trigger the technique MITRE T1565 
 
 .PARAMETER Namespace
 The namespace of the DNS Client NRPT rule.
