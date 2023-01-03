@@ -15,6 +15,8 @@ if (!(Test-Path $reg_key)) {
         Write-Host -ForegroundColor Red "The registry key does not exist, the system may not be able to allow multiple rdp session, creating it anyway to simulate the behavior"
         New-Item -Path $reg_key -Force | Out-Null
         Set-ItemProperty -Path $reg_key -Name $name -Value $value -Type $type
+        # reverse the action
+        Remove-ItemProperty -Path $reg_key -Name $name
     }
     catch{
         Write-Host "An error occurred:"
@@ -27,6 +29,8 @@ else{
             try{
                 Set-ItemProperty -Path $reg_key -Name $name -Value $value -Type $type
                 Write-Host -ForegroundColor Green "$reg_key is now configured to enable multilpe rdp sessions:`n"
+                # reverse the action
+                Set-ItemProperty -Path $reg_key -Name $name -Value 1 -Type $type
             }
             catch{
                 Write-Host "An error occurred:"
