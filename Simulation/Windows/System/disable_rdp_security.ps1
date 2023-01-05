@@ -2,6 +2,8 @@
     T1543 - Create or Modify System Process
     T1562.001 - Impair Defenses: Disable or Modify Tools
     T1021.001 - Remote Services: Remote Desktop Protocol
+    Script that will weaken RDP settings, setting these values will allow easier spoofing and MITM and Bruteforce attacks.
+    NLA must be disable for example if we want to spoof the client hostname authenticating with kerberos.
 #>
 
 $regKey = "HKLM:\SYSTEM\CurrentControlSet\Control\Terminal Server\WinStations\RDP-Tcp"
