@@ -15,7 +15,6 @@ Get-NetNeighbor | Where-Object { ($_.IPAddress -notlike "*:*") -and ($_.IPAddres
 
 #Loop through the array and attempt to send the Wake-on-Lan packet
 foreach($mac in $arpTableDict.Values){
-    Write-Host "--- $mac ---"
     try{
         #Create a new packet using the MAC address
         $packet = New-Object byte[](102)
@@ -35,7 +34,6 @@ foreach($mac in $arpTableDict.Values){
         $Udpclient = New-Object System.Net.Sockets.UdpClient
         $Udpclient.Connect(([System.Net.IPAddress]::Broadcast),9)
         $Udpclient.Send($packet,$packet.length)
-        Write-Host "$Udpclient - $packet - $packet.length "
         $Udpclient.Close()
     }
     catch{
