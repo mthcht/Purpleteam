@@ -1,9 +1,13 @@
-# T1552.002 - Unsecured Credentials: Credentials in Registry
-# Work in progress
-
-$strings = @('admin','password','Password','mot de passe','license','Credential','credential','login','Login','key')
+<#
+    T1552.002 - Unsecured Credentials: Credentials in Registry
+    T1012 - Query Registry
+    Simple script to search credentials in registry with "Get-ChildItem" or "reg query"
+#>
+$strings = @('password','licensekey')
 #Search all registry subkeys for passwords
 $Results = @()
+#Search all registry subkeys for passwords
+
 
 $registryKeys = @(
 "Software\Microsoft\Windows\CurrentVersion\Run",
@@ -40,27 +44,46 @@ foreach($registrypath in $registrypaths){
         $regpath = "$registrypath"+':\'+"$registrykey"
         if (Test-Path $regpath) {
             Write-Host $regpath
-            Get-ChildItem -path "$regpath" -Recurse -ErrorAction SilentlyContinue | 
+            Get-ChildItem -path $regpath -Recurse -ErrorAction SilentlyContinue | 
             ForEach-Object {  
                 Get-ItemProperty $_.pspath |
                 ForEach-Object {
-                    $Result = New-Object -TypeName psobject
-                    $Result | Add-Member -MemberType NoteProperty -Name "Name" -Value $_.Name
-                    $Result | Add-Member -MemberType NoteProperty -Name "Property" -Value $_.Property
-                    $Result | Add-Member -MemberType NoteProperty -Name "Value" -Value $_.Value
-                    If($Result.Name -ne $null){
-                        $Results += $Result
+                    $Result = [PSCustomObject]@{
+                        regpath = "$regpath"
+                        Name = "$_.Name"
+                        Property = "$_.Property"
+                        Value = "$_.Value"
+                    }
+                    foreach($string in $strings){
+                        If($Result.Name.Contains("$string") -or $Results.Value.Contains("$string") -or $Results.Property.Contains("$string")){
+                            Write-Host "`n`n ---- ok `n`n $Result `n ---"
+                            $Results += $Result
+                        }
                     }
                 }
-        }
+            }
         }
     }
 }
 
-# reg query HKCU /f password /t REG_SZ /s
 
 
-#Filter results
+
+$date = Get-Date -UFormat %s
+$resultfile =  ".\result_string_$date.txt"
+if(!(Test-Path $resultfile)){
+    New-Item -Path $resultfile -ItemType File
+}
+else{
+    Clear-Content -Path $resultfile
+}
+
+foreach($result in $Results){
+    Add-Content -Path $resultfile -Value "`n $result `n" -Encoding Ascii 
+}
+
+#simulate other method reg query (easily detected):
 foreach($string in $strings){
-  $Results | Where-Object {$_.Property -like "$string"}
+    $add = reg query HKCU /f $string /t REG_SZ /s
+    Add-Content -Path $resultfile -Value "`n reg query $registrypath with $string result: $add" 
 }
