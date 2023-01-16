@@ -14,7 +14,7 @@ try {
     Invoke-WebRequest $url -OutFile $outfile 
     if (Test-Path $outfile){
         Write-Host -ForegroundColor Green "Success: Dumpert downloaded to $outfile"
-        & $output
+        & $outfile
     }
     else{
         throw "dmpert.exe not found."
