@@ -12,6 +12,11 @@ foreach($log in $Loglist){
 wevtutil sl Microsoft-Windows-TaskScheduler/Operational /e:true
 wevtutil sl Microsoft-Windows-DriverFrameworks-UserMode/Operational /e:true
 
+#from W10 with exploit guard, log process creation for some process, will be available in Microsoft-Windows-Security-Mitigations/Kernel Mode
+Set-ProcessMitigation -Name cmd.exe -Disable DisallowChildProcessCreation -Enable AuditChildProcess
+Set-ProcessMitigation -Name powershell.exe -Disable DisallowChildProcessCreation -Enable AuditChildProcess
+Set-ProcessMitigation -Name powershell_ise.exe -Disable DisallowChildProcessCreation -Enable AuditChildProcess
+
 # Set account logon audit policy
 auditpol /set /subcategory:'{0CCE923F-69AE-11D9-BED3-505054503030}'  /success:enable /failure:enable
 # Set computer account management audit policy
