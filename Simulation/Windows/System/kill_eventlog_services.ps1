@@ -11,7 +11,7 @@ foreach($svc in $services){
         if($Service){
             # Stop Services
             if ((Get-Service $Service.Name).Status -eq "Running"){
-                Stop-Process -Id $Service.ProcessId -Force -PassThru -ErrorAction Stop -
+                Stop-Process -Id $Service.ProcessId -Force -PassThru -ErrorAction Stop
             }
             Set-Service -Name $Service.Name -StartupType Disabled
             if ((Get-Service $Service.Name).Status -ne "Running"){
