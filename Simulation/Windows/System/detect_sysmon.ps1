@@ -15,7 +15,11 @@ $sysinternals_current_user = Get-ChildItem HKCU:\Software\Sysinternals
 $sysinternal_sysmon_installed_current_user = $sysinternals_current_user | Select-String "System Monitor" 
 $sysmon_command = Get-Command sysmon*
 $sysmon_location = $sysmon_command | Select-Object -ExpandProperty Source
-$sysmon_config = powershell -Command "& $sysmon_location -c"
+$sysmon_config = @()
+foreach($location in $sysmon_location){
+    $config = &"$location" -c
+    $sysmon_config += $config
+}
 # This last one can take a long time (disable by default) but nice to detect last sysmon eventlog 
 # $latest_sysmon_event = Get-WinEvent -LogName Microsoft-Windows-Sysmon/Operational | Sort-Object TimeCreated -Descending | Select-Object -First 1 -Property TimeCreated
 
