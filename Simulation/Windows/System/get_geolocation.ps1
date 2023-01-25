@@ -4,6 +4,8 @@
   Simple script to get the latitude an longitude from a windows machine
 #>
 
+Start-Transcript -Path "$env:tmp\simulation_traces.log" -Append
+
 function Get-GeoLocation{
 	try {
         #Add an assembly from the .Net framework (System.Device)
@@ -79,3 +81,5 @@ $city = ($match_city.Groups[0].Value).Split('\"')[2]
 
 Write-Host "$city --- $country"
 #>
+
+Stop-Transcript
