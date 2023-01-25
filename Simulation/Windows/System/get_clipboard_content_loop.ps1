@@ -1,4 +1,8 @@
-# T1115 - Clipboard Data
+<#
+    T1115 - Clipboard Data
+#>
+
+Start-Transcript -Path "$env:tmp\simulation_traces.log" -Append
 
 # Get clipboard content
 $clipboard = Get-Clipboard
@@ -26,3 +30,5 @@ while ($true)
     }
     Start-Sleep -Seconds 1
 }
+
+Stop-Transcript
