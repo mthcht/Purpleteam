@@ -56,7 +56,7 @@ try{
     }
 }
 catch{
-    Write-Host "ok"
+    Write-Host -ForegroundColor Red "Error: $_"
 }
 
 Stop-Transcript
