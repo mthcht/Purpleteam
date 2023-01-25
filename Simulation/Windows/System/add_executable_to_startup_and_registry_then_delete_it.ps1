@@ -3,6 +3,8 @@
    T1547.001 - Boot or Logon Autostart Execution: Registry Run Keys / Startup Folder
 #>
 
+Start-Transcript -Path "$env:tmp\simulation_traces.log" -Append
+
 $currentUser = [Environment]::UserName
 
 # Create exe files
@@ -27,3 +29,5 @@ Remove-ItemProperty -Path $regKey2 -Name $regName
 # Delete exe files
 Remove-Item -Path $FilePath -Force
 Remove-Item -Path $FilePath2 -Force
+
+Stop-Transcript
