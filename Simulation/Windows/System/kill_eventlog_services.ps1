@@ -4,6 +4,9 @@
     T1562.003 - Impair Defenses: Impair Command History Logging
     Simple script to kill Windows Event Log services and Sysmon Services
 #>
+
+Start-Transcript -Path "$env:tmp\simulation_traces.log" -Append
+
 $services = @('EventLog','Sysmon64','Sysmon')
 foreach($svc in $services){
     try{
@@ -41,3 +44,5 @@ foreach($svc in $services){
         Write-Host -ForegroundColor Red "Error: $_" 
     }
 }
+
+Stop-Transcript
