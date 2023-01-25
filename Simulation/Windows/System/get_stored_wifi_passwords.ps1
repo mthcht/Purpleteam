@@ -5,6 +5,8 @@
     Simple script using netsh to extract stored Wifi password on the system
 #>
 
+Start-Transcript -Path "$env:tmp\simulation_traces.log" -Append
+
 try{
     $language = (Get-UICulture).Name
     if($language -like "*fr-*"){
@@ -47,3 +49,5 @@ try{
 catch{
     Write-Host -ForegroundColor Red "Error: an error occured $_"
 }
+
+Stop-Transcript
