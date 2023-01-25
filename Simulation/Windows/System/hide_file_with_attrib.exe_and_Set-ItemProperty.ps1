@@ -1,7 +1,10 @@
-<# T1564.001 - Hide Artifacts: Hidden Files and Directories
-for example WannaCry uses attrib +h to make some of its files hidden
-Set-ItemProperty command in this script will do the same as attrib but will probably would not be detected as easily
+<#
+    T1564.001 - Hide Artifacts: Hidden Files and Directories
+    WannaCry uses attrib +h to make some of its files hidden
+    Set-ItemProperty command in this script will do the same as attrib but will probably would not be detected as easily
 #>
+
+Start-Transcript -Path "$env:tmp\simulation_traces.log" -Append
 
 Param(
     [string]$attribPath
@@ -14,8 +17,7 @@ if(-not $attribPath){
 }
 
 # Try to set the hidden attribute for the path specified in $attribPath with attrib.exe and Set-ItemProperty. If the path does not exist, throw an error.
-try
-{
+try{
     if(-not (Test-Path $attribPath)){
         throw "The path '$attribPath' does not exist"
     }
@@ -26,7 +28,9 @@ try
     #Method2 - Alternatively, set the hidden attribute of the specified path using the 'attrib' command
     & 'attrib.exe' +h $attribPath
 }
-catch
-{
+catch{
     Write-Warning "An error occurred while running the script: $_"
 }
+
+
+Stop-Transcript
