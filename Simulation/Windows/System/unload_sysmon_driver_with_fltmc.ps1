@@ -5,12 +5,6 @@
     Unload Sysmon driver, allow the attacker to bypass sysmon detections (most of it, network monitoring will still be effective)
 #>
 
-<#
-    T1584.002 - Compromise Infrastructure: DNS Server
-    This script will change the DNS settings to use Google's DNS servers or a custom DNS server. 
-    Malware can act as a DHCP server and provide adversary-owned DNS servers to the victimized computers
-#>
-
 Start-Transcript -Path "$env:tmp\simulation_traces.log" -Append
 
 $sysmon_driver_altitude = fltmc.exe | Select-String "385201"
