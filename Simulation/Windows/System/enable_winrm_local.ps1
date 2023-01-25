@@ -1,5 +1,9 @@
-# T1021.006 - Remote Services: Windows Remote Management
-# This script will enable WinRM (Remote PS) on the local machine.
+<#
+    T1021.006 - Remote Services: Windows Remote Management
+    This script will enable WinRM (Remote PS) on the local machine.
+#>
+
+Start-Transcript -Path "$env:tmp\simulation_traces.log" -Append
 
 # Enable WinRM 
 Enable-PSRemoting -Force
@@ -22,3 +26,5 @@ Set-Item WSMan:\localhost\Service\AllowUnencrypted $true
 
 # Restart WinRM Service
 Restart-Service winrm
+
+Stop-Transcript
