@@ -7,6 +7,7 @@
   /!\ SMBv1 should not be used 
 #>
 
+Start-Transcript -Path "$env:tmp\simulation_traces.log" -Append
 
 # Enable SMB1 on Workstaiton and server
 Set-SmbServerConfiguration -EnableSMB1Protocol $true -Confirm:$false -ErrorAction SilentlyContinue
@@ -33,3 +34,5 @@ catch{
 
 # Restart the computer for changes to take effect
 # Restart-Computer
+
+Stop-Transcript
