@@ -1,5 +1,9 @@
-# T1497.003 - Virtualization/Sandbox Evasion: Time Based Evasion
-# T1124 - System Time Discovery
+<#
+    T1497.003 - Virtualization/Sandbox Evasion: Time Based Evasion
+    T1124 - System Time Discovery
+#>
+
+Start-Transcript -Path "$env:tmp\simulation_traces.log" -Append
 
 param([switch] $help )
 if ($help)
@@ -15,3 +19,5 @@ $dateToChangeTo = $args[0]
 Set-Date -Date $dateToChangeTo
 # Output the new date
 Write-Host "The system date was changed from $currentDate to $dateToChangeTo"
+
+Stop-Transcript
