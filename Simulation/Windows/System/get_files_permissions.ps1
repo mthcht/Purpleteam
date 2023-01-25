@@ -3,6 +3,8 @@
     Simple script show files with write permissions for the current user
 #>
 
+Start-Transcript -Path "$env:tmp\simulation_traces.log" -Append
+
 # Get the directory path
 if($args.Length -eq 0){
     $directoryPath = Get-Location
@@ -24,3 +26,5 @@ foreach ($file in $files){
         Write-Output "The user has write permission for the file: $($file.FullName)"
     }
 }
+
+Stop-Transcript
