@@ -5,6 +5,8 @@
    Allow the users to have mutliple sessions opened, with this script:
 #>
 
+Start-Transcript -Path "$env:tmp\simulation_traces.log" -Append
+
 $reg_key = "HKLM:\System\CurrentControlSet\Control\TerminalServer"
 $name = "fSingleSessionPerUser"
 $value = 0
@@ -44,3 +46,5 @@ else{
     }
     
 }
+
+Stop-Transcript
