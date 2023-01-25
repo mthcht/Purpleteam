@@ -1,4 +1,8 @@
-# T1027.008 - Obfuscated Files or Information: Stripped Payloads
+<#
+    T1027.008 - Obfuscated Files or Information: Stripped Payloads
+#>
+
+Start-Transcript -Path "$env:tmp\simulation_traces.log" -Append
 
 # Get the current directory location
 $currentLocation = Get-Location
@@ -26,3 +30,5 @@ for($i=0; $i -lt $stripped_bytes.Length; $i++){
 # Output the new payload
 $outputPath = "$currentLocation\stripped_payload.exe"
 [System.IO.File]::WriteAllBytes($outputPath, $stripped_bytes)
+
+Stop-Transcript
