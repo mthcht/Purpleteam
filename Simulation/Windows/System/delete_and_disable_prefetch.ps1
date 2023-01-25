@@ -1,5 +1,5 @@
 <#
-    T1562.001  -   Impair Defenses: Disable or Modify Tools 
+    T1562.001  -  Impair Defenses: Disable or Modify Tools 
     T1112 -  Modify Registry 
     T1489 -  Service Stop
     T1070.004 -  Indicator Removal: File Deletion 
@@ -9,24 +9,31 @@
     This information includes the name of the application, the time it was run, and the number of times it was run.
 #>
 
-# Stop prefetch service
-Stop-Service -Name SysMain -Force 
+Start-Transcript -Path "$env:tmp\simulation_traces.log" -Append
+try{
+    # Stop prefetch service
+    Stop-Service -Name SysMain -Force 
 
-#Remove prefetch files
-$Files = Get-ChildItem -Path $env:SystemRoot\Prefetch -Recurse
-Foreach ($File in $Files){
-    Write-Host $File
-    Remove-Item -Path $File -Force -Recurse
-    Write-Host "Removed file: $($File.Name)"
+    #Remove prefetch files
+    $Files = Get-ChildItem -Path $env:SystemRoot\Prefetch -Recurse
+    Foreach ($File in $Files){
+        Write-Host $File
+        Remove-Item -Path $File -Force -Recurse
+        Write-Host "Removed file: $($File.Name)"
+    }
+
+    # Disabling prefetch and superfetch, the system will not keep as much data in its cache, making it harder for the forensic analyst to find evidence that may have been stored in the cache.
+    # Additionally, disabling prefetch and superfetch can make it more difficult to trace activity on the system, as the system will not be able to keep track of recent activities as easily.
+    $PrefetchReg = "HKLM:\SYSTEM\CurrentControlSet\Control\SessionManager\Memory Management\PrefetchParameters"
+    if (-Not (Test-Path -Path $PrefetchReg)){
+        New-ItemProperty -Path $PrefetchReg
+    }
+    Set-ItemProperty -Path $PrefetchReg -Name "EnablePrefetcher" -Value 0
+    Set-ItemProperty -Path $PrefetchReg -Name "EnableSuperfetch" -Value 0
 }
-
-# Disabling prefetch and superfetch, the system will not keep as much data in its cache, making it harder for the forensic analyst to find evidence that may have been stored in the cache.
-# Additionally, disabling prefetch and superfetch can make it more difficult to trace activity on the system, as the system will not be able to keep track of recent activities as easily.
-$PrefetchReg = "HKLM:\SYSTEM\CurrentControlSet\Control\SessionManager\Memory Management\PrefetchParameters"
-if (-Not (Test-Path -Path $PrefetchReg)){
-    New-ItemProperty -Path $PrefetchReg
+catch{
+    Write-host -ForegroundColor Red "Error: $_"
 }
-Set-ItemProperty -Path $PrefetchReg -Name "EnablePrefetcher" -Value 0
-Set-ItemProperty -Path $PrefetchReg -Name "EnableSuperfetch" -Value 0
-
 #Restart-Computer -Force
+
+Stop-Transcript
