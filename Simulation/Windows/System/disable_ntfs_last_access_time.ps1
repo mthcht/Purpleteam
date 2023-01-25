@@ -4,6 +4,8 @@
      Disable NTFS Last access time logging
 #>
 
+Start-Transcript -Path "$env:tmp\simulation_traces.log" -Append
+
 try{
     Write-Host -ForegroundColor Cyan "Disabling NTFS Last access time in registry...."
     $RegistryPath = "HKLM:\SYSTEM\CurrentControlSet\Control\FileSystem"
@@ -56,3 +58,5 @@ try{
 catch{
     Write-Host "ok"
 }
+
+Stop-Transcript
