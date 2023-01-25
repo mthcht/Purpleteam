@@ -3,6 +3,7 @@
     This script will use createdump.exe from Microsoft Dotnet version 5 or 6 to dump lsass process
 #>
 
+Start-Transcript -Path "$env:tmp\simulation_traces.log" -Append
 
 $exePath =  Resolve-Path "$env:ProgramFiles\dotnet\shared\Microsoft.NETCore.App\*\createdump.exe"
 $lsass_pid = (Get-Process lsass).id
@@ -36,3 +37,5 @@ else{
         . $PSCommandPath
     }
 }
+
+Stop-Transcript
