@@ -5,6 +5,8 @@
     Delete USNJrnl for all local drives with fsutil.exe (Anti forensic script)
 #>
 
+Start-Transcript -Path "$env:tmp\simulation_traces.log" -Append
+
 try{
     $Drives = Get-WMIObject Win32_LogicalDisk | Select-Object -Property DriveType, DeviceID
     foreach($Drive in $Drives)
@@ -24,3 +26,5 @@ try{
 catch{
     Write-Host -ForegroundColor Red "`nError: $_"
 }
+
+Stop-Transcript
