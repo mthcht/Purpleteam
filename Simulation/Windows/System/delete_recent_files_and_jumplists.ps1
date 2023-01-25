@@ -4,6 +4,8 @@
     Delete Recent Items and jumplists 
 #>
 
+Start-Transcript -Path "$env:tmp\simulation_traces.log" -Append
+
 try{
     Write-Host -ForegroundColor Cyan "Deleting Recent Files links...."
     $RecentFilesPath = "$env:APPDATA\Microsoft\Windows\Recent\"
@@ -43,3 +45,5 @@ try{
 catch{
     Write-Host -ForegroundColor Red "`nError Jumplists: $_"
 }
+
+Stop-Transcript
