@@ -6,7 +6,10 @@
 
 Start-Transcript -Path "$env:tmp\simulation_traces.log" -Append
 
-param($DNSServers)
+param(
+    [Parameter(Mandatory=$false)]
+    [string]$DNSServers
+)
 
 if ($DNSServers -eq $null) {
     $DNSServers = "8.8.8.8","8.8.4.4"
@@ -20,7 +23,13 @@ foreach ($Adapter in $NetworkAdapters)
 {
     #Set the DNS servers for the adapter
     Set-DnsClientServerAddress -InterfaceIndex $Adapter.ifIndex -ServerAddresses $DNSServers
+    if($? -eq $True){   
+        Write-Host -ForegroundColor Green "Success: DNS changed to $DNSServers successfully for" $Adapter.Name
+    }
+    else{
+        Write-Host -ForegroundColor Red "Error:DNS cannot be changed to $DNSServers for" $Adapter.Name
+    }
 }
-Write-Host "DNS changed successfully!"
+
 
 Stop-Transcript
