@@ -6,6 +6,8 @@
     - delete all shadow copies and disable automatic shadowcopy
 #>
 
+Start-Transcript -Path "$env:tmp\simulation_traces.log" -Append
+
 # Create a shadow copy method 1
 (gwmi -list win32_shadowcopy).Create('C:\','ClientAccessible')
 
@@ -43,3 +45,5 @@ wbadmin.exe delete catalog -quiet
 # disable automatic Windows recovery features by modifying boot configuration data
 bcdedit.exe /set bootstatuspolicy ignoreallfailures
 bcdedit.exe /set recoveryenabled No
+
+Stop-Transcript
