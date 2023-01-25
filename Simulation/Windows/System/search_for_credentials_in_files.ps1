@@ -1,8 +1,8 @@
 <#
-  T1552.001 - Unsecured Credentials: Credentials In Files
-  T1083 - File and Directory Discovery
-  Simple script to search for strings inside files in a given directory (equivalent to a grep -rnw "mystring" .)
-  Example usage: 
+    T1552.001 - Unsecured Credentials: Credentials In Files
+    T1083 - File and Directory Discovery
+    Simple script to search for strings inside files in a given directory (equivalent to a grep -rnw "mystring" .)
+    Example usage: 
     search for 'password=' in every files in the current directory and save the result in results.txt in the same directory
     - powershell.exe -ep Bypass -File .\search_for_credentials_in_files.ps1 -search 'password=' -path . -out ./results.txt
     Ask for user input and print results in the console
@@ -10,6 +10,8 @@
     search for 'your password' in every files in the parent directory and print results in the console
     - powershell.exe -ep Bypass -File .\search_for_credentials_in_files.ps1 -search 'your password' -path ../
 #>
+
+Start-Transcript -Path "$env:tmp\simulation_traces.log" -Append
 
 param(
     [Parameter(Mandatory=$false)]
@@ -51,3 +53,5 @@ else{
         }
     }
 }
+
+Stop-Transcript
