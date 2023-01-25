@@ -1,4 +1,8 @@
-# T1027.009 - Obfuscated Files or Information: Embedded Payloads
+<#
+    T1027.009 - Obfuscated Files or Information: Embedded Payloads
+#>
+
+Start-Transcript -Path "$env:tmp\simulation_traces.log" -Append
 
 # Get the current directory location
 $currentLocation = Get-Location
@@ -17,3 +21,5 @@ $payloadContent = [System.Text.Encoding]::Unicode.GetBytes("Purpleteam: This is 
 $combinedFilePath = "$currentLocation\Combined.exe"
 $combinedContent = [System.Text.Encoding]::Unicode.GetBytes($binaryContent + $payloadContent)
 [System.IO.File]::WriteAllBytes($combinedFilePath, $combinedContent)
+
+Stop-Transcript
