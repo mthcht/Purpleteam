@@ -4,6 +4,8 @@
   Capture mouse cursor position and buttons actions, take a screenshot for each mouse click and save it in $Directory, works on multiple Screens
 #>
 
+Start-Transcript -Path "$env:tmp\simulation_traces.log" -Append
+
 $Directory = "$env:USERPROFILE\Pictures\Saved Pictures"
 $CaptureQuality = 80
 
@@ -80,3 +82,5 @@ while($true)
     }
     $pos = $newpos
 }
+
+Stop-Transcript
