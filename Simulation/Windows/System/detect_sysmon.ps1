@@ -5,6 +5,8 @@
    T1082 - System Information Discovery
 #>
 
+Start-Transcript -Path "$env:tmp\simulation_traces.log" -Append
+
 $sysmon_process = Get-Process | Where-Object { $_.ProcessName -eq "Sysmon" }
 $sysmon_service = (Get-CimInstance win32_service -Filter "Description = 'System Monitor service'") | Select-Object ProcessId,State
 $sysmon_service2 = (Get-Service | where-object {$_.DisplayName -like "*Sysmo*"})| Select-Object Name,Status
@@ -54,3 +56,5 @@ if ($sysmon_location){
 if ($sysmon_config){
     Write-Host -ForegroundColor DarkYellow "Sysmon configuration found: `n $sysmon_config `n`n"
 }
+
+Stop-Transcript
