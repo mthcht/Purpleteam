@@ -3,6 +3,9 @@
     T1012 - Query Registry
     Simple script to search credentials in registry with "Get-ChildItem" or "reg query"
 #>
+
+Start-Transcript -Path "$env:tmp\simulation_traces.log" -Append
+
 $strings = @('password','licensekey')
 #Search all registry subkeys for passwords
 $Results = @()
@@ -87,3 +90,5 @@ foreach($string in $strings){
     $add = reg query HKCU /f $string /t REG_SZ /s
     Add-Content -Path $resultfile -Value "`n reg query $registrypath with $string result: $add" 
 }
+
+Stop-Transcript
