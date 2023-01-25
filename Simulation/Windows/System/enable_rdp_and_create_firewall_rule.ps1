@@ -1,8 +1,12 @@
-# T1021.001 - Remote Services: Remote Desktop Protocol
-# T1112 - Modify Registry
-# T1543.003 - Create or Modify System Process: Windows Service
-# TA0008 - Lateral Movement
-# TA0005 - Defense Evasion
+<#
+    T1021.001 - Remote Services: Remote Desktop Protocol
+    T1112 - Modify Registry
+    T1543.003 - Create or Modify System Process: Windows Service
+    TA0008 - Lateral Movement
+    TA0005 - Defense Evasion
+#>
+
+Start-Transcript -Path "$env:tmp\simulation_traces.log" -Append
 
 #Enable RDP service
 if((Get-Service -Name TermService).Status -ne "Running")
@@ -27,3 +31,4 @@ if (-not (Get-NetFirewallRule -DisplayName $fwRuleName))
     New-NetFirewallRule -DisplayName $fwRuleName -Direction Inbound -Protocol TCP -LocalPort 3389 -Action Allow -Enabled True
 }
 
+Stop-Transcript
