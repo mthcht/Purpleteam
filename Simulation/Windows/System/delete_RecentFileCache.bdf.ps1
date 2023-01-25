@@ -4,6 +4,8 @@
     Simple script anti forensic: Remove RecentFileCache.bcf
 #>
 
+Start-Transcript -Path "$env:tmp\simulation_traces.log" -Append
+
 try{
     $Drives = Get-WMIObject Win32_LogicalDisk | Select-Object -Property DriveType, DeviceID
     foreach($Drive in $Drives)
@@ -29,3 +31,5 @@ try{
 catch{
     Write-Host -ForegroundColor Red "Error: $_"
 }
+
+Stop-Transcript
