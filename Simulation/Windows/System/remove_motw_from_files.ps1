@@ -5,6 +5,7 @@
     - Remove Zone.Identifer completly for each file in the given directory
 #>
 
+Start-Transcript -Path "$env:tmp\simulation_traces.log" -Append
 
 param ( 
     [Parameter(Mandatory=$false)]
@@ -36,3 +37,5 @@ foreach ($file in $files){
     }
 
 }
+
+Stop-Transcript
