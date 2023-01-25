@@ -1,4 +1,8 @@
-# T1070.001 - Indicator Removal: Clear Windows Event Logs
+<#
+    T1070.001 - Indicator Removal: Clear Windows Event Logs
+#>
+
+Start-Transcript -Path "$env:tmp\simulation_traces.log" -Append
 
 $evtLogs = (Get-EventLog -List).Log
 
@@ -22,3 +26,6 @@ If ($confirm -eq "y")
 } Else {
     Write-Host "Event logs $evtLogNames have not been cleared!"
 }
+
+
+Stop-Transcript
