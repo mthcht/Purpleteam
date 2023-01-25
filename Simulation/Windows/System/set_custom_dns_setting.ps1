@@ -1,6 +1,10 @@
-# T1584.002 - Compromise Infrastructure: DNS Server
-# This script will change the DNS settings to use Google's DNS servers or a custom DNS server. 
-# Malware can act as a DHCP server and provide adversary-owned DNS servers to the victimized computers
+<#
+    T1584.002 - Compromise Infrastructure: DNS Server
+    This script will change the DNS settings to use Google's DNS servers or a custom DNS server. 
+    Malware can act as a DHCP server and provide adversary-owned DNS servers to the victimized computers
+#>
+
+Start-Transcript -Path "$env:tmp\simulation_traces.log" -Append
 
 param($DNSServers)
 
@@ -18,3 +22,5 @@ foreach ($Adapter in $NetworkAdapters)
     Set-DnsClientServerAddress -InterfaceIndex $Adapter.ifIndex -ServerAddresses $DNSServers
 }
 Write-Host "DNS changed successfully!"
+
+Stop-Transcript
