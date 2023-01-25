@@ -4,6 +4,8 @@
     It uses a modified powershell function "Out-Minidump" taken from PowerSploit project.
 #>
 
+Start-Transcript -Path "$env:tmp\simulation_traces.log" -Append
+
 function Out-Minidump{
     [CmdletBinding()]
     Param (
@@ -79,3 +81,5 @@ if ($dumpedfile | Where-Object {Test-Path $_.FullName}){
 else{
     Write-Host -ForegroundColor Red "Error: Lsass dumped file not found" 
 }
+
+Stop-Transcript
