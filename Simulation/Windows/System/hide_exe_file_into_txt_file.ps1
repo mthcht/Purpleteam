@@ -1,8 +1,11 @@
-<# T1564.004 - Hide Artifacts: NTFS File Attributes
+<#
+   T1564.004 - Hide Artifacts: NTFS File Attributes
    Extended Attributes (EA) and Alternate Data Streams can be used to store arbitrary data (and even complete files).
    Adversaries may store malicious data or binaries in file attribute metadata instead of directly in files. 
    This may be done to evade some defenses, such as static indicator scanning tools and anti-virus.
 #>
+
+Start-Transcript -Path "$env:tmp\simulation_traces.log" -Append
 
 #Declare Variables 
 $exeFile = ".\hello.exe"
@@ -21,3 +24,5 @@ try{
 catch{
     Write-Error "Error : $_"
 }
+
+Stop-Transcript
