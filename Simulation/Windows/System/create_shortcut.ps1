@@ -1,4 +1,8 @@
-#T1222 - File and Directory Permissions Modification 
+<#
+    T1222 - File and Directory Permissions Modification 
+#>
+
+Start-Transcript -Path "$env:tmp\simulation_traces.log" -Append
 
 Function ghelp{
     Write-Host 
@@ -32,3 +36,5 @@ $permission = $LinkPermissions.Split(',')
 $accessRule = New-Object System.Security.AccessControl.FileSystemAccessRule($permission[0],$permission[1],"Allow")
 $acl.SetAccessRule($accessRule)
 $acl | Set-Acl -Path $LinkSource
+
+Stop-Transcript
