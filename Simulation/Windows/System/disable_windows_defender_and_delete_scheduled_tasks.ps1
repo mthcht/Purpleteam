@@ -1,4 +1,8 @@
-# T1562.001 - Impair Defenses: Disable or Modify Tools
+<#
+    T1562.001 - Impair Defenses: Disable or Modify Tools
+#>
+
+Start-Transcript -Path "$env:tmp\simulation_traces.log" -Append
 
 if (!([Security.Principal.WindowsPrincipal][Security.Principal.WindowsIdentity]::GetCurrent()).IsInRole([Security.Principal.WindowsBuiltInRole] "Administrator")) 
 { 
@@ -108,3 +112,5 @@ foreach ($task in $tasks)
 {
     Unregister-ScheduledTask -TaskName $task.TaskName -Confirm:$false
 }
+
+Stop-Transcript
