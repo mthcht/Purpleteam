@@ -1,6 +1,10 @@
-# T1112 - Modify Registry
-# T1003 - OS Credential Dumping
-# behavior and detection : https://blog.netwrix.com/2022/10/11/wdigest-clear-text-passwords-stealing-more-than-a-hash/
+<#
+    T1112 - Modify Registry
+    T1003 - OS Credential Dumping
+    Behavior and detection : https://blog.netwrix.com/2022/10/11/wdigest-clear-text-passwords-stealing-more-than-a-hash/
+#>
+
+Start-Transcript -Path "$env:tmp\simulation_traces.log" -Append
 
 $registryPath = "HKLM:\System\CurrentControlSet\Control\SecurityProviders\Wdigest"
 
@@ -13,3 +17,5 @@ If($checkReg -eq 0 -or $checkReg -eq $null){
 } Elseif($checkReg -eq 1) {
     Write-Host "Wdigest is Already Enabled"
 }
+
+Stop-Transcript
