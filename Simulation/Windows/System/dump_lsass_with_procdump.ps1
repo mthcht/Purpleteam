@@ -3,6 +3,8 @@
     Dumping lsass process using procdump from sysinternals tools
 #>
 
+Start-Transcript -Path "$env:tmp\simulation_traces.log" -Append
+
 $dmpPath = "$env:TEMP\lsass.dmp"
 
 #Download Procdump
@@ -20,3 +22,5 @@ if (Test-Path $dmpPath) {
 } else {
     Write-Host "Error: $dmpPath has not been created"
 }
+
+Stop-Transcript
