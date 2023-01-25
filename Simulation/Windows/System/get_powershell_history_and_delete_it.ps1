@@ -1,4 +1,8 @@
-# T1070.003 - Indicator Removal: Clear Command History
+<#
+    T1070.003 - Indicator Removal: Clear Command History
+#>
+
+Start-Transcript -Path "$env:tmp\simulation_traces.log" -Append
 
 #Retrieve PowerShell History from all users
 #Get all users
@@ -29,3 +33,5 @@ ForEach ($user in $users) {
         Clear-Content -Path $profilePath
     }
 }
+
+Stop-Transcript
