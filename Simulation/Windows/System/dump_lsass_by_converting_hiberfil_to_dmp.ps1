@@ -4,6 +4,8 @@
     ref: https://blog.gentilkiwi.com/tag/hibr2dmp
 #>
 
+Start-Transcript -Path "$env:tmp\simulation_traces.log" -Append
+
 $url = "https://raw.githubusercontent.com/mthcht/Purpleteam/main/Simulation/Windows/_bin/Hibr2Dmp.exe"
 $hiberfil = "$env:SystemDrive\hiberfil.sys"
 $dumpfile = "$env:tmp\hiberfil_dump.dmp"
@@ -35,3 +37,5 @@ try {
 catch {
     Write-Error $_
 }
+
+Stop-Transcript
