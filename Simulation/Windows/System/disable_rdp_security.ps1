@@ -6,6 +6,8 @@
     NLA must be disable for example if we want to spoof the client hostname authenticating with kerberos.
 #>
 
+Start-Transcript -Path "$env:tmp\simulation_traces.log" -Append
+
 $regKey = "HKLM:\SYSTEM\CurrentControlSet\Control\Terminal Server\WinStations\RDP-Tcp"
 
 # Get state of RDP settings
@@ -54,3 +56,6 @@ try{
 catch{
     Write-Host -ForegroundColor Red "[failed] Error: _$"
 }
+
+
+Stop-Transcript
