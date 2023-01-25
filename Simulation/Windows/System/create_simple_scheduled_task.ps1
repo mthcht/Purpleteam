@@ -1,5 +1,8 @@
-# T1222 - File and Directory Permissions Modification
+<#
+    T1222 - File and Directory Permissions Modification
+#>
 
+Start-Transcript -Path "$env:tmp\simulation_traces.log" -Append
 
 #First, we will define the necessary variables
 $action = 'C:\Windows\System32\cmd.exe'
@@ -19,3 +22,5 @@ if ($createdTask) {
 } else {
     Write-Output "Scheduled task '$schedTaskName' failed to be created."
 }
+
+Stop-Transcript
