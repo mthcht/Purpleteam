@@ -5,12 +5,12 @@
     - Remove Zone.Identifer completly for each file in the given directory
 #>
 
-Start-Transcript -Path "$env:tmp\simulation_traces.log" -Append
-
 param ( 
     [Parameter(Mandatory=$false)]
     [string]$Path = (Get-Location)
 )
+
+Start-Transcript -Path "$env:tmp\simulation_traces.log" -Append
 
 $files = Get-ChildItem -Path $Path 
 foreach ($file in $files){
