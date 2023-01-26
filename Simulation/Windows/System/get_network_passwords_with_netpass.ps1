@@ -7,7 +7,7 @@
     Download  netpass.exe from project https://raw.githubusercontent.com/mthcht/Purpleteam/main/Simulation/Windows/_bin/netpass.exe and execute it 
 #>
 
-Start-Transcript -Path "$env:tmp\simulation_traces.log" -Append
+Start-Transcript -Path "$env:tmp\simulation_traces.log" -Append -Force
 # Download and execute netpass.exe (the binary on my repo is accepting commandline, the default available on Nirsoft site does not)
 if([System.IntPtr]::Size -eq 4){
     $url = "https://raw.githubusercontent.com/mthcht/Purpleteam/main/Simulation/Windows/_bin/netpass.exe"
