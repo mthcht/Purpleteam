@@ -3,12 +3,11 @@
     WannaCry uses attrib +h to make some of its files hidden
     Set-ItemProperty command in this script will do the same as attrib but will probably would not be detected as easily
 #>
-
-Start-Transcript -Path "$env:tmp\simulation_traces.log" -Append
-
 Param(
     [string]$attribPath
 )
+
+Start-Transcript -Path "$env:tmp\simulation_traces.log" -Append
 
 # If $attribPath is not specified, create a file named 'file_to_hide.txt' in the current directory
 if(-not $attribPath){
