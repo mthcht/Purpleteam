@@ -3,9 +3,10 @@
     T1124 - System Time Discovery
 #>
 
+param([switch] $help )
+
 Start-Transcript -Path "$env:tmp\simulation_traces.log" -Append
 
-param([switch] $help )
 if ($help)
 {
     Write-Host "Example Usage ('dd/MM/yyyy format'): powershell -ExecutionPolicy Bypass -File .\change_system_date.ps1 "5/12/2022 23:46""
