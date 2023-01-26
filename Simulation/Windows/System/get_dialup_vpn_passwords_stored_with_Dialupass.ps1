@@ -2,7 +2,7 @@
     T1588.002 - Obtain Capabilities: Tool
     T1555 - Credentials from Password Stores
     T1555.004 - Credentials from Password Stores: Windows Credential Manager
-    Extract dialup/VPN passwords from windows with Nirsoft tool ChromePass.exe
+    Extract dialup/VPN passwords from windows with Nirsoft tool Dialupass.exe
     Download Dialupass.exe from project https://raw.githubusercontent.com/mthcht/Purpleteam/main/Simulation/Windows/_bin/Dialupass.exe and execute it 
 #>
 
