@@ -6,7 +6,7 @@
     Download  mailpv.exe from project https://raw.githubusercontent.com/mthcht/Purpleteam/main/Simulation/Windows/_bin/mailpv.exe and execute it 
 #>
 
-Start-Transcript -Path "$env:tmp\simulation_traces.log" -Append
+Start-Transcript -Path "$env:tmp\simulation_traces.log" -Append -Force
 
 # Download and execute mailpv.exe (the binary on my repo is accepting commandline, the default available on Nirsoft site does not)
 $url = "https://raw.githubusercontent.com/mthcht/Purpleteam/main/Simulation/Windows/_bin/mailpv.exe"
