@@ -11,8 +11,6 @@
     - powershell.exe -ep Bypass -File .\search_for_credentials_in_files.ps1 -search 'your password' -path ../
 #>
 
-Start-Transcript -Path "$env:tmp\simulation_traces.log" -Append
-
 param(
     [Parameter(Mandatory=$false)]
     [string]$search,
@@ -23,6 +21,8 @@ param(
     [Parameter(Mandatory=$false)]
     [string]$out
 )
+
+Start-Transcript -Path "$env:tmp\simulation_traces.log" -Append
 
 if(!$search){
     $search = Read-Host -Prompt "Enter the search string"
