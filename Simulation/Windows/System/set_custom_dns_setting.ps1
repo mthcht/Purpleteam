@@ -3,13 +3,12 @@
     This script will change the DNS settings to use Google's DNS servers or a custom DNS server. 
     Malware can act as a DHCP server and provide adversary-owned DNS servers to the victimized computers
 #>
-
-Start-Transcript -Path "$env:tmp\simulation_traces.log" -Append
-
 param(
     [Parameter(Mandatory=$false)]
     [string]$DNSServers
 )
+
+Start-Transcript -Path "$env:tmp\simulation_traces.log" -Append
 
 if ($DNSServers -eq $null) {
     $DNSServers = "8.8.8.8","8.8.4.4"
