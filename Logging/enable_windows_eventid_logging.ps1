@@ -23,7 +23,7 @@ Set-ProcessMitigation -Name powershell_ise.exe -Disable DisallowChildProcessCrea
 # Enable policies logging success and failures
 $list_policy = @("'{0CCE923F-69AE-11D9-BED3-505054503030}'","'{0CCE9236-69AE-11D9-BED3-505054503030}'","'{0CCE923A-69AE-11D9-BED3-505054503030}'","'{0CCE9237-69AE-11D9-BED3-505054503030}'","'{0CCE9235-69AE-11D9-BED3-505054503030}'","'{0cce9248-69ae-11d9-bed3-505054503030}'","'{0CCE922B-69AE-11D9-BED3-505054503030}'","'{0CCE922E-69AE-11D9-BED3-505054503030}'","'{0CCE9217-69AE-11D9-BED3-505054503030}'","'{0CCE9216-69AE-11D9-BED3-505054503030}'","'{0CCE9215-69AE-11D9-BED3-505054503030}'","'{0CCE921C-69AE-11D9-BED3-505054503030}'","'{0CCE921B-69AE-11D9-BED3-505054503030}'")
 foreach ($policy in $list_policy){
-    & "Auditpol" /set /subcategory:$($policy) /success:enable /failure:enable
+    & "Auditpol" /set /subcategory:$policy /success:enable /failure:enable
 }
 
 #Enable other policies
