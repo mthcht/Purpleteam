@@ -17,6 +17,8 @@
     T1550.002	- Use Alternate Authentication Material: Pass the Hash
     T1550.003	Use Alternate Authentication Material: Pass the Ticket
     T1491.001 - Defacement: Internal Defacement
+    T1204.002 - User Execution: Malicious File
+    T1588.001 - Obtain Capabilities: Malware
     work in progress
 #>
 
