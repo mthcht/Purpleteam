@@ -3,6 +3,7 @@
     T1588.001 - Obtain Capabilities: Malware
     T1059 - Command and Scripting Interpreter
     Download metasploitframework-latest.msi from https://windows.metasploit.com/metasploitframework-latest.msi and isntall it on the machine
+    Installing the entire Metasploit framework on a (victim) Windows Server to move laterally, technique associated with NetWalker
 #>
 
 Start-Transcript -Path "$env:tmp\simulation_traces.log" -Append -Force -Verbose
