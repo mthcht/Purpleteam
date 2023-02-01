@@ -11,7 +11,6 @@ Start-Transcript -Path "$env:tmp\simulation_traces.log" -Append -Force -Verbose
 # Download and install metasploitframework-latest.msi
 $url = "https://windows.metasploit.com/metasploitframework-latest.msi"
 $logfile = "$env:tmp\install_metasploit.log"
-$dumpfile = "$env:tmp\metasploit.txt"
 $outfile = "$env:tmp\msploit.msi"
 try {
     $ProgressPreference = 'SilentlyContinue'
@@ -71,12 +70,6 @@ try {
     }
     else{
         Write-Host -ForegroundColor Red "Error: Failed to download Metasploit framework installer to $outfile"
-    }
-    if(test-path $dumpfile){
-        Write-Host -ForegroundColor Green "Success: to $dumpfile"
-    }
-    else{
-        Write-Host -ForegroundColor Red "Error: Failed to to $dumpfile"
     }
 }
 catch {
