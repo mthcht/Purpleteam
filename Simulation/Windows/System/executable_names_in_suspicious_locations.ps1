@@ -5,7 +5,7 @@
     T1074.001 - Data Staged: Local Data Staging
     T1564.001 - Hide Artifacts: Hidden Files and Directories
     Simulated execution of legitimate system utilities with the same name in abnormal locations (recyclebin, temp ...)
-    Detection: Any executables from windows\system32 not executing from their original location
+    Detection: Any executables from windows\system32 not executing from their original location or their original parent process name
 #>
 
 Start-Transcript -Path "$env:tmp\simulation_traces.log" -Append -Force -Verbose
