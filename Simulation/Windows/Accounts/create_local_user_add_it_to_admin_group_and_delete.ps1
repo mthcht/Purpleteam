@@ -1,6 +1,9 @@
-# T1098 - Account Manipulation
-# T1136.001 - Create Account: Local Account
-# T1531 - Account Access Removal
+<#
+    T1098 - Account Manipulation
+    T1136.001 - Create Account: Local Account
+    T1531 - Account Access Removal
+    Create local user, add it to the administrator group with multiple methods and delete it
+#>
 
 [CmdletBinding()]
 param(
@@ -43,6 +46,7 @@ Function Admin_method1 {
     ) 
     #Create user account
     net user /add $UserName $Password
+    net1 user /add "$($UserName)1" $Password
     #Add user to local admins
     net localgroup $Admin_GroupName $UserName /add
     net localgroup $Admin_GroupName $UserName /delete
@@ -55,7 +59,7 @@ Function Admin_method2 {
         [string]$Password
     )
     # Create user account
-    New-ADUser -Name $UserName -AccountPassword (ConvertTo-SecureString -AsPlainText $Password -Force) -Enabled $true -ChangePasswordAtLogon $true
+    New-ADUser -Name $UserName -AccountPassword (ConvertTo-SecureString -AsPlainText $Password -Force) -Enabled $true -ChangePasswordAtLogon $true -Verbose
     # Add user to local admins group
     Add-ADGroupMember -Identity $Admin_GroupName -Members $UserName
     Remove-ADGroupMember -Identity $Admin_GroupName -Members $UserName
