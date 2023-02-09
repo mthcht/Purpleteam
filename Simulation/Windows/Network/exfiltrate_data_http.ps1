@@ -3,6 +3,7 @@
     Create a 1GB file and upload it to an url of your choice 
 #>
 
+
 param (
     [Parameter(Mandatory=$false)]
     [string]$url
@@ -18,13 +19,25 @@ if (-not $url){
 try {
         
     Write-Host -ForegroundColor Cyan "Creating file with 1GB size"
-    $filePath = "$env:tmp\exfiltration.dat"
-    $f = new-object System.IO.FileStream $filePath, Create, ReadWrite
+    $FilePath = "$env:tmp\exfiltration.txt"
+    $f = new-object System.IO.FileStream $FilePath, Create, ReadWrite
     $f.SetLength(1GB)
     $f.Close()
-    if ((Get-Item $filePath).Length -eq 1GB){
-        Write-Host -ForegroundColor Green "Success: File $filePath created with size of 1GB"
-        Invoke-WebRequest -Uri $url -Method POST -InFile $filePath -Verbose
+    if ((Get-Item $FilePath).Length -eq 1GB){
+        Write-Host -ForegroundColor Green "Success: File $FilePath created with size of 1GB"
+        $FieldName = 'document'
+        $ContentType = 'text/plain'
+        $FileStream = [System.IO.FileStream]::new($FilePath, [System.IO.FileMode]::Open)
+        $FileHeader = [System.Net.Http.Headers.ContentDispositionHeaderValue]::new('form-data')
+        $FileHeader.Name = $FieldName
+        $FileHeader.FileName = Split-Path -leaf $FilePath
+        $FileContent = [System.Net.Http.StreamContent]::new($FileStream)
+        $FileContent.Headers.ContentDisposition = $FileHeader
+        $FileContent.Headers.ContentType = [System.Net.Http.Headers.MediaTypeHeaderValue]::Parse($ContentType)
+        $MultipartContent = [System.Net.Http.MultipartFormDataContent]::new()
+        $MultipartContent.Add($FileContent)
+        Write-Host -ForegroundColor Cyan "Uploading file content to $url ..."
+        Invoke-WebRequest -Body $MultipartContent -Method 'POST' -Uri $url -Verbose 
         Remove-Item $filePath -Verbose -Force
     }
     else{
