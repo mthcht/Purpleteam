@@ -1,5 +1,6 @@
 <#
     T1046 - Network Service Discovery
+    T1057 - Process Discovery
     T1135 - Network Share Discovery
     T1201 - Password Policy Discovery
     T1120 - Peripheral Device Discovery
