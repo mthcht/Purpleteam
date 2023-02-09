@@ -6,9 +6,12 @@
   This script will enable shell commands, execute a command and create an user with rights to execute shell commands
 #>
 
-# IN MSSQL with admin rights
-# EXEC sp_configure 'show advanced options', '1';  
-# EXEC sp_configure 'xp_cmdshell', 1; 
+
+<# 
+   IN MSSQL with admin rights:
+   EXEC sp_configure 'show advanced options', '1';  
+   EXEC sp_configure 'xp_cmdshell', 1; 
+#>
 
 # With powershell
 Import-Module SqlServer
