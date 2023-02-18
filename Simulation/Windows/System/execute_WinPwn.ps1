@@ -1,5 +1,58 @@
 <#
-    FIXME: add mitre associated MITRE techniques (covers a lot...)
+
+    T1002 - Data Compressed
+    T1003 - Credential Dumping 
+    T1003.001 - OS Credential Dumping: LSASS Memory
+    T1003.002 - OS Credential Dumping: Security Account Manager
+    T1003.004 - OS Credential Dumping: LSA Secrets
+    T1003.005 - OS Credential Dumping: Cached Domain Credentials
+    T1003.006 - OS Credential Dumping: DCSync
+    T1007 - System Service Discovery
+    T1016 - System Network Configuration Discovery
+    T1018 - Remote System Discovery
+    T1033 - System Owner/User Discovery
+    T1046 - Network Service Discovery
+    T1047 - Windows Management Instrumentation
+    T1049 - System Network Connections Discovery
+    T1056 - Input Capture
+    T1057 - Process Discovery
+    T1059 - Command-Line Interface 
+    T1069 - Permission Groups Discovery
+    T1069.002 - Permission Groups Discovery: Domain Groups
+    T1081 - Credentials in Files
+    T1082 - System Information Discovery
+    T1086 - PowerShell
+    T1087.002 - Account Discovery: Domain Account
+    T1098 - Account Manipulation     
+    T1117 - Regsvr32
+    T1120 - Peripheral Device Discovery
+    T1134 - Access Token Manipulation
+    T1134.005 - Access Token Manipulation: SID-History Injection
+    T1135 - Network Share Discovery
+    T1136 - Create Account 
+    T1145 - Network Share Connection Removal 
+    T1201 - Password Policy Discovery
+    T1204.002 - User Execution: Malicious File
+    T1207 - Rogue Domain Controller
+    T1482 - Domain Trust Discovery
+    T1491.001 - Defacement: Internal Defacement
+    T1518.001 - Software Discovery: Security Software Discovery
+    T1547.005 - Boot or Logon Autostart Execution: Security Support Provider
+    T1550.002 - Use Alternate Authentication Material: Pass the Hash
+    T1550.003 - Use Alternate Authentication Material: Pass the Ticket
+    T1552.001 - Unsecured Credentials: Credentials In Files
+    T1552.004 - Unsecured Credentials: Private Keys
+    T1555 - Credentials from Password Stores
+    T1555.001 - Keychain
+    T1555.003 - Credentials from Web Browsers
+    T1555.004 - Windows Credential Manager
+    T1558.001 - Steal or Forge Kerberos Tickets: Golden Ticket
+    T1558.002 - Steal or Forge Kerberos Tickets: Silver Ticket
+    T1558.003 - Steal or Forge Kerberos Tickets: Kerberoasting
+    T1588.001 - Obtain Capabilities: Malware
+    T1588.002 - Obtain Capabilities: Tool
+    T1615 - Group Policy Discovery
+    T1649 -	Steal or Forge Authentication Certificates
     Executing Winpwn scripts from https://raw.githubusercontent.com//mthcht/WinPwn/master/Offline_WinPwn.ps1
 #>
 
