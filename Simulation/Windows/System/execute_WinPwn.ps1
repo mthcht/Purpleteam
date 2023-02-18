@@ -1,5 +1,4 @@
 <#
-
     T1002 - Data Compressed
     T1003 - Credential Dumping 
     T1003.001 - OS Credential Dumping: LSASS Memory
