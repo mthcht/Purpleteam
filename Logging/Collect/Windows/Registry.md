@@ -18,6 +18,10 @@
   - `HKCU:\SOFTWARE\Microsoft\Windows\CurrentVersion\RunOnce`
 - `HKCU:\SOFTWARE\Microsoft\Windows\Shell`
 - `HKCU:\SOFTWARE\Sysinternals`
+- `HKCU:\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\RunMRU`
+- `HKCU:\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\TypedPaths`
+- `HKCU:\Software\Microsoft\Terminal Server Client\Default`
+- `HKCU:\Software\Microsoft\Terminal Server Client\Servers`
 #### HKLM
 - `HKLM:\SOFTWARE\Classes`
 - `HKLM:\SOFTWARE\Classes\CLSID`
