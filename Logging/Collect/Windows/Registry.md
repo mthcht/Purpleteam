@@ -1,5 +1,5 @@
-`
 ### List of registry key path to monitor:
+
 #### HKCR
 - `HKCR:\CLSID`
 - `HKCR:\CLSID\{52A2AAAE-085D-4187-97EA-8C30DB990436}\InprocServer32`
