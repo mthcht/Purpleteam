@@ -8,12 +8,12 @@ param (
     [switch]$ask
 )
 
-Start-Transcript -Path "$env:tmp\simulation_traces.log" -Append -Force
+Start-Transcript -Path "$env:tmp\simulation_traces.log" -Append -Force -Verbose
 
 try {
     if ($ask -eq $true){
         $evtLogs = (Get-EventLog -List).Log
-        Write-Host -ForegroundColor Cyan "Input Mode activated with -ask, asking user for basic log selections..."
+        Write-Host -ForegroundColor Cyan "[Info] Input Mode activated with -ask, asking user for basic log selections..."
         $j = 0
         foreach($i in $evtLogs){
             Write-Host "$j : $i" 
@@ -27,23 +27,30 @@ try {
 
         if ($confirm -eq "y"){
             Clear-EventLog -LogName $evtLogNames -Verbose
-            Write-Host "Event logs $evtLogNames have been cleared!"
+            Write-Host -ForegroundColor Green "[Info] Event logs $evtLogNames have been cleared"
         }
         else {
-            Write-Host "Event logs $evtLogNames have not been cleared!"
+            Write-Host -ForegroundColor Red "[Error] Event logs $evtLogNames have not been cleared"
         }
     }
     else {
         $evtLogs = Get-WinEvent -ListLog * -Force -Verbose
-        foreach($event in $evtLogs){
-            Write-Host -ForegroundColor Cyan "Clearing log $($event.LogName)..."
-            wevtutil cl $event.LogName
+        if ($evtLogs){
+            Write-Host -ForegroundColor Cyan "[Info] Event logs found, deleting all logs..."
+            foreach($event in $evtLogs){
+                Write-Host -ForegroundColor Cyan "Clearing log $($event.LogName)..."
+                wevtutil cl $event.LogName
+            }
+            Write-Host -ForegroundColor Green "[Info] Done"
+        }
+        else{
+            Write-Host -ForegroundColor Red "[Error] No event logs found, something went wrong;..."
         }
     }
 }
 catch {
-    Write-Host -ForegroundColor Red "Error: $_"
+    Write-Host -ForegroundColor Red "`n[Error] Exception: $_"
 }
 
 
-Stop-Transcript
+Stop-Transcript -Verbose
