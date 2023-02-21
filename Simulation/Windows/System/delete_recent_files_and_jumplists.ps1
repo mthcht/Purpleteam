@@ -4,11 +4,12 @@
     Delete Recent Items and jumplists 
 #>
 
-Start-Transcript -Path "$env:tmp\simulation_traces.log" -Append
+Start-Transcript -Path "$env:tmp\simulation_traces.log" -Append -Verbose -Force
 
 try{
-    Write-Host -ForegroundColor Cyan "Deleting Recent Files links...."
+    Write-Host -ForegroundColor Cyan "[Info] Deleting Recent Files, folders,links...."
     $RecentFilesPath = "$env:APPDATA\Microsoft\Windows\Recent\"
+    $RecentFilesReg = "HKCU:\Software\Microsoft\Windows\CurrentVersion\Explorer\TypedPaths"
     $RecentFiles = Get-ChildItem -Path $RecentFilesPath -File -Force -Recurse
 
     foreach ($RecentFile in $RecentFiles){
@@ -16,19 +17,32 @@ try{
     }
     $CountFiles = (Get-ChildItem -Path $RecentFilesPath -File -Force -Recurse).Count
     if($CountFiles -eq 0){
-        Write-Host -ForegroundColor Green "Sucess: All the recent files are deleted"
+        Write-Host -ForegroundColor Green "[Sucess] All the recent files are deleted"
     }
     else{
-        Write-Host -ForegroundColor Red "There is still $CountFiles File(s) link(s) in the recent files folder"
+        Write-Host -ForegroundColor Red "[Error] There is still $CountFiles File(s) link(s) in the recent files folder"
+    }
+    if (Test-Path $RecentFilesReg){
+        Write-Host -ForegroundColor Cyan "[Info] Removing entries in $RecentFilesReg ..."
+        Remove-Item $RecentFilesReg -Force -Recurse -Verbose
+        if (Get-Item $RecentFilesReg){
+            Write-Host -ForegroundColor Red "[Error] $RecentFilesReg still contains data"
+        }
+        else{
+            Write-Host -ForegroundColor Green "[Sucess] $RecentFilesReg entries deleted"
+        }
+    }
+    else{
+        Write-Host -ForegroundColor Green "[Sucess] $RecentFilesReg does not exist"
     }
 }
 catch{
-    Write-Host -ForegroundColor Red "`nError Recent Files: $_"
+    Write-Host -ForegroundColor Red "`n[Error] Exception Recent Files: $_"
 }
 try{
-    Write-Host -ForegroundColor Cyan "Deleting Jumlists entries...."
+    Write-Host -ForegroundColor Cyan "[Info] Deleting Jumlists entries...."
     $jumplistpath = "HKCU:\Software\Microsoft\Windows\CurrentVersion\Explorer\RecentDocs"
-    $Jumplistcontent = Get-ChildItem $jumplistpath -Recurse
+    $Jumplistcontent = Get-ChildItem $jumplistpath -Recurse -Verbose
 
     Remove-ItemProperty $jumplistpath -Name *
     foreach ($key in $Jumplistcontent) {
@@ -39,11 +53,11 @@ try{
         }
     }
     if(((Get-Item $jumplistpath).Property).Count -eq 0){
-        Write-Host -ForegroundColor Green "Sucess: Jumlists deleted"
+        Write-Host -ForegroundColor Green "[Sucess] Jumlists deleted"
     }
 }
 catch{
-    Write-Host -ForegroundColor Red "`nError Jumplists: $_"
+    Write-Host -ForegroundColor Red "`n[Error] Exception Jumplists: $_"
 }
 
-Stop-Transcript
+Stop-Transcript -Verbose 
