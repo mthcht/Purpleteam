@@ -1,7 +1,7 @@
-todo:
+TODO:
 
-- MITRE mapping of every simulations cript
+- automatic MITRE mapping of every simulations script
 
-- MITRE mapping of every detection rules
+- automatic MITRE mapping of every detection rules
 
-- MITRE mapping of every datasources 
+- automatic MITRE mapping of every datasources 
