@@ -1,4 +1,4 @@
-# Threat Hunting Session for Quakbot recent behavior (20230222)
+# Threat Hunting Session for Qakbot recent behavior (20230222)
 Based on observed behaviors from [raw content](https://raw.githubusercontent.com/mthcht/Purpleteam/main/Detection/Threat%20Hunting/qakbot/_raw_20230222.txt)
 
 note: Threat Hunting searches used are meant for Threat Hunting sessions and could generate a lot of false positive if used as detection rules like this.
