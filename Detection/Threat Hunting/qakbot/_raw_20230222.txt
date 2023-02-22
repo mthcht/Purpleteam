@@ -181,6 +181,23 @@ http://179.43.154.184/1/report_details.exe
 http://179.43.154.184/3/Factura%20893257.pdf
 http://179.43.154.184/3/290120231.exe
 http://51.222.199.226/145/566647.dat
+http://165.22.160.25/w9edb/160223
+http://165.22.160.25/w9edb/160223
+http://64.225.8.202/1Moch7/160223
+http://64.225.8.202/1Moch7/160223
+http://165.22.160.25/w9edb/160223
+http://baracundofres.com/images/150223.gif'
+http://waojernote.com/images/1.gif
+http://165.22.160.25/w9edb/160223
+http://104.236.1.43/YXF/150223.gif
+http://193.57.138.12/400/113864.dat
+http://51.222.199.226/145/566647.dat
+http://77.83.199.12/282/535806.dat
+http://104.236.1.43/YXF/150223.gif
+https://casualscollection.com/*.gif
+https://transfer.sh/*
+http://49.50.84.164/637/564761.dat
+http://51.222.199.226/145/566647.dat
 
 ### file_name,file_path:
 133337.zip
