@@ -47,6 +47,7 @@ AND
 ```
 tag=proxy url=* NOT dest IN ("10.0.0.0/8", "172.16.0.0/12", "192.168.0.0/16") | regex url = "^(https|tunnel)\:\/\/\d*\.\d*\.\d*\.\d*"
 ```
+---
 
 #### process_command searches:
 for this session, we will use these one (extracted from raw file) but can be anything suspicious really (lolbas mostly)
