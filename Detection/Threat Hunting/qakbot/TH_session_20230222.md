@@ -2,14 +2,7 @@
 Based on observed behaviors from [raw content](https://raw.githubusercontent.com/mthcht/Purpleteam/main/Detection/Threat%20Hunting/qakbot/_raw_20230222.txt)
 
 note: Threat Hunting searches used are meant for Threat Hunting sessions and could generate a lot of false positive if used as detection rules like this.
-
-
-## Useful Keywords:
-
-- `url`: `"*.dll","*.dat","*.exe","*/t4*","https://transfer.sh/*"`
-- `dest_nt_domain`: `"casualscollection.com","transfer.sh","baracundofres.com","waojernote.com","dns.msftncsi.com"'`
-- `file_path`|`file_name`|`_raw`: `"*.one","*362e56855844fb2be3dfae4b566ab676f6ec681fad1c1a2e8eb6d245d56b83f5*","*283fed02e9434975e43435a8748ab01451199a061da32e94e39128fd7745db24*","*Djqyxkquei*","*Mairrkitevaj*","*Bourfbyal*","*Eypqhosmv*","28dc02bcd14a49b263705c4cf5fda85734d1f6d401b7ac34b9377610d0597cae","*283fed02e9434975e43435a8748ab01451199a061da32e94e39128fd7745db24*","*283fed02e9434975e43435a8748ab01451199a061da32e94e39128fd7745db24*","*283fed02e9434975e43435a8748ab01451199a061da32e94e39128fd7745db24*","*1c7829f0316c7aeb94e0887bedf93e3667ab1283659bb1e3d5bcb2860d609ec1*","*Contract_QE20*.one*","*contract 2.one*","*document.one*","*item.one*","*aTgzWLspf.tmp*","*aiaV7JT69.jpg*","*133337.*","*O P E N.*","*Open.jse*","*Open.wsf*","*aNaUlv0y.bat*","*adeP1F.dll*","*\\i.cmd*","* fd.dll*","*default.bat*","*O p e n.bat*","*ngops.bat*","*\\r.cmd*","*\\Temp\\*.bat*","*\\Temp\\*.vbs*","*\\Temp\\*.cmd*","*lesian.dat*","*\\invoice.pdf*","*Feb*_Doc*.one","*Gertiokas*.ocx*","*KYC_CZ21(Feb15).one*","*aaSQMCd.dll*","*aJ1vC.dll*","*C:\\a","*aOQSyY.bat*"`
-- `process_command`: `"*Start-Sleep*","*-C iwr *","* IWR *","* -uri *","*invoke-webrequest*","*regsvr32*.ocx*","*regsvr32*\\Temp\*","*reg.exe*Windows Defender\\Exclusions\\*","*whoami*","*netstat*","*net1.exe*","*net.exe*","*ipconfig*","*cmd /c*","*cmd.exe /c*","*arp -a*","* 2>&1*","*schtasks* /Create*","onenote*\\Temp\\*.one*","*rundll32*.jpg*","*rundll32*.dat*","*.SmcisaK*","*Open.wsf*","*Open.jse*","*\\OneNote\\*.wsf*","*\\OneNote\\*.bat*","*\\OneNote\\*.vbs*","*\\programdata\\*.jpg*","*\\programdata\\*.pdf*","*\\programdata\\*.dat*","*curl -*","*http://*","*https://*","* && rundll32*","*msiexec.exe /V*","*-OutFile *.dat*","*-ExecutionPolicy*","* -ep *","*-WindowStyle hidden*","*route print*"`
+We need dirty searches for Threat Hunting without Datamodel and optimizations because we want to make sure we match something without depending on the normalization work of the SOC, we can always have a parsing error in DM, service or configuration issue...
 
 ### Splunk searches: 
 We assume the logs are normalized, replace the fields names with your own mapping...
@@ -27,6 +20,14 @@ here we use:
 - `tag=process` = must contains all log sources with process execution traces
 - `tag=proxy` = must contains all log sources with proxy users access traces
 - `index=*` = search in all logs sources available
+
+### Useful Keywords:
+
+- url: `"*.dll","*.dat","*.exe","*/t4*","https://transfer.sh/*"`
+- dest_nt_domain: `"casualscollection.com","transfer.sh","baracundofres.com","waojernote.com","dns.msftncsi.com"'`
+- file_path | file_name | _raw: `"*.one","*362e56855844fb2be3dfae4b566ab676f6ec681fad1c1a2e8eb6d245d56b83f5*","*283fed02e9434975e43435a8748ab01451199a061da32e94e39128fd7745db24*","*Djqyxkquei*","*Mairrkitevaj*","*Bourfbyal*","*Eypqhosmv*","28dc02bcd14a49b263705c4cf5fda85734d1f6d401b7ac34b9377610d0597cae","*283fed02e9434975e43435a8748ab01451199a061da32e94e39128fd7745db24*","*283fed02e9434975e43435a8748ab01451199a061da32e94e39128fd7745db24*","*283fed02e9434975e43435a8748ab01451199a061da32e94e39128fd7745db24*","*1c7829f0316c7aeb94e0887bedf93e3667ab1283659bb1e3d5bcb2860d609ec1*","*Contract_QE20*.one*","*contract 2.one*","*document.one*","*item.one*","*aTgzWLspf.tmp*","*aiaV7JT69.jpg*","*133337.*","*O P E N.*","*Open.jse*","*Open.wsf*","*aNaUlv0y.bat*","*adeP1F.dll*","*\\i.cmd*","* fd.dll*","*default.bat*","*O p e n.bat*","*ngops.bat*","*\\r.cmd*","*\\Temp\\*.bat*","*\\Temp\\*.vbs*","*\\Temp\\*.cmd*","*lesian.dat*","*\\invoice.pdf*","*Feb*_Doc*.one","*Gertiokas*.ocx*","*KYC_CZ21(Feb15).one*","*aaSQMCd.dll*","*aJ1vC.dll*","*C:\\a","*aOQSyY.bat*"`
+- process_command: `"*Start-Sleep*","*-C iwr *","* IWR *","* -uri *","*invoke-webrequest*","*regsvr32*.ocx*","*regsvr32*\\Temp\*","*reg.exe*Windows Defender\\Exclusions\\*","*whoami*","*netstat*","*net1.exe*","*net.exe*","*ipconfig*","*cmd /c*","*cmd.exe /c*","*arp -a*","* 2>&1*","*schtasks* /Create*","onenote*\\Temp\\*.one*","*rundll32*.jpg*","*rundll32*.dat*","*.SmcisaK*","*Open.wsf*","*Open.jse*","*\\OneNote\\*.wsf*","*\\OneNote\\*.bat*","*\\OneNote\\*.vbs*","*\\programdata\\*.jpg*","*\\programdata\\*.pdf*","*\\programdata\\*.dat*","*curl -*","*http://*","*https://*","* && rundll32*","*msiexec.exe /V*","*-OutFile *.dat*","*-ExecutionPolicy*","* -ep *","*-WindowStyle hidden*","*route print*"`
+
 
 #### Behavior searches (specific behavior that could be a used as detection for qakbot):
 
