@@ -78,9 +78,9 @@ tag=network dest_ip=102.156.253.86 dest_port=443) OR (dest_ip=103.111.70.115 des
 ```
 
 #### unlimited power search x) :
-1.upload keywords_list.csv to your SIEM
-2.create a lookup definition named keywords_list for keywords_list.csv and add WILDCARD(keyword) in the advanced option of the lookup for this search to work, modify permissions of the lookup to be able to read it
-3.
+- 1.upload keywords_list.csv to your SIEM
+- 2.create a lookup definition named keywords_list for keywords_list.csv and add WILDCARD(keyword) in the advanced option of the lookup for this search to work, modify permissions of the lookup to be able to read it
+- 3.
 ```
 index=* | lookup keywords_list keyword as _raw OUTPUT keyword as keyword_detection 
 | stats count ealiest(_time) as firsttime latest(_time)- as lasttime values(_raw) by keyword_detection index sourcetype 
