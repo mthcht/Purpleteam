@@ -1,4 +1,5 @@
 keyword
+*/ds/0*.gif*
 * && rundll32*
 * -ep *
 * -uri *
