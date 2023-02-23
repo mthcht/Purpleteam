@@ -66,7 +66,7 @@ OR file_name IN ("*.one","*362e56855844fb2be3dfae4b566ab676f6ec681fad1c1a2e8eb6d
 
 #### url, dest_nt_domain searches:
 ```
-tag=proxy url IN ("*.dll","*.dat","*.exe","*/t4*","https://transfer.sh/*,"https://zuericherblatt.com/RRE.php","https://premiumtrstcouriers.com/NP.php","https://autoingress.com.au/b1krz/09","https://tria.ge/230222-wh26xscg68") 
+tag=proxy url IN ("*.dll","*.dat","*.exe","*/t4*","https://transfer.sh/*,"https://zuericherblatt.com/RRE.php","https://premiumtrstcouriers.com/NP.php","https://autoingress.com.au/b1krz/09","https://tria.ge/230222-wh26xscg68","*/ds/0812.gif*") 
 OR dest_nt_host IN ("casualscollection.com","transfer.sh","baracundofres.com","waojernote.com","dns.msftncsi.com")
 ```
 
