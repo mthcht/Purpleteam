@@ -350,11 +350,9 @@ keyword
 *arp -a*
 *b0e55ee7e05134855eb70ac1744370b78743818c106e389de7e0b614a2c37d2d*
 *b91340d156582060095227e8d26f29f5ffc8b0e8fbf35a392b649adc60a5d4ab*
-*baracundofres.com
 *baracundofres.com*
 *bdfee1ccabe10bc2600f4c184ec7e9a5496d646b2df8f17d4d96e0c89a40aca2*
 *be7e0c5b7566efa2d8b39bada9bd9e114f8ccc27c71327026f616e85bb2adb30*
-*casualscollection.com
 *casualscollection.com*
 *cmd /c*
 *cmd.exe /c*
@@ -379,7 +377,7 @@ keyword
 *ngops.bat*
 *onenote*\\Temp\\*.one**
 *regsvr32*.ocx*
-*regsvr32*\\Temp\*
+*regsvr32*\\Temp\\*
 *route print*
 *rundll32*.dat*
 *rundll32*.jpg*
