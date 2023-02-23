@@ -1,7 +1,10 @@
 # Threat Hunting Session for Qakbot recent behavior (20230222)
 Based on observed recents behaviors from [raw content](https://raw.githubusercontent.com/mthcht/Purpleteam/main/Detection/Threat%20Hunting/qakbot/_raw_20230222.txt)
 
-note: Threat Hunting searches used are meant for Threat Hunting sessions and could generate a lot of false positive if used as detection rules like this.
+Threat Hunting searches used are meant for Threat Hunting sessions and could generate a lot of false positive if used as detection rules like this.
+
+The IOC list is not complete on purpose, we only use the most recent IOCs for the session, you should automatically add new IOCs qakbot feeds to your database (MISP,OpenCTI...) with SIEM integration and scheduled detection rules.  
+
 We need dirty searches for Threat Hunting without Datamodel and optimizations because we want to make sure we match something without depending on the Datamodel normalization when we don't know how the SIEM is managed
 
 ### Splunk searches: 
