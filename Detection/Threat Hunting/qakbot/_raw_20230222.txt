@@ -17,6 +17,7 @@ https://app.any.run/tasks/492897a1-6009-4142-a6d5-e43c10c0a357/
 https://app.any.run/tasks/e9ba6363-937c-4d97-a8d8-16bdfed48b39/
 https://app.any.run/tasks/6a2bdcaf-1e1d-4ec7-b809-c89518a144bb/
 https://app.any.run/tasks/c61763e3-6956-4fc8-9e9b-23f2685bfa9c/
+https://blog.cyble.com/2023/02/01/qakbots-evolution-continues-with-new-strategies/
 
 ### file_hash:
 518518b0929911353cd7ab95d873e1fb290d8a494122cfb88e7f8bcf015576c8
