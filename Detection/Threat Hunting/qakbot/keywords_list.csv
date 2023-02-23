@@ -1,6 +1,7 @@
 keyword
 */ds/0*.gif*
 *OFERTA PO# * NSS*
+*ApplicationReject_*.one*
 * && rundll32*
 * -ep *
 * -uri *
