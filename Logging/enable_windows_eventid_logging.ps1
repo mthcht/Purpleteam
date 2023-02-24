@@ -27,6 +27,8 @@ foreach ($policy in $list_policy){
 }
 
 #Enable other policies
+auditpol /set /category:"Object Access" /success:enable /failure:enable
+auditpol /set /category:"System" /success:enable /failure:enable
 #Enable file access audit success events (Event ID 5145,4663,4660,4656,4658)
 Auditpol /set /subcategory:"Detailed File Share" /success:enable
 Auditpol /set /subcategory:"File System" /success:enable
