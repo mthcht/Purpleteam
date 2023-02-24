@@ -10,6 +10,7 @@ Win.IceID
 *\\RecentDocs\\.img*
 *\\worker.cmd*
 *hertbe.dll*
+*\\ProgramData\\*loader_dll_64.dll*
 *\\COIm.jpg*
 *mrassociattes.com*
 *invoke-webrequest -uri*
