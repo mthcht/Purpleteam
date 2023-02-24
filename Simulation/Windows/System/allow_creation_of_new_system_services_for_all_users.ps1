@@ -9,7 +9,7 @@
     traces:
       - Microsoft-Windows-Sysmon: EventID 1
       - security: EventID 4688,4657
-      - powershell: EventID 4104
+      - Microsoft-Windows-PowerShell/Operational: EventID 4104
       - Microsoft-Windows-Security-Mitigations/KernelMode: EventID 3 
         - example: Process '\Device\HarddiskVolume3\Windows\System32\cmd.exe' (PID 6544) would have been blocked from creating a child process 'C:\Windows\system32\sc.exe' with command line 'sc.exe  sdset scmanager D:(A;;KA;;;WD)')
     ref:
