@@ -1,5 +1,9 @@
 keyword
 *Qakbot*
+*.iso *
+*.iso,*
+*\\RecentDocs\\.iso*
+*\\RecentDocs\\.img* 
 */ds/0*.gif*
 *OFERTA PO# * NSS*
 *ApplicationReject_*.one*
