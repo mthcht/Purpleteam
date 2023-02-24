@@ -99,10 +99,11 @@ redacted.document.01.20.pdf
 Contract_02_21_Copy#909.one 
 redacted_file_01.24.2023.pdf
 Contract_02_21_Copy#909.one
- 
+
 ### commands:
 %windir%\system32\cmd.exe /c start rundll32.exe hertbe.dll,#1
 C:\them\worker.cmd
+*\\ProgramData\\*loader_dll_64.dll*
 cmd /c C:\Users\Admin\AppData\Local\Temp\Document.lnk
 cmd /c C:\Users\Admin\AppData\Local\Temp\Inv_Document.lnk
 cmd /c C:\Users\Admin\AppData\Local\Temp\LUGGAGES.lnk
