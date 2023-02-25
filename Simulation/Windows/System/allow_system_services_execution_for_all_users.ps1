@@ -3,7 +3,7 @@
     T1569.002 - System Services: Service Execution
     T1112 - Modify Registry
     
-    Allow every users to create new system system service
+    Allow every users to start system service
     FI: variants of Notpetya Ransomware used 'sc.exe sdset scmanager D:(D;;0x00040002;;;NU)%a'
 
     traces:
