@@ -8,6 +8,10 @@
 
 `$t=(Get-Date).AddMinutes(-5);Get-WinEvent -ListLog * | %{Get-WinEvent -FilterHashtable @{LogName=$_.LogName; StartTime=$t;} -ErrorAction Ignore  | Where-Object {$_.Message -like "*FIXME*"} | Format-Table -AutoSize -Wrap}` 
 
+####  Get last 5 minutes modified files on system:
+
+`$ErrorActionPreference = 'SilentlyContinue';$currentTime = Get-Date;$previousTime = $currentTime.AddMinutes(-5);Get-ChildItem -Path "C:\" -Recurse | Where-Object { $_.LastWriteTime -gt $previousTime }`
+
 ### Others
 
 #### Get recently created files
