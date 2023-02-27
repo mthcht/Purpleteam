@@ -10,7 +10,7 @@
 
 ####  Get last 5 minutes modified files on system:
 
-`$ErrorActionPreference = 'SilentlyContinue';$currentTime = Get-Date;$previousTime = $currentTime.AddMinutes(-5);Get-ChildItem -Path "$env:HOMEDRIVE\" -Recurse | Where-Object { $_.LastWriteTime -gt $previousTime }`
+$t = (Get-Date).AddMinutes(-5);Get-ChildItem -Path "$env:HOMEDRIVE\" -Recurse -Force -ErrorAction Ignore | Where-Object { $_.LastWriteTime -gt $t } | Format-Table -AutoSize -Wrap | Out-File last5minutesfiles.txt
 
 ### Others
 
