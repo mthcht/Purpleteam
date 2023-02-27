@@ -10,7 +10,11 @@
 
 ####  Get last 5 minutes modified files on system:
 
-$t = (Get-Date).AddMinutes(-5);Get-ChildItem -Path "$env:HOMEDRIVE\" -Recurse -Force -ErrorAction Ignore | Where-Object { $_.LastWriteTime -gt $t } | Format-Table -AutoSize -Wrap | Out-File last5minutesfiles.txt
+`$t = (Get-Date).AddMinutes(-5);Get-ChildItem -Path "$env:HOMEDRIVE\" -Recurse -Force -ErrorAction Ignore | Where-Object { $_.LastWriteTime -gt $t } | Format-Table -AutoSize -Wrap | Out-File last5minutesfiles.txt`
+
+Note:  -Attributes with Get-ChildItem can help you find more files
+
+add "-Attributes Hidden" for the last modified hidden files/dir for example...
 
 ### Others
 
