@@ -41,6 +41,12 @@ Auditpol /set /subcategory:"Handle Manipulation" /success:enable
 auditpol /set /subcategory:"Directory Service Changes" /success:enable
 #Enable EventID logging 4656,4657,4660,4663 
 auditpol /set /subcategory:"Registry" /success:enable /failure:enable
+# Event ID 4663
+auditpol /set /subcategory:"File System" /success:Enable
+# Event ID 5156
+auditpol /set /subcategory:"Filtering Platform Connection" /success:Enable
+# Event ID 5140
+auditpol /set /subcategory:"File Share" /success:Enable
 #Enable EventID logging 5156
 auditpol /set /subcategory:"Filtering Platform Connection" /success:enable
 
