@@ -19,7 +19,6 @@
     T1491.001 - Defacement: Internal Defacement
     T1204.002 - User Execution: Malicious File
     T1588.001 - Obtain Capabilities: Malware
-    work in progress
 #>
 
 Start-Transcript -Path "$env:tmp\simulation_traces.log" -Append -Force
