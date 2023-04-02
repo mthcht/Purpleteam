@@ -6,8 +6,8 @@ import csv
 api_key = "FIXME"
 url_comment_ip = "https://www.virustotal.com/api/v3/ip_addresses/{}/comments"
 url_vote_ip = "https://www.virustotal.com/api/v3/ip_addresses/{}/votes"
-ip_wl =  '/opt/virustotal_report/ssh/ip_reported_wl.csv'
-bf_list = '/opt/virustotal_report/ssh/bf_list.csv'
+ip_wl = '/opt/virustotal_report/ssh/bf_list.csv'
+bf_list = '/opt/virustotal_report/ssh/ip_reported_wl.csv'
 
 headers = {
     "accept": "application/json",
@@ -29,6 +29,31 @@ def add_to_wl(filename, new_value):
         else:
             print(f"'{new_value}' already exists in '{filename}', skipping write")
 
+def add_ip_to_collection(ip_address):
+    # IP reported (by mthcht)
+    collection_id = '03b1ed79d4fc646a8d170b21438e1473fac0f56755cf64256624a13cab885c16'
+
+    payload = {
+        'type': 'ip_address',
+        'data': [{"type": "ip_address","id": ip_address}]
+    }
+
+    response = requests.post(
+        f'https://www.virustotal.com/api/v3/collections/{collection_id}/ip_addresses',
+        headers={
+            'x-apikey': api_key,
+            'Content-Type': 'application/json'
+        },
+        json=payload
+    )
+
+    # Check the response status code to confirm the IP address was added successfully
+    if response.status_code == 200:
+        print(f'{ip_address} added to the collection successfully.')
+    else:
+        print(f'Error adding {ip_address} to the collection: {response.text}')
+
+
 def check_reported(filename, new_value):
     existing_values = []
     with open(filename, 'r') as file:
@@ -44,6 +69,7 @@ def post_comment_on_ip(date,ip_address):
         if response.status_code == 200:
             print(f"Comment posted on IP: {ip_address}")
             add_to_wl(ip_wl,"{},{}".format(ip_address,date))
+            add_ip_to_collection(ip_address)
         elif response.status_code == 429:
             print(f"Failed to post comment on IP: {ip_address}. Error: {response.text} {response.status_code} Too many request check quota limit... \n Exiting script...")
             quit()
