@@ -9,6 +9,7 @@ from datetime import datetime
 
 current_year = datetime.now().year
 log_dir = "/var/log/"
+bf_list_result = "/opt/virustotal_report/bf_list.csv"
 result=[]
 
 def month_to_number(month_name):
@@ -57,7 +58,7 @@ for filename in os.listdir(log_dir):
 
 result_dict = {}
 csv_dict = {}
-with open('/root/bf_list.csv','r') as f_input:
+with open(bf_list_result,'r') as f_input:
     csv_input = csv.reader(f_input)
     first_char = f_input.read(1)
     if first_char:
@@ -78,13 +79,13 @@ for ip in csv_dict:
 print('final result:')
 print(list(result_dict.items()))
 print(result_dict)
-with open('/root/bf_list.csv','w') as f_output:
+with open(bf_list_result,'w') as f_output:
     csv_output = csv.writer(f_output)
     csv_output.writerow(['ip_address','date'])
     for ip,date in result_dict.items():
         csv_output.writerow([ip,date])
 
-with open('/root/bf_list.csv','r') as f_input:
+with open(bf_list_result,'r') as f_input:
     csv_reader = csv.DictReader(f_input)
     line_count = 0
     for row in csv_reader:
