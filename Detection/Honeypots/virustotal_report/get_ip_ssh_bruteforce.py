@@ -9,7 +9,7 @@ from datetime import datetime
 
 current_year = datetime.now().year
 log_dir = "/var/log/"
-bf_list_result = "/opt/virustotal_report/bf_list.csv"
+bf_list_result = "/opt/virustotal_report/ssh/bf_list.csv"
 result=[]
 
 def month_to_number(month_name):
