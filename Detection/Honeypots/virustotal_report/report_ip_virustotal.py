@@ -1,5 +1,4 @@
 #!/bin/python3
-# work in progress
 
 import requests
 import csv
@@ -45,11 +44,11 @@ def post_comment_on_ip(date,ip_address):
         if response.status_code == 200:
             print(f"Comment posted on IP: {ip_address}")
             add_to_wl(ip_wl,"{},{}".format(ip_address,date))
-        if response.status_code == 429:
+        elif response.status_code == 429:
             print(f"Failed to post comment on IP: {ip_address}. Error: {response.text} {response.status_code} Too many request check quota limit... \n Exiting script...")
             quit()
         else:
-            print(f"Failed to post comment on IP: {ip_address}. Error: {response.text}")
+            print(f"Failed to post comment on IP: {ip_address}. Error: {response.status_code}  {response.text}")
 
 def give_bad_vote(ip_address):
     url = url_vote_ip.format(ip_address)
