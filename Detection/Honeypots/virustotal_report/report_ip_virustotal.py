@@ -6,8 +6,8 @@ import csv
 api_key = "FIXME"
 url_comment_ip = "https://www.virustotal.com/api/v3/ip_addresses/{}/comments"
 url_vote_ip = "https://www.virustotal.com/api/v3/ip_addresses/{}/votes"
-ip_wl = '/opt/virustotal_report/ssh/bf_list.csv'
-bf_list = '/opt/virustotal_report/ssh/ip_reported_wl.csv'
+bf_list = '/opt/virustotal_report/ssh/bf_list.csv'
+ip_wl = '/opt/virustotal_report/ssh/ip_reported_wl.csv'
 
 headers = {
     "accept": "application/json",
