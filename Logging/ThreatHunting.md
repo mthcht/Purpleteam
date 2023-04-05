@@ -34,7 +34,8 @@ Get-WinEvent -FilterHashtable @{LogName='Microsoft-Windows-Sysmon/Operational'; 
         CommandLine = $commandLine.'#text'
     }
 } | Sort-Object TimeCreated
-```t
+```
+
 
 ### Others
 
