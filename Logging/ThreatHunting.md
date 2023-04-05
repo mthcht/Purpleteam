@@ -18,6 +18,24 @@ Note:  -Attributes with Get-ChildItem can help you find more files
 
 add "-Attributes Hidden" for the last modified hidden files/dir for example...
 
+#### Get Basic Sysmon Event ID 1 Informations ParentImage - Image - CommandLine in powershell
+```
+Get-WinEvent -FilterHashtable @{LogName='Microsoft-Windows-Sysmon/Operational'; ID=1} | ForEach-Object {
+    $eventXml = [xml]$_.ToXml()
+    $process = $eventXml.Event.EventData.Data | Where-Object { $_.Name -eq 'Image' }
+    $parentProcess = $eventXml.Event.EventData.Data | Where-Object { $_.Name -eq 'ParentImage' }
+    $commandLine = $eventXml.Event.EventData.Data | Where-Object { $_.Name -eq 'CommandLine' }
+    $timeCreated = $_.TimeCreated
+
+    [PSCustomObject]@{
+        TimeCreated = $timeCreated
+        Process = $process.'#text'
+        ParentProcess = $parentProcess.'#text'
+        CommandLine = $commandLine.'#text'
+    }
+} | Sort-Object TimeCreated
+```t
+
 ### Others
 
 #### Get loggedin user
