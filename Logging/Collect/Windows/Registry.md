@@ -24,6 +24,7 @@
 - `HKCU:\Software\Microsoft\Terminal Server Client\Servers`
 #### HKLM
 - `HKLM:\SOFTWARE\Classes`
+- `HKLM:\System\CurrentControlSet\Services\*\ImagePath`
 - `HKLM:\SOFTWARE\Classes\CLSID`
   - `HKLM:\SOFTWARE\Classes\CLSID\{645FF040-5081-101B-9F08-00AA002F954E}\shell\`
 - `HKLM:\SOFTWARE\Microsoft\AMSI\Providers`
