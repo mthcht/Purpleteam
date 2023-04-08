@@ -36,6 +36,216 @@ Get-WinEvent -FilterHashtable @{LogName='Microsoft-Windows-Sysmon/Operational'; 
 } | Sort-Object TimeCreated
 ```
 
+### Static analysis
+
+#### Get all hashes on the system:
+for windows:
+`az`
+
+for linux:
+`az`
+
+#### Extract Informations from powershell scripts:
+
+- extract powershell scripts informations with powershell:
+
+ex: `powershell -ep Bypass keywords_in_powershell_scripts.ps1 c:\users\mthcht\desktop\mimikatz.ps1` 
+
+```powershell
+param (
+    [Parameter(Mandatory=$true)]
+    [string]$ScriptPath
+)
+
+function Extract-ScriptInfo {
+    param (
+        [string]$ScriptPath
+    )
+
+    $tokens = $errors = $null
+    $ast = [System.Management.Automation.Language.Parser]::ParseFile(
+        $ScriptPath,
+        [ref]$tokens,
+        [ref]$errors
+    )
+
+    # Function names
+    $function_definitions = $ast.FindAll({ param($node) $node -is [System.Management.Automation.Language.FunctionDefinitionAst] }, $true)
+    $function_names = $function_definitions.Name
+
+    # Command invocations
+    $command_invocations = $ast.FindAll({ param($node) $node -is [System.Management.Automation.Language.CommandAst] }, $true)
+    $invoked_commands = $command_invocations | ForEach-Object { $_.CommandElements[0].Value }
+
+    # Available arguments
+    $param_blocks = $ast.FindAll({ param($node) $node -is [System.Management.Automation.Language.ParamBlockAst] }, $true)
+    $available_arguments = $param_blocks | ForEach-Object { $_.Parameters.Name.VariablePath.UserPath }
+
+    $script_info = @{
+        FunctionNames = $function_names
+        InvokedCommands = $invoked_commands
+        AvailableArguments = $available_arguments
+    }
+
+    return $script_info
+}
+
+$script_info = Extract-ScriptInfo -ScriptPath $ScriptPath
+Write-Host "Function names:`n $($script_info.FunctionNames -join ',')"
+Write-Host "Invoked commands:`n $($script_info.InvokedCommands -join ',')"
+Write-Host "Available arguments:`n $($script_info.AvailableArguments -join ',')"
+```
+
+- extract powershell scripts informations with python (for analysis on linux):
+
+ex: `python3 keywords_in_powershell_scripts.ps1 /home/mthcht/mimikatz.ps1`
+
+```python
+import argparse
+import subprocess
+import json
+
+def extract_script_info(script_path):
+    script = f"""
+    $tokens = $errors = $null
+    $ast = [System.Management.Automation.Language.Parser]::ParseFile(
+        \"{script_path}\",
+        [ref]$tokens,
+        [ref]$errors)
+
+    # Function names
+    $function_definitions = $ast.FindAll({{ param($node) $node -is [System.Management.Automation.Language.FunctionDefinitionAst] }}, $true)
+    $function_names = $function_definitions.Name
+
+    # Command invocations
+    $command_invocations = $ast.FindAll({{ param($node) $node -is [System.Management.Automation.Language.CommandAst] }}, $true)
+    $invoked_commands = $command_invocations | ForEach-Object {{ $_.CommandElements[0].Value }}
+
+    # Available arguments
+    $param_blocks = $ast.FindAll({{ param($node) $node -is [System.Management.Automation.Language.ParamBlockAst] }}, $true)
+    $available_arguments = $param_blocks | ForEach-Object {{ $_.Parameters.Name.VariablePath.UserPath }}
+
+    $script_info = @{{
+        FunctionNames = $function_names
+        InvokedCommands = $invoked_commands
+        AvailableArguments = $available_arguments
+    }}
+    $script_info | ConvertTo-Json
+    """
+    result = subprocess.run(
+        ["pwsh", "-Command", script],
+        capture_output=True,
+        text=True,
+    )
+
+    if result.returncode != 0:
+        print("PowerShell Error:", result.stderr)
+        raise Exception("Failed to extract script information")
+
+    print("PowerShell Output:", result.stdout)
+
+    if result.stdout.strip() == "null":
+        return {}
+
+    script_info = json.loads(result.stdout)
+    return script_info
+
+def main():
+    parser = argparse.ArgumentParser(description="Extract script information from a PowerShell script.")
+    parser.add_argument("script_path", help="Path to the PowerShell script")
+
+    args = parser.parse_args()
+    script_path = args.script_path
+
+    script_info = extract_script_info(script_path)
+    print("Function names:{}\n".format(script_info.get("FunctionNames", [])))
+    print("Invoked commands:{}\n".format(script_info.get("InvokedCommands", [])))
+    print("Available arguments:{}\n".format(script_info.get("AvailableArguments", [])))
+
+if __name__ == "__main__":
+    main()
+```
+
+#### Extract Informations from python scripts:
+
+- extract python scripts informations with python:
+
+ex: `python3 keywords_in_python_scripts.py /home/mthcht/mimikatz.py`
+
+```python
+import argparse
+import ast
+
+class PythonScriptInfoExtractor(ast.NodeVisitor):
+    def __init__(self):
+        self.function_names = []
+        self.imported_modules = []
+        self.function_arguments = {}
+        self.script_arguments = []
+
+    def visit_FunctionDef(self, node):
+        self.function_names.append(node.name)
+        self.function_arguments[node.name] = [arg.arg for arg in node.args.args]
+        self.generic_visit(node)
+
+    def visit_Import(self, node):
+        for alias in node.names:
+            self.imported_modules.append(alias.name)
+        self.generic_visit(node)
+
+    def visit_ImportFrom(self, node):
+        module_name = node.module
+        for alias in node.names:
+            self.imported_modules.append(f"{module_name}.{alias.name}")
+        self.generic_visit(node)
+
+    def visit_Call(self, node):
+        if isinstance(node.func, ast.Attribute):
+            if node.func.attr == 'add_argument':
+                if isinstance(node.func.value, ast.Name) and node.func.value.id == 'parser':
+                    arg = node.args[0].s if node.args else None
+                    if arg:
+                        self.script_arguments.append(arg)
+        self.generic_visit(node)
+
+def extract_python_script_info(script_path):
+    with open(script_path, "r") as source:
+        node = ast.parse(source.read())
+
+    extractor = PythonScriptInfoExtractor()
+    extractor.visit(node)
+
+    return {
+        "FunctionNames": extractor.function_names,
+        "ImportedModules": extractor.imported_modules,
+        "FunctionArguments": extractor.function_arguments,
+        "ScriptArguments": extractor.script_arguments,
+    }
+
+def main():
+    parser = argparse.ArgumentParser(description="Extract script information from a Python script.")
+    parser.add_argument("script_path", help="Path to the Python script")
+
+    args = parser.parse_args()
+    script_path = args.script_path
+
+    script_info = extract_python_script_info(script_path)
+    print("Function names:\n", script_info["FunctionNames"])
+    print("Imported modules:\n", script_info["ImportedModules"])
+    print("Function arguments:")
+    for func_name, args in script_info["FunctionArguments"].items():
+        print(f"  {func_name}: {args}")
+    print("Script arguments:\n", script_info["ScriptArguments"])
+
+if __name__ == "__main__":
+    main()
+```
+
+#### Extract Informations from vbs scripts:
+
+#### Extract Informations from batch scripts:
+
+
 
 ### Others
 
