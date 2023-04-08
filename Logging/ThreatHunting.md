@@ -40,10 +40,10 @@ Get-WinEvent -FilterHashtable @{LogName='Microsoft-Windows-Sysmon/Operational'; 
 
 #### Get all hashes on the system:
 for windows:
-`az`
+`Get-ChildItem -Path . -Recurse -File | Get-FileHash -Algorithm SHA256`
 
 for linux:
-`az`
+`find ../ -type f -print0 | xargs -0 sha256sum`
 
 #### Extract Informations from powershell scripts:
 
