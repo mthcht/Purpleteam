@@ -241,6 +241,55 @@ if __name__ == "__main__":
     main()
 ```
 
+#### Extract Informations from perl scripts:
+
+- extract prel scripts informations with perl PPI:
+ex: `perl extract_from_perl.pl bruteforce_test.pl`
+
+```perl
+use strict;
+use warnings;
+use PPI;
+use Data::Dumper;
+
+sub extract_info_from_perl {
+    my ($perl_script_path) = @_;
+    my $document = PPI::Document->new($perl_script_path);
+
+    # Extract function names
+    my @function_names = map { $_->name } grep { $_->isa('PPI::Statement::Sub') } @{ $document->find('PPI::Statement::Sub') || [] };
+
+    # Extract function arguments
+    my @function_arguments;
+    for my $sub (grep { $_->isa('PPI::Statement::Sub') } @{ $document->find('PPI::Statement::Sub') || [] }) {
+        my $block = $sub->block;
+        my $signature = $block->find('PPI::Statement::Variable');
+        my @args;
+        if (defined $signature && ref $signature eq 'ARRAY' && scalar @$signature > 0) {
+            @args = map { $_->content } @{$signature->[0]->variables} if ref($signature->[0]->variables) eq 'ARRAY';
+        }
+        push @function_arguments, \@args;
+    }
+
+    # Extract invoked commands
+    my @invoked_commands = map { $_->content } @{ $document->find('PPI::Token::QuoteLike::Command') || [] };
+
+    # Extract script arguments
+    my @script_arguments = map { $_->content } @{ $document->find('PPI::Token::ArrayIndex') || [] };
+
+    return {
+        function_names => \@function_names,
+        function_arguments => \@function_arguments,
+        invoked_commands => \@invoked_commands,
+        script_arguments => \@script_arguments,
+    };
+}
+
+if (@ARGV != 1) {
+    print "Usage: $0 path_to_perl_script\n";
+    exit 1;
+}
+```
 #### Extract Informations from vbs scripts:
 
 #### Extract Informations from batch scripts:
