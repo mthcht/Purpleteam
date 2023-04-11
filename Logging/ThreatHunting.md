@@ -47,6 +47,7 @@ for linux:
 
 #### Extract IOCs from any file/url:
 ex: `python3 extract_iocs.py https://github.com/pr0xylife/Qakbot/raw/main/Qakbot_obama250_11.04.2023.txt`
+
 ex: `python3 extract_iocs.py myreport.txt`
 ```python
 import re
