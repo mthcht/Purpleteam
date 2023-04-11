@@ -367,7 +367,73 @@ if __name__ == '__main__':
     main()
 ```
 #### Extract Informations from batch scripts:
+```python
+import re
+import sys
 
+def extract_elements(batch_file):
+    results = {
+        'script_args': [],
+        'function_names': [],
+        'function_args': {},
+        'invoked_commands': []
+    }
+
+    patterns = {
+        'script_arg': re.compile(r"^\s*set\s+/A\s+arg(\d+)\s*=\s*%%\d+", re.IGNORECASE),
+        'function': re.compile(r"^\s*:\s*([a-zA-Z0-9_]+)\s+.*?%%~\d+", re.IGNORECASE),
+        'command': re.compile(r"^\s*([a-zA-Z0-9_]+)\s*\b", re.IGNORECASE)
+    }
+
+    with open(batch_file, 'r') as file:
+        for line in file:
+            # Extract script arguments
+            match_script_arg = patterns['script_arg'].search(line)
+            if match_script_arg:
+                script_arg = int(match_script_arg.group(1))
+                results['script_args'].append(script_arg)
+
+            # Extract function names and their arguments
+            match_function = patterns['function'].search(line)
+            if match_function:
+                function_name = match_function.group(1)
+                results['function_names'].append(function_name)
+
+            # Extract invoked commands and their entire line
+            match_command = patterns['command'].search(line)
+            if match_command:
+                command_name = match_command.group(1)
+                if command_name.lower() not in ["set", "goto", "if", "for", "call", "echo", "exit"]:
+                    results['invoked_commands'].append(line.strip())
+
+    return results
+
+def main():
+    if len(sys.argv) < 2:
+        print("Usage: python extract_batch_elements.py <Batch-file>")
+        sys.exit(1)
+
+    batch_file = sys.argv[1]
+    results = extract_elements(batch_file)
+
+    if results['script_args']:
+        print("Script arguments found:")
+        for script_arg in results['script_args']:
+            print(f" - {script_arg}")
+
+    if results['function_names']:
+        print("\nFunction names found:")
+        for function_name in results['function_names']:
+            print(f" - {function_name}")
+
+    if results['invoked_commands']:
+        print("\nInvoked commands found:")
+        for command_line in results['invoked_commands']:
+            print(f" - {command_line}")
+
+if __name__ == '__main__':
+    main()
+```
 
 
 ### Others
