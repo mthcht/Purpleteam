@@ -291,7 +291,7 @@ if (@ARGV != 1) {
 }
 ```
 #### Extract Informations from vbs scripts:
-```
+```python
 import re
 import sys
 
