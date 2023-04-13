@@ -45,6 +45,43 @@ for windows:
 for linux:
 `find ../ -type f -print0 | xargs -0 sha256sum`
 
+#### Quickly get files path and hashes of every files of a github repo
+ex: `python3 get_github_repo.py https://github.com/EmpireProject/Empire`
+```
+import git
+import os
+import sys
+import hashlib
+
+# Get the GitHub project URL from the command line arguments
+url = sys.argv[1]
+
+# Get the repository name from the URL
+repo_name = url.split("/")[-1].replace(".git", "")
+
+# Check if the repository has already been cloned
+repo_dir = os.path.join(os.getcwd(), repo_name)
+if not os.path.exists(repo_dir):
+    # Clone the GitHub repository to a local directory
+    git.Repo.clone_from(url, repo_dir)
+
+# Get the list of file paths
+file_paths = []
+for root, dirs, files in os.walk(repo_dir):
+    # Ignore .git and .github directories and their subdirectories
+    dirs[:] = [d for d in dirs if d not in ['.git', '.github']]
+    for file in files:
+        file_path = os.path.join(root, file)
+        if '.git' not in file_path and '.github' not in file_path:
+            file_paths.append(file_path)
+
+# Calculate the hash of each file and print it
+for file_path in file_paths:
+    with open(file_path, 'rb') as f:
+        file_data = f.read()
+        file_hash = hashlib.sha256(file_data).hexdigest()
+        print(f"{file_path} : {file_hash}")
+```
 #### Extract IOCs from any file/url:
 ex: `python3 extract_iocs.py https://github.com/pr0xylife/Qakbot/raw/main/Qakbot_obama250_11.04.2023.txt`
 
