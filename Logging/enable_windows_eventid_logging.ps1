@@ -145,4 +145,7 @@ Set-ItemProperty -Path "HKLM:\Software\Microsoft\Windows\CurrentVersion\Policies
 # Enable Include command line in process creation events
 Set-ItemProperty -Path "HKLM:\Software\Microsoft\Windows\CurrentVersion\Policies\System\Audit" -Name "ProcessCreationIncludeCmdLine_Enabled" -Value 1 -Type DWORD -Verbose
 
+# well i changed my mind, i want everything
+auditpol /set /category:* /success:enable /failure:enable
+
 Stop-Transcript
