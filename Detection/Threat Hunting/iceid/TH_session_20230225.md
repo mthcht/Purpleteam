@@ -76,7 +76,7 @@ OR file_path IN ("*Contract_*_*_Copy#*.one","*Contract_0*_*_Copy#*.one","*Docume
 #### url, dest_nt_domain searches:
 ```
 tag=proxy url IN ("*.exe","*.dll","*.dat","*.one","*allertmnemonkik.com*","*dgormiugatox.com*","*firebasestorage.googleapis.com/*.appspot.com/o/*.zip*","*plivetrakoy.com*","*klayerziluska.com*","*umousteraton.com*","*mrassociattes.com*","*aerilaponawki.com*","*alishaskainz.com*","*yelsopotre.com*","*alohaplinayagot.com*","*plitspiritnox.com*","*aerilaponawki.com*","*alishaskainz.com*","*yelsopotre.com*","*alohaplinayagot.com*","*carismorth.com*","*cootembrast.com*")
-OR dest_nt_domain IN (*allertmnemonkik.com*","*dgormiugatox.com*","*firebasestorage.googleapis.com/*.appspot.com/o/*.zip*","*plivetrakoy.com*","*klayerziluska.com*","*umousteraton.com*","*mrassociattes.com*","*aerilaponawki.com*","*alishaskainz.com*","*yelsopotre.com*","*alohaplinayagot.com*","*plitspiritnox.com*","*aerilaponawki.com*","*alishaskainz.com*","*yelsopotre.com*","*alohaplinayagot.com*","*carismorth.com*","*cootembrast.com*")
+OR dest_nt_domain IN ("*allertmnemonkik.com*","*dgormiugatox.com*","*firebasestorage.googleapis.com/*.appspot.com/o/*.zip*","*plivetrakoy.com*","*klayerziluska.com*","*umousteraton.com*","*mrassociattes.com*","*aerilaponawki.com*","*alishaskainz.com*","*yelsopotre.com*","*alohaplinayagot.com*","*plitspiritnox.com*","*aerilaponawki.com*","*alishaskainz.com*","*yelsopotre.com*","*alohaplinayagot.com*","*carismorth.com*","*cootembrast.com*")
 ```
 
 #### file_hash searches:
