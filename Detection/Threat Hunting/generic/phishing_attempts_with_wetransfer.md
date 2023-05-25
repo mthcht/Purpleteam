@@ -21,4 +21,4 @@ How can you detect collection and data exfiltration with wetransfer in your prox
   - (Each link ends with a unique id)
 
 So, for comprehensive detection of exfiltration via the WeTransfer UI, generic data exfiltration detection techniques (monitoring outbound data volume) is good however, for smaller files and to focus on WeTransfer, the relevant detection is to hunt for POST requests to **`*Wetransfer.com/api/v4/transfers/*`**
-and for collection, hunt for requests to **`*wetransfer.com/downloads/*`** or **`we.tl/t-*`
+and for collection, hunt for requests to **`*wetransfer.com/downloads/*`** or **`we.tl/t-*`**
