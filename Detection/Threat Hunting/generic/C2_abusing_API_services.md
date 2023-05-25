@@ -11,14 +11,14 @@
     - https://github.com/Lemonada/teleBrat
     - https://github.com/woj-ciech/Social-media-c2
   - API detection: 
-    - POST requests to `api.telegram.org`
+    - Requests to `https://api.telegram.org/bot*`
 
 ## Twitter API usage
   - C2 projects:
     - https://github.com/slaeryan/LARRYCHATTER 
     - https://github.com/woj-ciech/Social-media-c2
   - API detection: 
-    - POST requests to `` 
+    - Requests to `https://api.twitter.com/1*`,`https://api.twitter.com/2*`,`https://upload.twitter.com/`,`https://api.twitter.com/oauth*` 
  
 ## Gmail API usage
   - C2 projects:
@@ -28,7 +28,7 @@
     - https://github.com/rschwass/PSGSHELL
     - https://github.com/shanefarris/GmailBackdoor
   - API detection: 
-    - POST requests to `` 
+    - Requests to `https://www.googleapis.com/gmail/*`, `https://www.googleapis.com/auth/*`
  
 ## Slack API usage
   - C2 projects:
@@ -39,7 +39,7 @@
     - https://github.com/herwonowr/slackhell
     - https://github.com/Yihsiwei/slack-c2-golang
   - API detection: 
-    - POST requests to `` 
+    - Requests to `https://slack.com/api/*` 
   
 ## Discord API usage
   - C2 projects:
@@ -54,7 +54,7 @@
     - https://github.com/hoaan1995/ZER0BOT
     - https://github.com/Jeff53978/Python-Trojan
   - API detection: 
-    - POST requests to `` 
+    - Requests to `https://discord.com/api/*` 
   
 ## Google Sheet/Google Drive API usage
   - C2 projects:
@@ -62,37 +62,37 @@
     - https://github.com/a-rey/google_RAT
     - https://github.com/SpiderLabs/DoHC2
   - API detection: 
-    - POST requests to `` 
+    - Requests to `https://sheets.googleapis.com/*`,`https://www.googleapis.com/drive/*` 
 
 ## Github API usage
   - C2 projects:
     - https://github.com/3ct0s/disctopia-c2
     - https://github.com/TheD1rkMtr/GithubC2
   - API detection: 
-    - POST requests to `` 
+    - Requests to `https://api.github.com/*` 
 
 ## Youtube API usage
   - C2 projects:
     - https://github.com/latortuga71/YoutubeAsAC2 
     - https://github.com/woj-ciech/Social-media-c2
   - API detection: 
-    - POST requests to ``
+    - Requests to `https://www.googleapis.com/youtube/*`
 
 ## Pastebin API usage
   - C2 projects:
     - https://github.com/3ndG4me/AgentSmith 
   - API detection: 
-    - POST requests to ``
+    - Requests to `https://pastebin.com/api/api_post.php`,`https://pastebin.com/api/*`
 
 ## Reddit API usage
   - C2 projects:
     - https://github.com/kleiton0x00/RedditC2
     - https://github.com/thrasr/reddit-c2
   - API detection: 
-    - POST requests to ``
+    - Requests to `https://www.reddit.com/api/*`
 
 ## Instagram API usage
   - C2 projects:
     - https://github.com/woj-ciech/Social-media-c2/
   - API detection: 
-    - POST requests to ``
+    - Requests to `https://api.instagram.com/oauth/*`,`https://graph.instagram.com/*`
