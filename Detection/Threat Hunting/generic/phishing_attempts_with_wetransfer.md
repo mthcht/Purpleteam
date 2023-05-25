@@ -7,10 +7,10 @@ How can you detect collection and data exfiltration with wetransfer in your prox
 
 ### Data Exfiltration Indicators:
 
-- Regular browsing to wetransfer[.]com entails periodic GET requests to https://backgrounds.wetransfer[.]net/creator/wepresent-* approximately every 40 seconds.
-- The process of uploading files begins with email confirmation, which involves a POST request to https://wetransfer[.]com/api/v4/transfers/email.
-- Further file manipulations will lead to requests to https://wetransfer[.]com/api/v4/transfers/*.
-- Upon email confirmation, file uploads proceed via a backend API URL https://e-10220.adzerk[.]net/api/v2. However, note that this URL is subject to frequent changes.
+- Regular browsing to `wetransfer.com` entails periodic GET requests to `https://backgrounds.wetransfer.net/creator/wepresent-*` approximately every 40 seconds.
+- The process of uploading files begins with email confirmation, which involves a POST request to `https://wetransfer.com/api/v4/transfers/email`.
+- Further file manipulations will lead to requests to `https://wetransfer.com/api/v4/transfers/*`
+- Upon email confirmation, file uploads proceed via a backend API URL `https://e-10220.adzerk.net/api/v2`. However, note that this URL is subject to frequent changes.
 
 ### Data Collection Indicators:
 
