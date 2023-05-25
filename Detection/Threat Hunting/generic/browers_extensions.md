@@ -1,3 +1,5 @@
+## Browser extensions detections
+
 ref https://twitter.com/mthcht/status/1647370542867947520
 
 ### Firefox
