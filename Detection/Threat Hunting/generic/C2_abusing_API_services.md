@@ -96,3 +96,11 @@
     - https://github.com/woj-ciech/Social-media-c2/
   - API detection: 
     - Requests to `https://api.instagram.com/oauth/*`,`https://graph.instagram.com/*`
+
+## Virustotal C2 usage
+  - C2 projects:
+    - https://github.com/RATandC2/VirusTotalC2
+    - https://github.com/D1rkMtr/VirusTotalC2
+  - API detection: 
+    - Requests to ``
+
