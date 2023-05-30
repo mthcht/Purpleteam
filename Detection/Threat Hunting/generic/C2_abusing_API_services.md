@@ -96,7 +96,7 @@
   - C2 projects:
     - https://github.com/Arno0x/DBC2
   - API detection:
-    - Requests to `https://api.dropboxapi.com` 
+    - Requests to `https://api.dropboxapi.com/*` 
 
 ## Instagram API usage
   - C2 projects:
