@@ -15,7 +15,8 @@
 
 ## Twitter API usage
   - C2 projects:
-    - https://github.com/slaeryan/LARRYCHATTER 
+    - https://github.com/slaeryan/LARRYCHATTER
+    - https://github.com/PaulSec/twittor
     - https://github.com/woj-ciech/Social-media-c2
   - API detection: 
     - Requests to `https://api.twitter.com/1*`,`https://api.twitter.com/2*`,`https://upload.twitter.com/`,`https://api.twitter.com/oauth*` 
@@ -90,6 +91,12 @@
     - https://github.com/thrasr/reddit-c2
   - API detection: 
     - Requests to `https://www.reddit.com/api/*`
+
+## Dropbox API usage
+  - C2 projects:
+    - https://github.com/Arno0x/DBC2
+  - API detection:
+    - Requests to `https://api.dropboxapi.com` 
 
 ## Instagram API usage
   - C2 projects:
