@@ -3,6 +3,8 @@
 ## From a real phishing attempt (BASE64 + AES):
 
 ### Scenario:
+ref: https://twitter.com/mthcht/status/1664272429169139712
+
 The user received a phishing email requesting a transfer and included a shortened URL as a means to access the accompanying documents, the link redirect to `hidrive.com` hosting an html file:
 
 
@@ -52,6 +54,20 @@ This allows the attacker to bypass detections and execute their malicious code w
 
 ### downloading PAYMENTS.html from `hidrive.com`
   - GET request to `https://get.hidrive.com/api/*/file/*`
+  - The file is saved and Sysmon EID 15 will trigger (as suggested by [@johnk3r](https://twitter.com/mthcht/status/1664294705557823489):
+    - File stream created:
+      ```
+      UtcTime: 2023-06-01 15:26:23.877
+      ProcessGuid: {6ac0160e-b889-6478-ffae-000000000300}
+      ProcessId: 10036
+      Image: C:\Program Files\Mozilla Firefox\firefox.exe
+      TargetFilename: C:\Users\mthcht\Downloads\PAYMENTS.html:Zone.Identifier
+      CreationUtcTime: 2023-06-01 15:26:21.411
+      Hash: SHA1=ANONYMiZED,MD5=ANONYMiZED,SHA256=ANONYMiZED,IMPHASH=00000000000000000000000000000000
+      Contents: [ZoneTransfer]  ZoneId=3  ReferrerUrl=https://get.hidrive.com/i/ANONYMiZED  HostUrl=https://get.hidrive.com/api/ANONYMiZED/file/ANONYMiZED
+      User: WIN10\mthcht
+      ```
+    - In Sysmon EID 15 look for TargetFilename ending with `*.html:Zone.Identifier` and ZoneID=3
 
 ### manually opening a downloaded PAYMENTS.html directly from explorer:
   - **Registry**:
@@ -96,6 +112,7 @@ This allows the attacker to bypass detections and execute their malicious code w
   - If it's the first time the user open an .html file you will also see:
       - Registry: Sysmon EID 12 & 13 with process `Openwith.exe` and target registry key containing `*\\Explorer\\*.html`
       - Commandline: Sysmon EID 1 or Security EID 4688 with parent process `Openwith.exe`, your browser as a child process and the commandlines i gave from each browser
+
 
 ### Detection summary
   - The detection tips mentioned above are applicable to your threat hunting sessions. However, instead of focusing specifically on detecting my phishing example `PAYMENTS.html` file, broaden your scope by replacing it with `*.html`. This modification allows you to gather a comprehensive summary of all HTML files locally opened by users in your environment.
