@@ -38,6 +38,7 @@ myvar2 content:
 'encrypted2', key, {mode: CryptoJS.mode.ECB }); 
 document.write(decrypted.toString(CryptoJS.enc.Utf8));</script>
 ```
+*i replaced the encrypted data with 'encrypted1 and 'encrypted2'*
 
 You can see that the decryption key is embedded within the same HTML file.
 
