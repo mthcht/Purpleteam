@@ -54,7 +54,7 @@ This allows the attacker to bypass detections and execute their malicious code w
 
 ### downloading PAYMENTS.html from `hidrive.com`
   - GET request to `https://get.hidrive.com/api/*/file/*`
-  - The file is saved and Sysmon EID 15 will trigger (as suggested by [@johnk3r](https://twitter.com/mthcht/status/1664294705557823489):
+  - The file is saved and Sysmon EID 15 will trigger (as suggested by [@johnk3r](https://twitter.com/mthcht/status/1664294705557823489)):
     - File stream created:
       ```
       UtcTime: 2023-06-01 15:26:23.877
