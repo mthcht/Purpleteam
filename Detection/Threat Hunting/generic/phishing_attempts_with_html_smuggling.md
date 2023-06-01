@@ -2,7 +2,9 @@
 
 ## From a real phishing attempt (BASE64 + AES):
 
-The user received a phishing email requesting a transfer with just shortened url to get the documents, the link redirect to `hidrive.com` hosting an html file:
+### Scenario:
+The user received a phishing email requesting a transfer and included a shortened URL as a means to access the accompanying documents, the link redirect to `hidrive.com` hosting an html file:
+
 
 ![2023-06-01 14_52_54-HiDrive Share_ Send large files free of charge](https://github.com/mthcht/Purpleteam/assets/75267080/f7242815-7939-441a-8b25-83d6a711ddbb)
 
