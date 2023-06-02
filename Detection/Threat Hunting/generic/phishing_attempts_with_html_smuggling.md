@@ -125,7 +125,7 @@ This allows the attacker to bypass detections and execute their malicious code w
     - [chrome] with child process `*\\chrome.exe*` : `*\\Google\\Chrome\\Application\\chrome.exe" --single-argument *\\Users\\*\\AppData\\Local\\Temp\\Rar*\\PAYMENTS.html`
     - [Internet Explorer] with child process `*\\iexplorer.exe` : `*\\Internet Explorer\\iexplore.exe" *\\Users\\*\\AppData\\Local\\Temp\\Rar*\\PAYMENTS.html`
     - [edge] with child process `*\\msedge.exe` : `*\\Microsoft\\Edge\\Application\\msedge.exe" --single-argument *\\Users\\*\\AppData\\Local\\Temp\\Rar*\\PAYMENTS.html`
-    - [firefox] with child process `*\\firefox.exe` : `*\\Mozilla Firefox\\firefox.exe" -osint -url l *\\Users\\*\\AppData\\Local\\Temp\\Rar*\\PAYMENTS.html`
+    - [firefox] with child process `*\\firefox.exe` : `*\\Mozilla Firefox\\firefox.exe" -osint -url *\\Users\\*\\AppData\\Local\\Temp\\Rar*\\PAYMENTS.html`
   - **File deleted** when closing the opened html page from the browser (Sysmon EID 26):
     - from process `*\\WinRAR.exe` and target file name `*\\Users\\*\\AppData\\Local\\Temp\\Rar*\\PAYMENTS.html`
 
