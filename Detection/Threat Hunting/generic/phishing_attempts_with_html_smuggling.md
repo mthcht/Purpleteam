@@ -102,6 +102,8 @@ This allows the attacker to bypass detections and execute their malicious code w
     - [firefox] with child process `*\\firefox.exe` : `*\\Mozilla Firefox\\firefox.exe" -osint -url *\\Users\\*\\AppData\\Local\\Temp\\Temp1_*.zip\\PAYMENTS.html`
     
 ### manually opening a downloaded PAYMENTS.html from an archive with winzip (very crappy software btw):
+*can be winzip32.exe or winzip64.exe*
+
   - **Registry**:
     - Sysmon EID 12 & 13 with process `winzpi64.exe` and target registry key containing `*\\Explorer\\*.html*`
   - **File created** and **File creation time changed** when opening the html page from the archive (Sysmon EID 11 + EID 2):
@@ -113,8 +115,7 @@ This allows the attacker to bypass detections and execute their malicious code w
     - [firefox] with child process `*\\firefox.exe` : `*\\Mozilla Firefox\\firefox.exe" -osint -url *\\Users\\*\\AppData\\Local\\Temp\\wz*\\PAYMENTS.html`
   - **File deleted** when closing the opened html page from the browser (Sysmon EID 26):
     - from process `*\\winzip64.exe` and target file name `*\\Users\\*\\AppData\\Local\\Temp\\wz*\\PAYMENTS.html`
-    
-
+  
 - If it's the first time the user open an .html file you will also see:
     - Registry: Sysmon EID 12 & 13 with process `Openwith.exe` and target registry key containing `*\\Explorer\\*.html`
     - Commandline: Sysmon EID 1 or Security EID 4688 with parent process `Openwith.exe`, your browser as a child process and the commandlines i gave from each browser
