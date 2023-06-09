@@ -44,6 +44,7 @@
   
 ## Discord API usage
   - C2 projects:
+    - https://github.com/MythicC2Profiles/discord
     - https://github.com/3ct0s/disctopia-c2
     - https://github.com/emmaunel/DiscordGo
     - https://github.com/crawl3r/DaaC2
