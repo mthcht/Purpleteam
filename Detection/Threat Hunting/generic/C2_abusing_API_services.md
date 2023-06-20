@@ -66,6 +66,12 @@
   - API detection: 
     - Requests to `https://sheets.googleapis.com/*`,`https://www.googleapis.com/drive/*` 
 
+## Google Calendar
+- C2 projects:
+  - https://github.com/MrSaighnal/GCR-Google-Calendar-RAT
+- API detection:
+  - Requests to `https://www.googleapis.com/auth/calendar*`
+
 ## Github API usage
   - C2 projects:
     - https://github.com/3ct0s/disctopia-c2
