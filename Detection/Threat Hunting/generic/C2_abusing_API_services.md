@@ -107,9 +107,15 @@
 
 ## Instagram API usage
   - C2 projects:
-    - https://github.com/woj-ciech/Social-media-c2/
+    - https://github.com/woj-ciech/Social-media-c2
   - API detection: 
     - Requests to `https://api.instagram.com/oauth/*`,`https://graph.instagram.com/*`
+
+## Zoom API usage
+  - C2 projects:
+    - https://github.com/0xEr3bus/ShadowForgeC2
+  - API detection:
+    - Requests to `https://api.zoom.us/v2/chat/users/me/*`  
 
 ## Virustotal C2 usage
   - C2 projects:
