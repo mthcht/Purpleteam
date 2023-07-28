@@ -117,9 +117,15 @@
   - API detection:
     - Requests to `https://api.zoom.us/v2/chat/users/me/*`  
 
-## Virustotal C2 usage
+## Virustotal API usage
   - C2 projects:
     - https://github.com/RATandC2/VirusTotalC2
     - https://github.com/D1rkMtr/VirusTotalC2 (the repo does not exist anymore and the github username changed from D1rkMtr to TheD1rkMtr)
   - API detection: 
     - Requests to `https://www.virustotal.com/api/v3/*/comments`, `https://www.virustotal.com/api/v2/*/comments`
+
+## Notion API usage
+ - C2 projects:
+   - https://github.com/mttaggart/OffensiveNotion
+ - API detection:
+   -  Requests to `https://api.notion.com*`
