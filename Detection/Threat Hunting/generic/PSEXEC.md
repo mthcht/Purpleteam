@@ -38,6 +38,8 @@ If [PSEXEC](https://learn.microsoft.com/en-us/sysinternals/downloads/psexec) is 
 - The field ServiceAccount = `LocalSystem` or `0x10`
 
 and Sysmon EventID 1 we should still be able to detect default PSEXEC from microsoft with the field OriginalFileName = `*psexesvc.exe*` with the process_name different than `PSEXESVC.exe*`or `*psexec*`
+
+
 Service creation from psexec.py from impacket and psexec from Metasploit is more difficult to detect, we should see a randomly generated string of 8 upper and lowercase letters for psexec of Metasploit in the field `ServiceName` of the EventID 4697 or a randomly generated string of 16 upper and lowercase letters for psexec of Metasploit in the field `ServiceName` of the EventID 7045`(and 4 upper and lowercase letters for psexec from impacket - may generate too many false positives)
 
 ### Windows Security EventID 4674:
