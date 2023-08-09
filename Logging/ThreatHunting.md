@@ -47,6 +47,9 @@ for linux:
 
 #### Quickly get files path and hashes of every files of a github repo
 ex: `python3 get_github_repo.py https://github.com/EmpireProject/Empire`
+
+<details>
+
 ```
 import git
 import os
@@ -82,10 +85,16 @@ for file_path in file_paths:
         file_hash = hashlib.sha256(file_data).hexdigest()
         print(f"{file_path} : {file_hash}")
 ```
+
+</details>
+
 #### Extract IOCs from any file/url:
 ex: `python3 extract_iocs.py https://github.com/pr0xylife/Qakbot/raw/main/Qakbot_obama250_11.04.2023.txt`
 
 ex: `python3 extract_iocs.py myreport.txt`
+
+<details>
+
 ```python
 import re
 import sys
@@ -173,11 +182,15 @@ if __name__ == '__main__':
         print(hash)
 ```
 
+</details>
+
 #### Extract Informations from powershell scripts:
 
 - extract powershell scripts informations with powershell:
 
 ex: `powershell -ep Bypass keywords_in_powershell_scripts.ps1 c:\users\mthcht\desktop\mimikatz.ps1` 
+
+<details>
 
 ```powershell
 param (
@@ -224,9 +237,13 @@ Write-Host "Invoked commands:`n $($script_info.InvokedCommands -join ',')"
 Write-Host "Available arguments:`n $($script_info.AvailableArguments -join ',')"
 ```
 
+</details>
+
 - extract powershell scripts informations with python (for analysis on linux):
 
 ex: `python3 keywords_in_powershell_scripts.ps1 /home/mthcht/mimikatz.ps1`
+
+<details>
 
 ```python
 import argparse
@@ -294,11 +311,15 @@ if __name__ == "__main__":
     main()
 ```
 
+</details>
+
 #### Extract Informations from python scripts:
 
 - extract python scripts informations with python:
 
 ex: `python3 keywords_in_python_scripts.py /home/mthcht/mimikatz.py`
+
+<details>
 
 ```python
 import argparse
@@ -369,10 +390,15 @@ if __name__ == "__main__":
     main()
 ```
 
+</details>
+
+
 #### Extract Informations from perl scripts:
 
 - extract prel scripts informations with perl PPI:
 ex: `perl extract_from_perl.pl bruteforce_test.pl`
+
+<details>
 
 ```perl
 use strict;
@@ -418,7 +444,13 @@ if (@ARGV != 1) {
     exit 1;
 }
 ```
+
+</details>
+
 #### Extract Informations from vbs scripts:
+
+<details>
+
 ```python
 import re
 import sys
@@ -494,7 +526,14 @@ def main():
 if __name__ == '__main__':
     main()
 ```
+
+</details>
+
+	
 #### Extract Informations from batch scripts:
+
+<details>
+
 ```python
 import re
 import sys
@@ -562,6 +601,8 @@ def main():
 if __name__ == '__main__':
     main()
 ```
+
+</details>
 
 
 ### Others
