@@ -1,5 +1,5 @@
 # C2 Hiding in plain sight
-
+*also published on https://mthcht.medium.com/c2-hiding-in-plain-sight-7a83963b9344*
 *Understanding your environment with the applications used and allowed will enhances the effectiveness of your hunt here*
 
 ## Telegram API usage
