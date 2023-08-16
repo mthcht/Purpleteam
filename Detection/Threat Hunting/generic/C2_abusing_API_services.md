@@ -124,6 +124,16 @@
   - API detection: 
     - Requests to `https://www.virustotal.com/api/v3/*/comments`, `https://www.virustotal.com/api/v2/*/comments`
 
+## Zulip API usage
+  - C2 projects:
+    - https://github.com/n1k7l4i/goZulipC2
+  - API detection:
+    - Requests to:
+      - `*.zulipchat.com/api/v1/messages*` 
+      - `*.zulipchat.com/api/v1/user_uploads*`
+      - `*.zulipchat.com/api/v1/users/me/subscriptions*`
+      - `*.zulipchat.com/api/v1/get_stream_id?stream=*`
+
 ## Notion API usage
  - C2 projects:
    - https://github.com/mttaggart/OffensiveNotion
