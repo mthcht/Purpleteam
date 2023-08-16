@@ -9,7 +9,7 @@ logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(
 def get_method_and_header(algo, resolved, dnstwist_api_server):
     if resolved:
         method = f"{dnstwist_api_server}/dnstwist_resolved"
-        header = ["metadata.algotype", "dest_nt_domain", "dest_ip", "metadata.name_server1", "metadata.mail_server", "metadata.name_server2","metadata.original_domain"]
+        header = ["metadata.algotype", "dest_nt_domain", "dest_ip", "metadata.dns_aaaa", "metadata.mail_server", "metadata.dns_ns","metadata.original_domain"]
         algotype = 'resolved'
     else:
         method = f"{dnstwist_api_server}/dnstwist_algo"
