@@ -129,10 +129,10 @@
     - https://github.com/n1k7l4i/goZulipC2
   - API detection:
     - Requests to:
-      - `*.zulipchat.com/api/v1/messages*` 
-      - `*.zulipchat.com/api/v1/user_uploads*`
-      - `*.zulipchat.com/api/v1/users/me/subscriptions*`
-      - `*.zulipchat.com/api/v1/get_stream_id?stream=*`
+      - `https://*.zulipchat.com/api/v1/messages*` 
+      - `https://*.zulipchat.com/api/v1/user_uploads*`
+      - `https://*.zulipchat.com/api/v1/users/me/subscriptions*`
+      - `https://*.zulipchat.com/api/v1/get_stream_id?stream=*`
 
 ## Notion API usage
  - C2 projects:
