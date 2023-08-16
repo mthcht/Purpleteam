@@ -24,7 +24,7 @@ def new_endpoint():
     domain = request.json['domain']
     nameservers = '8.8.8.8,8.8.4.4' # Change this for your own dns servers (using google dns can be faster if your own servers can't handle thousands of dns requests in a short period of time)
     try:
-        result = subprocess.run([DNSTWIST_BINARY,'--format','csv','--registered','--useragent','Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/115.0.0.0 Safari/537.36','--nameservers',nameservers,domain], stdout=subprocess.PIPE, text=True, check=True)
+        result = subprocess.run([DNSTWIST_BINARY,'--format','csv','--registered','--nameservers',nameservers,domain], stdout=subprocess.PIPE, text=True, check=True)
         twisted_domains = result.stdout
         return Response(twisted_domains, mimetype='text/csv')
     except subprocess.CalledProcessError as e:
