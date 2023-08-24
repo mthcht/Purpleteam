@@ -89,7 +89,7 @@
 ## Pastebin API usage
   - C2 projects:
     - https://github.com/3ndG4me/AgentSmith
-    - https://github.com/PeterEdtu/Pastebad-Reverse-Shell
+    - https://github.com/PeterEdtu/Pastebad-Reverse-Shell (pastebin.fr)
   - API detection: 
     - Requests to `https://pastebin.com/api/api_post.php`,`https://pastebin.com/api/*`
 
