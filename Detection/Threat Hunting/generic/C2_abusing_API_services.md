@@ -10,6 +10,7 @@
     - https://github.com/kensh1ro/NativeTeleBackdoor
     - https://github.com/Lemonada/teleBrat
     - https://github.com/woj-ciech/Social-media-c2
+    - https://github.com/machine1337/TelegramRAT
   - API detection: 
     - Requests to `https://api.telegram.org/bot*`
 
