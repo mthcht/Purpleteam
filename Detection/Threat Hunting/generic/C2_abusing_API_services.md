@@ -148,3 +148,11 @@
 - API detection:
   - POST Requests to `https://matrix.org/_matrix/client/r0/rooms/*/send/m.room.message`
   - GET Requests to `https://matrix.org/_matrix/client/r0/rooms/*/messages`
+
+## OPENAI
+- C2 projects:
+  - https://github.com/spartan-conseil/ratchatpt
+- API detection:
+  - POST & GET Requests to `https://api.openai.com/v1/files*`
+  - POST Requests to `https://api.openai.com/v1/files/*`
+  - GET Requests to `https://api.openai.com/v1/files/*/content*`
