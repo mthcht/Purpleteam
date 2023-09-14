@@ -142,14 +142,14 @@
  - API detection:
    -  Requests to `https://api.notion.com*`
   
-## Matrix
+## Matrix API usage
 - C2 projects:
   - https://github.com/n1k7l4i/goMatrixC2/
 - API detection:
   - POST Requests to `https://matrix.org/_matrix/client/r0/rooms/*/send/m.room.message`
   - GET Requests to `https://matrix.org/_matrix/client/r0/rooms/*/messages`
 
-## OPENAI
+## OPENAI API usage
 - C2 projects:
   - https://github.com/spartan-conseil/ratchatpt
 - API detection:
