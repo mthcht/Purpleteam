@@ -4,7 +4,7 @@ T1110.003 - Brute Force: Password Spraying
 
 .Synopsis
     This script attempts to find valid credentials for a set of users by trying different passwords
-    This will generate EventID 4623, 4776 and 4771 and 4724 if password reset succesfully
+    This will generate EventID 4723, 4776 and 4771 and 4724 if password reset succesfully
 .DESCRIPTION
     This script takes two files as input, one with usernames and one with passwords. It then attempts 
     to authenticate each of the users with each of the passwords, and prints out any valid credentials
