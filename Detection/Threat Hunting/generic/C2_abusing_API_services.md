@@ -123,6 +123,7 @@
   - C2 projects:
     - https://github.com/RATandC2/VirusTotalC2
     - https://github.com/D1rkMtr/VirusTotalC2 (the repo does not exist anymore and the github username changed from D1rkMtr to TheD1rkMtr)
+    - https://github.com/g0h4n/REC2
   - API detection: 
     - Requests to `https://www.virustotal.com/api/v3/*/comments`, `https://www.virustotal.com/api/v2/*/comments`
 
@@ -156,3 +157,4 @@
   - POST & GET Requests to `https://api.openai.com/v1/files*`
   - POST Requests to `https://api.openai.com/v1/files/*`
   - GET Requests to `https://api.openai.com/v1/files/*/content*`
+
