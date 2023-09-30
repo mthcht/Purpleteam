@@ -59,7 +59,7 @@ Any instance of `mscorsvw.exe` loading `mscorsvc.dll` from an unauthorized or un
 
 ### Hunt for loaded image in unexcpected location 
 
-Example with Sysmon EventID 7 (image loaded), same logic could be applied on EventID 6 (driver loaded)
+Example with Sysmon EventID 7 (image loaded)
 ```
 `wineventlog` signature_id=7  loaded_file=* 
 | lookup hijacklibs_list file_name as loaded_file OUTPUT expected_file_path file_name as metadata_file_name file_hash as metadata_file_hash vulnerable_file_name as metadata_vulnerable_file_name file_type as metadata_file_type link as metadata_link hijacklib_link as metadata_hijacklib_link
