@@ -107,6 +107,5 @@ Example with Sysmon EventID 7 (image loaded)
   latest(_time) as lasttime
   count by _time dest_nt_host
 | rename values(*) as *
-| fields - time
 ```
 
