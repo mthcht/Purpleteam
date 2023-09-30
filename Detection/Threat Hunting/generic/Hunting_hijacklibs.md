@@ -28,7 +28,7 @@ Any instance of `mscorsvw.exe` loading `mscorsvc.dll` from an unauthorized or un
 - you upload the lookup `hijacklibs_list.csv` on Splunk
 - create a definition lookup named `hijacklibs_list` for the lookup `hijacklibs_list.csv`
 
-### [Generic] Hunt for files in unexcpected locations
+### [Generic] Hunt for files in unexpected locations
 ```
 `wineventlog` file_name=* file_path=*
 | lookup hijacklibs_list file_name as file_name OUTPUT expected_file_path file_name as metadata_file_name file_hash as metadata_file_hash vulnerable_file_name as metadata_vulnerable_file_name file_type as metadata_file_type link as metadata_link hijacklib_link as metadata_hijacklib_link
@@ -57,7 +57,7 @@ Any instance of `mscorsvw.exe` loading `mscorsvc.dll` from an unauthorized or un
 | fields - time
 ```
 
-### Hunt for loaded image in unexcpected location 
+### Hunt for loaded image in unexpected location 
 
 Example with Sysmon EventID 7 (image loaded)
 ```
