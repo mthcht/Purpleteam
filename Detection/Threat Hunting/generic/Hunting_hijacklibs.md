@@ -1,3 +1,5 @@
+More detail published on https://mthcht.medium.com/detect-dll-hijacking-techniques-from-hijacklibs-with-splunk-c760d2e0656f
+
 ## Database Hijacklibs
 The database contains 386 Sideloading, 89 Environment Variable, 12 Phantom and 9 Search Order entries.
 
