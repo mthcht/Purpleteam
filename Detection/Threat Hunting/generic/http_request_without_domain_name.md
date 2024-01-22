@@ -4,7 +4,7 @@ ref: https://twitter.com/mthcht/status/1629943703476289536?s=20
 ```
   `myproxylogs` url=*
   NOT (dest_ip IN ("10.0.0.0/8", "172.16.0.0/12", "192.168.0.0/16"))
-  | regex url =^(http|https|tunnel)\:\/\/\d*\.\d*\.\d*\.\d*\/[\W|\w]
+  | regex url = "^(http|https|tunnel|)(\:\/\/|)\d*\.\d*\.\d*\.\d*\/[\W|\w]"
   | stats values(url)
     earliest(_time) as firsttime
     latest(_time) as lasttime
