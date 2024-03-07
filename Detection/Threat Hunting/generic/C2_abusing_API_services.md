@@ -85,6 +85,7 @@
   - C2 projects:
     - https://github.com/latortuga71/YoutubeAsAC2 
     - https://github.com/woj-ciech/Social-media-c2
+    - https://github.com/ricardojoserf/SharpCovertTube
   - API detection: 
     - Requests to `https://www.googleapis.com/youtube/*`
 
