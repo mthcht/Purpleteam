@@ -76,7 +76,7 @@ if __name__ == "__main__":
     args = parser.parse_args()
 
     if not (args.python or args.bash):
-        print("Usage: python tor_temp_docker.py --python <script_or_command> | --bash <script_or_command>")
+        print("Usage: python Execute_with_TOR_docker.py --python <script_or_command> | --bash <script_or_command>")
         sys.exit(1)
 
     temp_dir = tempfile.mkdtemp()
