@@ -1,8 +1,9 @@
 # Crowdstrike scams 
 
 ## Hunting
-- [suspicious_domains.csv](https://github.com/mthcht/Purpleteam/blob/main/Detection/Threat%20Hunting/CROWDSTRIKE_BSOD_scams/IOCS/suspicious_domains.csv) - check https://urlscan.io/search/#crowdstrike*%20date%3A%3Enow-7d%20 regularly to add new suspicious domains
-
+- [suspicious_domains.csv](https://github.com/mthcht/Purpleteam/blob/main/Detection/Threat%20Hunting/CROWDSTRIKE_BSOD_scams/IOCS/suspicious_domains.csv)
+  - check https://urlscan.io/search/#crowdstrike*%20date%3A%3Enow-7d%20 regularly to add new suspicious domains
+  - check DNSTWIST new resolving IP address  https://github.com/mthcht/awesome-lists/blob/main/Lists/DNSTWIST/crowdstrike.com_dnstwist_list.csv
 Observed in samples:
 - `api.telegram.org` (high FP risk)
 - `icanhazip.com` (high FP risk)
