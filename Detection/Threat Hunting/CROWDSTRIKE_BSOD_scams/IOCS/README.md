@@ -12,7 +12,7 @@ Observed in samples:
 - `taskkill /F /IM chrome.exe`
 
 
-## Crowdstrike reports IOCS:
+## IOCS reports:
 ### references:
   - https://www.crowdstrike.com/blog/threat-actor-distributes-python-based-information-stealer/
   - https://www.crowdstrike.com/blog/fake-recovery-manual-used-to-deliver-unidentified-stealer/
