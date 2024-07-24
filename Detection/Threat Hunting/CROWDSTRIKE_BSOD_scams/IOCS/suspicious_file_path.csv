@@ -1,3 +1,4 @@
 file_path,metadata_comment
 "*:\Windows\Temp\result.txt","https://www.crowdstrike.com/blog/fake-recovery-manual-used-to-deliver-unidentified-stealer/"
 "*:\c++\Mal_Cookie_x64\x64\Release\mscorsvc.pdb","https://www.crowdstrike.com/blog/fake-recovery-manual-used-to-deliver-unidentified-stealer/"
+"*\Temp\mscorsvc.dll",https://www.crowdstrike.com/blog/fake-recovery-manual-used-to-deliver-unidentified-stealer/
