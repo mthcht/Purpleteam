@@ -9,7 +9,7 @@ Observed in samples:
 - `findstr /I "avastui.exe avgui.exe bdservicehost.exe nswscsvc.exe sophoshealth.exe`
 - `findstr /V "locatedflatrendsoperating" Ukraine`
 - `cmd /c copy /b Treating + Viagra + Vision + Jul + Str 564784\L`
-- `taskkill /F /IM chrome.exe`
+- `taskkill /F /IM chrome.exe` (FP risk)
 
 
 ## IOCS reports:
