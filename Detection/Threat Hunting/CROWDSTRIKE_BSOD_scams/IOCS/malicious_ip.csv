@@ -1,3 +1,5 @@
-139.99.232.135
-185.255.114.110
-185.255.114.63
+dest_ip,metadata_comment
+139.99.232.135,https://www.crowdstrike.com/blog/threat-actor-distributes-python-based-information-stealer/
+185.255.114.110,https://www.crowdstrike.com/blog/threat-actor-distributes-python-based-information-stealer/
+185.255.114.63,https://www.crowdstrike.com/blog/threat-actor-distributes-python-based-information-stealer/
+172.104.160.126,https://www.crowdstrike.com/blog/fake-recovery-manual-used-to-deliver-unidentified-stealer/
