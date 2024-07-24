@@ -27,5 +27,6 @@ Observed in samples:
 - [malicious_hashes.csv](https://github.com/mthcht/Purpleteam/blob/main/Detection/Threat%20Hunting/CROWDSTRIKE_BSOD_scams/IOCS/malicious_hashes.csv)
 - [malicious_email.csv](https://github.com/mthcht/Purpleteam/blob/main/Detection/Threat%20Hunting/CROWDSTRIKE_BSOD_scams/IOCS/malicious_email.csv)
 - [malicious_domains.csv](https://github.com/mthcht/Purpleteam/blob/main/Detection/Threat%20Hunting/CROWDSTRIKE_BSOD_scams/IOCS/malicious_domains.csv)
-
+- [suspicious_file_name.csv](https://github.com/mthcht/Purpleteam/blob/main/Detection/Threat%20Hunting/CROWDSTRIKE_BSOD_scams/IOCS/suspicious_file_name.csv)
+- [suspicious_file_path.csv](https://github.com/mthcht/Purpleteam/blob/main/Detection/Threat%20Hunting/CROWDSTRIKE_BSOD_scams/IOCS/suspicious_file_path.csv)
 ## Others
