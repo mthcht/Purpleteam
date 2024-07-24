@@ -17,6 +17,8 @@ Observed in samples:
   - https://www.crowdstrike.com/blog/fake-recovery-manual-used-to-deliver-unidentified-stealer/
   - https://www.crowdstrike.com/blog/likely-ecrime-actor-capitalizing-on-falcon-sensor-issues/
   - https://www.crowdstrike.com/blog/lumma-stealer-with-cypherit-phishing-lure/
+  - https://app.any.run/tasks/14fc6a8a-6fd7-431f-aba5-d3177b47690f/
+
 
 ### IOCs:
 - [malicious_urls.csv](https://github.com/mthcht/Purpleteam/blob/main/Detection/Threat%20Hunting/CROWDSTRIKE_BSOD_scams/IOCS/malicious_urls.csv)
