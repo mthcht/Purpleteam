@@ -13,7 +13,17 @@ Observed in samples:
 - `findstr /V "locatedflatrendsoperating" Ukraine`
 - `cmd /c copy /b Treating + Viagra + Vision + Jul + Str 564784\L`
 - `taskkill /F /IM chrome.exe` (FP risk)
-
+- ` --force-interpreter` (high FP risk)
+- ` --entry-function` (high FP risk Mythic C2 Agent HTTP Endpoints)
+- `/api/v2/logs/event` (high FP risk Mythic C2 Agent HTTP Endpoints)
+- `/api/v2/logs/collect` (high FP risk Mythic C2 Agent HTTP Endpoints)
+- `/api/v2/logs/messaging` (high FP risk Mythic C2 Agent HTTP Endpoints)
+- `/api/v2/logs/startup` (high FP risk Mythic C2 Agent HTTP Endpoints)
+- `/api/v2/logs/shutdown` (high FP risk Mythic C2 Agent HTTP Endpoints)
+- `/api/v2/logs/worker` (high FP risk Mythic C2 Agent HTTP Endpoints)
+- `/api/v2/logs/frontend` (high FP risk Mythic C2 Agent HTTP Endpoints)
+- `/api/v2/logs/backend` (high FP risk Mythic C2 Agent HTTP Endpoints)
+- `Cirostrike`
 
 ## IOCS reports:
 ### references:
