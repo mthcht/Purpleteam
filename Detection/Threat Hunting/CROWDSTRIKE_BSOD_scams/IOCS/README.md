@@ -26,6 +26,7 @@ Observed in samples:
   - https://any.run/cybersecurity-blog/crowdstrike-outage-abuse/
   - https://www.virustotal.com/gui/file/803727ccdf441e49096f3fd48107a5fe55c56c080f46773cd649c9e55ec1be61/detection
   - https://www.crowdstrike.com/blog/malicious-inauthentic-falcon-crash-reporter-installer-spearphishing/
+  - https://www.crowdstrike.com/blog/malicious-inauthentic-falcon-crash-reporter-installer-ciro-malware/
 
 
 ### IOCs:
