@@ -12,6 +12,7 @@
     - https://github.com/woj-ciech/Social-media-c2
     - https://github.com/machine1337/TelegramRAT
     - https://github.com/1N73LL1G3NC3x/Nightmangle
+    - https://github.com/itaymigdal/Poshito
   - API detection: 
     - Requests to `https://api.telegram.org/bot*`
 
