@@ -13,25 +13,28 @@
         - Installs VirtualBox silently without user intervention.
         - Verifies that the installation was successful and adds VirtualBox to the system PATH for easier command execution.
 
-    2. **Download and Extract VM:**
+    2. **VirtualBox suppress notifications**
+        - Suppress all  VirtualBox GUI notifications
+        
+    3. **Download and Extract VM:**
         - Downloads a compressed archive containing a pre-configured Ubuntu VM from the provided URL.
         - Extracts the VM files to a specified temporary directory and verifies the extraction.
 
-    3. **Register the VM:**
+    4. **Register the VM:**
         - Locates the `.vdi` file for the VM.
         - Registers the VM with VirtualBox using the provided VM name.
         - Configures the VM with resources (e.g., memory, CPUs) and connects the `.vdi` file to the VM.
 
-    4. **Shared Folder Setup:**
+    5. **Shared Folder Setup:**
         - Adds a shared folder between the host and the VM (the entire C:\)
         - Ensures the shared folder is configured to automatically mount when the VM starts.
         - Skips this step if the shared folder already exists.
 
-    5. **Start the VM:**
+    6. **Start the VM:**
         - Starts the VM in headless mode (without opening a GUI).
         - Verifies that the VM starts successfully and logs any errors.
 
-    6. **Startup Configuration:**
+    7. **Startup Configuration:**
         - Creates a shortcut in the Windows Startup folder to ensure the VM starts in headless mode at system logon.
 
     Additional:
@@ -130,7 +133,15 @@ try {
         "Failed to add VirtualBox to PATH. Continuing..." `
         $false
 
-    # Step 3: Download and Extract VM
+    # Step 3: Suppress GUI Messages
+    Write-Verbose "Suppressing VirtualBox GUI messages globally..."
+    & "C:\Program Files\Oracle\VirtualBox\VBoxManage.exe" setextradata global GUI/SuppressMessages all
+    Verify-Success ([bool]$?) `
+        "VirtualBox GUI messages suppressed successfully." `
+        "Failed to suppress VirtualBox GUI messages." `
+        $false
+
+    # Step 4: Download and Extract VM
     Write-Verbose "Downloading VM archive..."
     Invoke-WebRequest -Uri $vmDownloadURL -OutFile $vmZipPath
     Verify-Success ([bool](Test-Path $vmZipPath)) `
@@ -145,7 +156,7 @@ try {
         "Failed to extract VM archive." `
         $true
 
-    # Step 4: Locate VDI File
+    # Step 5: Locate VDI File
     Write-Verbose "Locating VDI file..."
     $vdiFilePath = Get-ChildItem -Path $vmExtractPath -Recurse -Filter "*.vdi" | Select-Object -First 1 | ForEach-Object { $_.FullName }
     Verify-Success (-not [string]::IsNullOrEmpty($vdiFilePath)) `
@@ -153,7 +164,7 @@ try {
         "No VDI file found in the extracted archive." `
         $true
 
-    # Step 5: Register VM
+    # Step 6: Register VM
     Write-Verbose "Checking if the VM already exists..."
     $vmState = & VBoxManage showvminfo $vmName --machinereadable | Select-String -Pattern "VMState=" | ForEach-Object { $_.ToString().Split('=')[1].Trim('"') }
     if (-not $vmState) {
@@ -170,7 +181,7 @@ try {
         Write-Output "VM '$vmName' already exists. Skipping registration."
     }
 
-    # Step 6: Add Shared Folder
+    # Step 7: Add Shared Folder
     if ($vmState -ne "running" -and $vmState -ne "locked") {
         Write-Verbose "Checking if shared folder already exists..."
         $sharedFolderList = & VBoxManage showvminfo $vmName | Select-String -Pattern "Name: $sharedFolderName"
@@ -187,7 +198,7 @@ try {
         Write-Output "Shared folder operation skipped as VM is in '$vmState' state."
     }
 
-    # Step 7: Start the VM
+    # Step 8: Start the VM
     if ($vmState -eq "running") {
         Write-Output "VM '$vmName' is already running. Skipping start operation."
     } elseif ($vmState -eq "locked") {
@@ -200,7 +211,7 @@ try {
             $true
     }
 
-    # Step 8: Configure VM to Start at Logon via Startup Folder
+    # Step 9: Configure VM to Start at Logon via Startup Folder
     Write-Verbose "Configuring the VM to start at logon via the Startup folder..."
     $startupFolder = [System.Environment]::GetFolderPath("Startup")
     $shortcutPath = Join-Path $startupFolder "StartUbuntuVM.lnk"
